@@ -11,5 +11,9 @@ config_version=5
 [application]
 
 config/name="Scrapbook"
+run/main_scene="uid://cff8wll8ej86h"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"

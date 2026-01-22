@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cff8wll8ej86h"]
+
+[ext_resource type="Script" uid="uid://c2u68tik4oie7" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://beq6sr3huc8qg" path="res://assets/play-front.png" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cgw5oucwikfjs" path="res://assets/help-front.png" id="4_glbon"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BookCover" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(170, 162)
+texture = ExtResource("2_7vrkn")
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/BookCover"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -187.5
+offset_right = -188.0
+offset_bottom = -134.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+icon = ExtResource("3_jix8l")
+
+[node name="Help" type="Button" parent="MarginContainer/VBoxContainer/BookCover"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -187.5
+offset_right = -57.0
+offset_bottom = -134.5
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("4_glbon")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BookCover/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BookCover/Help" to="." method="_on_help_pressed"]
