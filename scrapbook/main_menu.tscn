@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cff8wll8ej86h"]
+[gd_scene load_steps=6 format=3 uid="uid://cff8wll8ej86h"]
 
 [ext_resource type="Script" uid="uid://c2u68tik4oie7" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://beq6sr3huc8qg" path="res://assets/play-front.png" id="3_jix8l"]
 [ext_resource type="Texture2D" uid="uid://cgw5oucwikfjs" path="res://assets/help-front.png" id="4_glbon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -23,7 +25,8 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="BookCover" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(170, 162)
+position = Vector2(600, 333)
+scale = Vector2(1.52632, 1.50612)
 texture = ExtResource("2_7vrkn")
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/BookCover"]
@@ -32,14 +35,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -296.0
-offset_top = -187.5
-offset_right = -188.0
-offset_bottom = -134.5
+offset_left = -266.0
+offset_top = -148.893
+offset_right = -198.0
+offset_bottom = -113.893
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_styles/hover = SubResource("StyleBoxFlat_jix8l")
 icon = ExtResource("3_jix8l")
+flat = true
 
 [node name="Help" type="Button" parent="MarginContainer/VBoxContainer/BookCover"]
 anchors_preset = 8
@@ -47,13 +52,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -187.5
-offset_right = -57.0
-offset_bottom = -134.5
+offset_left = -152.0
+offset_top = -148.893
+offset_right = -87.0
+offset_bottom = -113.893
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("4_glbon")
+flat = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BookCover/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BookCover/Help" to="." method="_on_help_pressed"]
