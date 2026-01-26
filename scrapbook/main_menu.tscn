@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cff8wll8ej86h"]
+[gd_scene load_steps=5 format=3 uid="uid://cff8wll8ej86h"]
 
 [ext_resource type="Script" uid="uid://c2u68tik4oie7" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://beq6sr3huc8qg" path="res://assets/play-front.png" id="3_jix8l"]
 [ext_resource type="Texture2D" uid="uid://cgw5oucwikfjs" path="res://assets/help-front.png" id="4_glbon"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -42,7 +40,6 @@ offset_bottom = -113.893
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_styles/hover = SubResource("StyleBoxFlat_jix8l")
 icon = ExtResource("3_jix8l")
 flat = true
 
