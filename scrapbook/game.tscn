@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cuykjqm5hmc5l"]
+[gd_scene load_steps=9 format=3 uid="uid://cuykjqm5hmc5l"]
 
 [ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://b5wkw6e4j517l" path="res://game.gd" id="1_fc0e3"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
-[ext_resource type="Texture2D" uid="uid://bnjrrtfps0npp" path="res://assets/birthday text.png" id="8_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="9_vef74"]
 
 [node name="Game" type="Node2D"]
@@ -39,10 +38,10 @@ icon = ExtResource("3_7jktm")
 flat = true
 
 [node name="help" type="Button" parent="MarginContainer/VBoxContainer/Book"]
-offset_left = 247.41
-offset_top = 102.524
-offset_right = 273.41
-offset_bottom = 128.524
+offset_left = 247.0
+offset_top = 103.682
+offset_right = 273.0
+offset_bottom = 129.682
 icon = ExtResource("4_ryrav")
 flat = true
 
@@ -69,11 +68,6 @@ offset_right = 311.222
 offset_bottom = -30.2658
 icon = ExtResource("7_vef74")
 flat = true
-
-[node name="BirthdayText" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book"]
-position = Vector2(-161.002, -124.137)
-scale = Vector2(0.278441, 0.275199)
-texture = ExtResource("8_j5wjh")
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book"]
 offset_left = 108.26
