@@ -1,23 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv3nsk22trvfj"]
+[gd_scene load_steps=6 format=3 uid="uid://cv3nsk22trvfj"]
 
 [ext_resource type="Texture2D" uid="uid://dx87txfiqhom7" path="res://assets/tester-table.jpg" id="1_2pplo"]
+[ext_resource type="Script" uid="uid://bwiuj5bb16wt" path="res://birthday_minigame.gd" id="1_4xl2v"]
 [ext_resource type="Texture2D" uid="uid://dccv5ycq325x6" path="res://assets/cake.png" id="2_2pplo"]
 [ext_resource type="Texture2D" uid="uid://b4ydu8pcqggnr" path="res://assets/lit candle.png" id="3_ba2e7"]
+[ext_resource type="Texture2D" uid="uid://lb34acqwof68" path="res://assets/pause.png" id="5_o6i3p"]
 
 [node name="BirthdayMinigame" type="Node2D"]
+script = ExtResource("1_4xl2v")
 
 [node name="Tester-table" type="Sprite2D" parent="."]
 position = Vector2(583, 328)
 texture = ExtResource("1_2pplo")
 
-[node name="Cake-tester" type="Sprite2D" parent="."]
-position = Vector2(603, 484)
+[node name="cake" type="Sprite2D" parent="."]
+position = Vector2(585, 483)
 scale = Vector2(1.06905, 0.977653)
 texture = ExtResource("2_2pplo")
 
 [node name="candles" type="Node2D" parent="."]
 
-[node name="Candle-tester" type="Sprite2D" parent="candles"]
-position = Vector2(484, 344)
-scale = Vector2(0.58204, 0.453929)
+[node name="lit candle" type="Sprite2D" parent="candles"]
+position = Vector2(462, 354)
+scale = Vector2(0.442919, 0.398393)
 texture = ExtResource("3_ba2e7")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 817.0
+offset_top = 25.0
+offset_right = 885.0
+offset_bottom = 93.0
+icon = ExtResource("5_o6i3p")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

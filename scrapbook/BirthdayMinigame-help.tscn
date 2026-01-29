@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://xgsip65vsrnb"]
+
+[ext_resource type="Script" uid="uid://cacayrepkgjnl" path="res://birthday_minigame_help.gd" id="1_lwj60"]
+[ext_resource type="Texture2D" uid="uid://dx87txfiqhom7" path="res://assets/tester-table.jpg" id="1_wlx87"]
+[ext_resource type="Texture2D" uid="uid://dccv5ycq325x6" path="res://assets/cake.png" id="2_d3x5e"]
+[ext_resource type="Texture2D" uid="uid://b4ydu8pcqggnr" path="res://assets/lit candle.png" id="3_eq8vs"]
+[ext_resource type="Texture2D" uid="uid://bv6b11qcj802p" path="res://assets/pause menu.png" id="5_g4cq8"]
+[ext_resource type="Texture2D" uid="uid://cm4q6myn6aocx" path="res://assets/resume.png" id="6_l4pnu"]
+[ext_resource type="Texture2D" uid="uid://dh735xab4y2mv" path="res://assets/quit.png" id="7_g4cq8"]
+
+[node name="BirthdayMinigame-help" type="Node2D"]
+script = ExtResource("1_lwj60")
+
+[node name="Tester-table" type="Sprite2D" parent="."]
+position = Vector2(583, 328)
+texture = ExtResource("1_wlx87")
+
+[node name="cake" type="Sprite2D" parent="."]
+position = Vector2(585, 483)
+scale = Vector2(1.06905, 0.977653)
+texture = ExtResource("2_d3x5e")
+
+[node name="candles" type="Node2D" parent="."]
+
+[node name="lit candle" type="Sprite2D" parent="candles"]
+position = Vector2(462, 354)
+scale = Vector2(0.442919, 0.398393)
+texture = ExtResource("3_eq8vs")
+
+[node name="PauseMenu" type="Sprite2D" parent="."]
+position = Vector2(772, 180)
+scale = Vector2(0.788352, 0.747261)
+texture = ExtResource("5_g4cq8")
+
+[node name="resume" type="Button" parent="PauseMenu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -193.0
+offset_top = -160.545
+offset_right = -71.0
+offset_bottom = -118.545
+grow_horizontal = 2
+icon = ExtResource("6_l4pnu")
+flat = true
+
+[node name="quit" type="Button" parent="PauseMenu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = -109.514
+offset_right = -96.0
+offset_bottom = -67.5141
+grow_horizontal = 2
+icon = ExtResource("7_g4cq8")
+flat = true
+
+[connection signal="pressed" from="PauseMenu/resume" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PauseMenu/quit" to="." method="_on_quit_pressed"]
