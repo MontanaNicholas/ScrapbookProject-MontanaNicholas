@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv3nsk22trvfj"]
+
+[ext_resource type="Texture2D" uid="uid://dx87txfiqhom7" path="res://assets/tester-table.jpg" id="1_2pplo"]
+[ext_resource type="Texture2D" uid="uid://dtga6idsf5dy5" path="res://assets/cake-tester.png" id="2_ba2e7"]
+[ext_resource type="Texture2D" uid="uid://ckjoyn6yqo67q" path="res://assets/candle-tester.png" id="3_4xl2v"]
+
+[node name="BirthdayMinigame" type="Node2D"]
+
+[node name="Tester-table" type="Sprite2D" parent="."]
+position = Vector2(583, 328)
+texture = ExtResource("1_2pplo")
+
+[node name="Cake-tester" type="Sprite2D" parent="."]
+position = Vector2(586, 395)
+scale = Vector2(0.612245, 0.634434)
+texture = ExtResource("2_ba2e7")
+
+[node name="candles" type="Node2D" parent="."]
+
+[node name="Candle-tester" type="Sprite2D" parent="candles"]
+position = Vector2(524, 262)
+scale = Vector2(0.15, 0.13)
+texture = ExtResource("3_4xl2v")
