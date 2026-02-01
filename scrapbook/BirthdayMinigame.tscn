@@ -1,32 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv3nsk22trvfj"]
+[gd_scene format=3 uid="uid://cv3nsk22trvfj"]
 
 [ext_resource type="Script" uid="uid://bwiuj5bb16wt" path="res://birthday_minigame.gd" id="1_4xl2v"]
 [ext_resource type="Texture2D" uid="uid://dccv5ycq325x6" path="res://assets/cake.png" id="2_2pplo"]
 [ext_resource type="Texture2D" uid="uid://dv6q043hkye11" path="res://assets/background.png" id="2_4xl2v"]
-[ext_resource type="Texture2D" uid="uid://b4ydu8pcqggnr" path="res://assets/lit candle.png" id="3_ba2e7"]
+[ext_resource type="PackedScene" uid="uid://snn35e2kp272" path="res://candle.tscn" id="2_o6i3p"]
 [ext_resource type="Texture2D" uid="uid://lb34acqwof68" path="res://assets/pause.png" id="5_o6i3p"]
 
-[node name="BirthdayMinigame" type="Node2D"]
+[node name="BirthdayMinigame" type="Node2D" unique_id=232311416]
 script = ExtResource("1_4xl2v")
+candle_scene = ExtResource("2_o6i3p")
 
-[node name="Tester-table" type="Sprite2D" parent="."]
+[node name="Tester-table" type="Sprite2D" parent="." unique_id=1156485019]
 position = Vector2(584, 369.75)
 scale = Vector2(1.08857, 1.103)
 texture = ExtResource("2_4xl2v")
 
-[node name="cake" type="Sprite2D" parent="."]
+[node name="cake" type="Sprite2D" parent="." unique_id=1294414840]
 position = Vector2(584.51, 471.457)
 scale = Vector2(1.07116, 1.08073)
 texture = ExtResource("2_2pplo")
 
-[node name="candles" type="Node2D" parent="."]
+[node name="candleSpot1" type="Marker2D" parent="cake" unique_id=1182487172]
+position = Vector2(-113.43779, -63.343338)
 
-[node name="lit candle" type="Sprite2D" parent="candles"]
-position = Vector2(462, 354)
-scale = Vector2(0.442919, 0.398393)
-texture = ExtResource("3_ba2e7")
+[node name="candles" type="Node2D" parent="." unique_id=1178458357]
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=342820817]
 offset_left = 889.0
 offset_top = 101.0
 offset_right = 957.0

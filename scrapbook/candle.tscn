@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://snn35e2kp272"]
+
+[ext_resource type="Script" uid="uid://7xi2gb4gp06w" path="res://candle.gd" id="1_pqck8"]
+[ext_resource type="Texture2D" uid="uid://byxaxnrvm1sds" path="res://assets/candle.png" id="1_tcgl6"]
+[ext_resource type="Texture2D" uid="uid://b4ydu8pcqggnr" path="res://assets/lit candle.png" id="2_pqck8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmlv8"]
+size = Vector2(69, 334)
+
+[node name="Candle" type="Node2D" unique_id=2106033536]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_pqck8")
+
+[node name="pivot" type="Node2D" parent="." unique_id=469569985]
+
+[node name="candleSprite" type="Sprite2D" parent="pivot" unique_id=1281159084]
+position = Vector2(0, -152)
+texture = ExtResource("1_tcgl6")
+
+[node name="flameSprite" type="Sprite2D" parent="pivot" unique_id=2023004612]
+position = Vector2(0, -156.952)
+texture = ExtResource("2_pqck8")
+
+[node name="clickArea" type="Area2D" parent="." unique_id=665185183]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickArea" unique_id=662051423]
+position = Vector2(0, -167)
+shape = SubResource("RectangleShape2D_wmlv8")
