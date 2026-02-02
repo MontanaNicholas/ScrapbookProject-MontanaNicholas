@@ -3,6 +3,7 @@ extends Node2D
 @export var candle_scene: PackedScene
 @onready var candles_container = $candles
 @onready var candle_spot_1 = $cake/candleSpot1
+@onready var win_ui = $UI/winUI
 @export var candle_row_offset := Vector2(40, -10)
 @export var candle_spacing := 35.0
 
@@ -10,6 +11,7 @@ var remaining := 0
 @export var candle_count := 5
 
 func _ready():
+	win_ui.visible = false
 	remaining = candle_count
 	print("Candles at start:", remaining)
 	spawn_candles()
@@ -29,7 +31,17 @@ func spawn_candles():
 func _on_candle_extinguished():
 	remaining -= 1
 	print("Candle blown out. Remaining:", remaining)
-	
+
+	if remaining <= 0:
+		win()
+		
+func win():
+	print("YOU WIN!")
+	win_ui.visible = true
+		
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://BirthdayMinigame-help.tscn")
 	
+
+func _on_continue_pressed() -> void:
+	get_tree().change_scene_to_file("res://main_menu.tscn")
