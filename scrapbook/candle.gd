@@ -1,5 +1,6 @@
 extends Node2D
 
+signal candle_extinguished
 
 var is_lit := true
 @onready var flame = get_node_or_null("pivot/flameSprite")
@@ -16,5 +17,9 @@ func _on_input_event(_viewport, event, _shape_idx):
 
 func extinguish():
 	is_lit = false
+
 	if flame:
 		flame.visible = false
+
+	print("Candle extinguished!")
+	emit_signal("candle_extinguished")

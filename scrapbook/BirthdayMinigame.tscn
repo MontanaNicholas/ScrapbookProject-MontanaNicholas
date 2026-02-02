@@ -9,6 +9,8 @@
 [node name="BirthdayMinigame" type="Node2D" unique_id=232311416]
 script = ExtResource("1_4xl2v")
 candle_scene = ExtResource("2_o6i3p")
+candle_row_offset = Vector2(120, -10)
+candle_spacing = 45.0
 
 [node name="Tester-table" type="Sprite2D" parent="." unique_id=1156485019]
 position = Vector2(584, 369.75)
