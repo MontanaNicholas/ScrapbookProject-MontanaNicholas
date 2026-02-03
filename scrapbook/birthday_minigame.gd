@@ -49,6 +49,10 @@ func spawn_candles():
 func start_timed_candles():
 	_run_timed_loop()
 
+func _turn_off_current_lit():
+	if lit_candle and lit_candle.is_lit:
+		lit_candle.extinguish(false)
+
 
 func _run_timed_loop() -> void:
 	if candle_nodes.is_empty():
@@ -56,22 +60,19 @@ func _run_timed_loop() -> void:
 		return
 
 	while remaining > 0:
-		# pick a random candle to light
-		lit_candle = candle_nodes.pick_random()
+		_turn_off_current_lit()
 
+		lit_candle = candle_nodes.pick_random()
 		if lit_candle:
 			lit_candle.light()
 
-		# keep it lit for a short time
-		await get_tree().create_timer(lit_duration).timeout
+		await get_tree().create_timer(lit_duration, false).timeout
 
-		# if player didn't click it, turn it off (no signal)
 		if lit_candle and lit_candle.is_lit:
-			lit_candle.extinguish(false)
+			print("Miss!")
+			_turn_off_current_lit()
 
-		# small gap before next candle
-		await get_tree().create_timer(light_interval).timeout
-
+		await get_tree().create_timer(light_interval, false).timeout
 
 func _on_candle_extinguished():
 	remaining -= 1
@@ -88,3 +89,8 @@ func win():
 		lit_candle.extinguish(false)
 
 	win_ui.visible = true
+
+
+func _on_pause_pressed() -> void:
+	print("PAUSE CLICKED")
+	$PauseMenu.open()
