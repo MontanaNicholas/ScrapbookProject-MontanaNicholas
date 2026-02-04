@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cff8wll8ej86h"]
+[gd_scene format=3 uid="uid://cff8wll8ej86h"]
 
 [ext_resource type="Script" uid="uid://c2u68tik4oie7" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://beq6sr3huc8qg" path="res://assets/play-front.png" id="3_jix8l"]
-[ext_resource type="Texture2D" uid="uid://cgw5oucwikfjs" path="res://assets/help-front.png" id="4_glbon"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_fu7sn"]
 
-[node name="main_menu" type="Control"]
+[node name="main_menu" type="Control" unique_id=925571316]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,49 +13,45 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="BookCover" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+[node name="BookCover" type="Sprite2D" parent="." unique_id=1642029914]
 position = Vector2(600, 333)
 scale = Vector2(1.52632, 1.50612)
 texture = ExtResource("2_7vrkn")
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/BookCover"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -266.0
-offset_top = -148.893
-offset_right = -198.0
-offset_bottom = -113.893
+[node name="UI" type="CanvasLayer" parent="." unique_id=446156429]
+
+[node name="menu" type="Control" parent="UI" unique_id=1545813926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-icon = ExtResource("3_jix8l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/menu" unique_id=1754393142]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 355.0
+offset_right = 677.0
+offset_bottom = 459.0
+alignment = 1
+
+[node name="help" type="Button" parent="UI/menu/VBoxContainer" unique_id=138961614]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.67058825, 0.8745098, 1)
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 32
+text = "Help"
 flat = true
 
-[node name="Help" type="Button" parent="MarginContainer/VBoxContainer/BookCover"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -148.893
-offset_right = -87.0
-offset_bottom = -113.893
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("4_glbon")
+[node name="play" type="Button" parent="UI/menu/VBoxContainer" unique_id=711753367]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.67058825, 0.8745098, 1)
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 32
+text = "Play"
 flat = true
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BookCover/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BookCover/Help" to="." method="_on_help_pressed"]
