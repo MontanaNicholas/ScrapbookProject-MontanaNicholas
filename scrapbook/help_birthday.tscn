@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dvt4k3qceaa7r"]
+
+[ext_resource type="Script" uid="uid://ddqp8575p5dug" path="res://help_birthday.gd" id="1_dc5b5"]
+[ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="2_e14j4"]
+[ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_825p7"]
+[ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_usdpl"]
+[ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_bhu35"]
+[ext_resource type="Texture2D" uid="uid://du78p1dellobn" path="res://assets/help bar.png" id="6_dc5b5"]
+[ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_j52ng"]
+
+[node name="Game" type="Node2D" unique_id=1560944956]
+script = ExtResource("1_dc5b5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1449537960]
+offset_right = 993.0
+offset_bottom = 627.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1094898433]
+layout_mode = 2
+
+[node name="Book" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1400640625]
+position = Vector2(531, 340.00003)
+scale = Vector2(1.4732705, 1.5645858)
+texture = ExtResource("2_e14j4")
+
+[node name="blue" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=927850267]
+offset_left = 267.222
+offset_top = -99.3694
+offset_right = 317.222
+offset_bottom = -64.3694
+icon = ExtResource("5_usdpl")
+flat = true
+
+[node name="red" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=123858921]
+offset_left = 267.222
+offset_top = -29.798
+offset_right = 314.222
+offset_bottom = 5.20197
+icon = ExtResource("6_bhu35")
+flat = true
+
+[node name="yellow" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=836804210]
+offset_left = 267.222
+offset_top = -65.2658
+offset_right = 311.222
+offset_bottom = -30.2658
+icon = ExtResource("7_j52ng")
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Book" unique_id=542701349]
+offset_left = 185.302
+offset_top = 76.05844
+offset_right = 302.04907
+offset_bottom = 151.47775
+
+[node name="HelpBar" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1896045803]
+position = Vector2(9.864281, 53.68831)
+scale = Vector2(0.9155453, 0.9018794)
+texture = ExtResource("6_dc5b5")
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book/HelpBar" unique_id=1074979270]
+offset_left = 178.62541
+offset_top = -104.971245
+offset_right = 204.62541
+offset_bottom = -78.971245
+icon = ExtResource("3_825p7")
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/HelpBar/exit" to="." method="_on_exit_pressed"]

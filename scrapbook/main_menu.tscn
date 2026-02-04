@@ -9,13 +9,16 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 187.0
+offset_right = -184.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
 
 [node name="BookCover" type="Sprite2D" parent="." unique_id=1642029914]
-position = Vector2(600, 333)
-scale = Vector2(1.52632, 1.50612)
+position = Vector2(335, 331)
+scale = Vector2(1.9210535, 1.9235475)
 texture = ExtResource("2_7vrkn")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=446156429]
@@ -25,33 +28,43 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
+offset_left = 1.0
 offset_top = -2.0
-offset_right = -2.0
+offset_right = -3.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/menu" unique_id=1754393142]
 layout_mode = 0
-offset_left = 516.0
-offset_top = 355.0
-offset_right = 677.0
-offset_bottom = 459.0
+offset_left = 472.0
+offset_top = 348.0
+offset_right = 553.0
+offset_bottom = 465.0
 alignment = 1
-
-[node name="help" type="Button" parent="UI/menu/VBoxContainer" unique_id=138961614]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9764706, 0.67058825, 0.8745098, 1)
-theme_override_fonts/font = ExtResource("3_fu7sn")
-theme_override_font_sizes/font_size = 32
-text = "Help"
-flat = true
 
 [node name="play" type="Button" parent="UI/menu/VBoxContainer" unique_id=711753367]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9764706, 0.67058825, 0.8745098, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.8915206, 0.7742784, 0.4096247, 1)
+theme_override_colors/font_hover_color = Color(0.5085021, 0.31724322, 0.106510855, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.61160076, 0.4142234, 0.21034881, 1)
 theme_override_fonts/font = ExtResource("3_fu7sn")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 50
 text = "Play"
 flat = true
+
+[node name="help" type="Button" parent="UI/menu/VBoxContainer" unique_id=138961614]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.90702367, 0.764646, 0.44385588, 1)
+theme_override_colors/font_hover_color = Color(0.63816875, 0.37209386, 0.13630772, 1)
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 25
+text = "Help"
+flat = true
+
+[connection signal="pressed" from="UI/menu/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="UI/menu/VBoxContainer/help" to="." method="_on_help_pressed"]

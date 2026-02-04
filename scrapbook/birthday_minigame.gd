@@ -1,5 +1,11 @@
 extends Node2D
 
+@export var round_time := 45.0
+var time_left := 0.0
+
+@onready var time_label: Label = $UI/HUD/topBar/content/timeLabel
+@onready var score_label: Label = $UI/HUD/topBar/content/scoreLabel
+
 @export var candle_scene: PackedScene
 
 @onready var candles_container = $candles
@@ -26,9 +32,20 @@ func _ready():
 	remaining = candle_count
 	print("Candles to successfully blow out:", remaining)
 
+	time_left = round_time
+	_update_time_label()
+	_update_score_label()
+	
 	spawn_candles()
 	start_timed_candles()
+	
+	
+func _update_time_label():
+	time_label.text = "Time: %d" % int(ceil(time_left))
 
+
+func _update_score_label():
+	score_label.text = "Score: %d" % (candle_count - remaining)
 
 func spawn_candles():
 	candle_nodes.clear()
@@ -45,7 +62,19 @@ func spawn_candles():
 		if candle.has_signal("candle_extinguished"):
 			candle.connect("candle_extinguished", _on_candle_extinguished)
 
+func _process(delta):
+	if get_tree().paused:
+		return
 
+	if time_left <= 0:
+		return
+
+	time_left -= delta
+	_update_time_label()
+
+	if time_left <= 0:
+		_end_game()
+		
 func start_timed_candles():
 	_run_timed_loop()
 
@@ -59,7 +88,11 @@ func _run_timed_loop() -> void:
 		print("No candles found!")
 		return
 
-	while remaining > 0:
+	while remaining > 0 and time_left > 0:
+		if get_tree().paused:
+			await get_tree().process_frame
+			continue
+
 		_turn_off_current_lit()
 
 		lit_candle = candle_nodes.pick_random()
@@ -67,6 +100,9 @@ func _run_timed_loop() -> void:
 			lit_candle.light()
 
 		await get_tree().create_timer(lit_duration, false).timeout
+
+		if get_tree().paused:
+			continue
 
 		if lit_candle and lit_candle.is_lit:
 			print("Miss!")
@@ -76,6 +112,7 @@ func _run_timed_loop() -> void:
 
 func _on_candle_extinguished():
 	remaining -= 1
+	_update_score_label()
 	print("Success! Remaining:", remaining)
 
 	if remaining <= 0:
@@ -90,6 +127,10 @@ func win():
 
 	win_ui.visible = true
 
+func _end_game():
+	print("TIME UP")
+	get_tree().paused = true
+	win_ui.visible = true
 
 func _on_pause_pressed() -> void:
 	print("PAUSE CLICKED")
