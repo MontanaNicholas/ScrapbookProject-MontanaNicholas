@@ -135,3 +135,7 @@ func _end_game():
 func _on_pause_pressed() -> void:
 	print("PAUSE CLICKED")
 	$PauseMenu.open()
+
+
+func _on_continue_pressed() -> void:
+	get_tree().change_scene_to_file("res://game.tscn")

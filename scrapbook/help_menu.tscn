@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b6jgnvkarkmht"]
+
+[ext_resource type="Script" uid="uid://cyty8nui6l4t6" path="res://help_menu.gd" id="1_54252"]
+[ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_rtr1j"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_54252"]
+[ext_resource type="Texture2D" uid="uid://du78p1dellobn" path="res://assets/help bar.png" id="4_54252"]
+[ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="5_2ghtw"]
+
+[node name="main_menu" type="Control" unique_id=925571316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 187.0
+offset_right = -184.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54252")
+
+[node name="BookCover" type="Sprite2D" parent="." unique_id=1642029914]
+position = Vector2(335, 331)
+scale = Vector2(1.9210535, 1.9235475)
+texture = ExtResource("2_rtr1j")
+
+[node name="title" type="Label" parent="BookCover" unique_id=1579087091]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -265.21912
+offset_top = -95.976166
+offset_right = -71.57536
+offset_bottom = -56.146255
+grow_horizontal = 2
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("3_54252")
+theme_override_font_sizes/font_size = 51
+text = "TITLE TEXT"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=446156429]
+
+[node name="menu" type="Control" parent="UI" unique_id=1545813926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = -3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HelpBar" type="Sprite2D" parent="UI/menu" unique_id=1165764111]
+position = Vector2(520.4375, 442.56253)
+scale = Vector2(0.9614795, 0.9652342)
+texture = ExtResource("4_54252")
+
+[node name="Label" type="Label" parent="UI/menu/HelpBar" unique_id=225146907]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.7085
+offset_top = -234.89197
+offset_right = -69.291504
+offset_bottom = -78.89197
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_54252")
+theme_override_font_sizes/font_size = 39
+text = "Explore the scrapbook 
+Unlock new pages
+Find bookworms!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="UI/menu/HelpBar" unique_id=519885509]
+anchors_preset = -1
+anchor_left = 0.601
+anchor_top = 0.48700002
+anchor_right = 0.601
+anchor_bottom = 0.48700002
+offset_left = -128.67801
+offset_top = -238.60184
+offset_right = -102.67801
+offset_bottom = -212.60184
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("5_2ghtw")
+flat = true
+
+[connection signal="pressed" from="UI/menu/HelpBar/Button" to="." method="_on_button_pressed"]

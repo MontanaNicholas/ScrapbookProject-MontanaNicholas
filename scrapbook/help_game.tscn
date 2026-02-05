@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_bh5pa"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_sjb7t"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_nawni"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="7_af77b"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_gdh2y"]
 [ext_resource type="Texture2D" uid="uid://du78p1dellobn" path="res://assets/help bar.png" id="7_lyaxc"]
 
@@ -82,6 +83,19 @@ offset_right = 207.0
 offset_bottom = -75.0
 icon = ExtResource("3_bh5pa")
 flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HelpBar" unique_id=1198712594]
+offset_left = -207.32916
+offset_top = -54.270233
+offset_right = 209.67084
+offset_bottom = 113.72977
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_af77b")
+theme_override_font_sizes/font_size = 42
+text = "Play the minigames 
+to unlock the next pages
+"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HelpBar/Button" to="." method="_on_button_pressed"]

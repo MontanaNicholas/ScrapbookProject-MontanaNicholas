@@ -7,7 +7,7 @@
 
 [node name="PauseMenu" type="Sprite2D" unique_id=229042202]
 process_mode = 2
-visible = false
+position = Vector2(-5, -2)
 scale = Vector2(1.31395, 1.21198)
 texture = ExtResource("1_05uyy")
 script = ExtResource("2_2nc7s")
@@ -31,9 +31,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -170.0
-offset_top = -109.514
+offset_top = 119.86275
 offset_right = -96.0
-offset_bottom = -67.5141
+offset_bottom = 161.86276
 grow_horizontal = 2
 icon = ExtResource("3_2nc7s")
 flat = true

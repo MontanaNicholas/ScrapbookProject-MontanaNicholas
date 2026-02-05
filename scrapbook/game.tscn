@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="9_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="9_vef74"]
 
 [node name="Game" type="Node2D" unique_id=1560944956]
@@ -76,6 +77,17 @@ offset_right = 164.26
 offset_bottom = 108.12
 icon = ExtResource("9_vef74")
 flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
+offset_left = -236.77078
+offset_top = -125.87862
+offset_right = -75.77078
+offset_bottom = -77.87862
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_hve3p")
+theme_override_font_sizes/font_size = 37
+text = "BIRTHDAYS"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
