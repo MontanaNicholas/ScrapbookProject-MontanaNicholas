@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2u68tik4oie7" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_7vrkn"]
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://c6pu5h6fg7r5g" path="res://assets/socks.png" id="4_jix8l"]
 
 [node name="main_menu" type="Control" unique_id=925571316]
 layout_mode = 3
@@ -34,6 +35,11 @@ theme_override_constants/line_spacing = 4
 theme_override_fonts/font = ExtResource("3_fu7sn")
 theme_override_font_sizes/font_size = 51
 text = "TITLE TEXT"
+
+[node name="Socks" type="Sprite2D" parent="BookCover" unique_id=56311288]
+position = Vector2(-91.616394, 82.13989)
+scale = Vector2(0.22940056, 0.22687827)
+texture = ExtResource("4_jix8l")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=446156429]
 

@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://cuykjqm5hmc5l"]
+[gd_scene format=3 uid="uid://bwdinlmqulwv1"]
 
-[ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://b5wkw6e4j517l" path="res://game.gd" id="1_fc0e3"]
-[ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_7jktm"]
-[ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="4_ryrav"]
-[ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
-[ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
-[ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
-[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="9_hve3p"]
-[ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="9_vef74"]
+[ext_resource type="Script" uid="uid://bi823g8dignyh" path="res://food_drink_main.gd" id="1_1frad"]
+[ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="2_8fmh5"]
+[ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_shnv8"]
+[ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="4_sdjta"]
+[ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_gyhnf"]
+[ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_166ns"]
+[ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_u62oi"]
+[ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="8_wi5hw"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="9_aonl4"]
 
-[node name="Game" type="Node2D" unique_id=1560944956]
-script = ExtResource("1_fc0e3")
+[node name="food_drink_menu" type="Node2D" unique_id=1560944956]
+script = ExtResource("1_1frad")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1449537960]
 offset_right = 993.0
@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="Book" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1400640625]
 position = Vector2(531, 340.00003)
 scale = Vector2(1.474, 1.565)
-texture = ExtResource("1_80nbo")
+texture = ExtResource("2_8fmh5")
 
 [node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=254491764]
 anchors_preset = -1
@@ -35,7 +35,7 @@ offset_left = -98.9011
 offset_top = -290.04
 offset_right = -72.9011
 offset_bottom = -264.04
-icon = ExtResource("3_7jktm")
+icon = ExtResource("3_shnv8")
 flat = true
 
 [node name="help" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1330651097]
@@ -43,7 +43,7 @@ offset_left = 247.0
 offset_top = 103.682
 offset_right = 273.0
 offset_bottom = 129.682
-icon = ExtResource("4_ryrav")
+icon = ExtResource("4_sdjta")
 flat = true
 
 [node name="blue" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=927850267]
@@ -51,7 +51,7 @@ offset_left = 267.222
 offset_top = -99.3694
 offset_right = 317.222
 offset_bottom = -64.3694
-icon = ExtResource("5_eow3j")
+icon = ExtResource("5_gyhnf")
 flat = true
 
 [node name="red" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=123858921]
@@ -59,7 +59,7 @@ offset_left = 267.222
 offset_top = -29.798
 offset_right = 314.222
 offset_bottom = 5.20197
-icon = ExtResource("6_j5wjh")
+icon = ExtResource("6_166ns")
 flat = true
 
 [node name="yellow" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=836804210]
@@ -67,7 +67,7 @@ offset_left = 267.222
 offset_top = -65.2658
 offset_right = 311.222
 offset_bottom = -30.2658
-icon = ExtResource("7_vef74")
+icon = ExtResource("7_u62oi")
 flat = true
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
@@ -75,22 +75,21 @@ offset_left = 108.26
 offset_top = 79.1204
 offset_right = 164.26
 offset_bottom = 108.12
-icon = ExtResource("9_vef74")
+icon = ExtResource("8_wi5hw")
 flat = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
-offset_left = -236.77078
-offset_top = -125.87862
-offset_right = -75.77078
-offset_bottom = -77.87862
+offset_left = 6.105835
+offset_top = -130.35146
+offset_right = 252.25102
+offset_bottom = -87.351456
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_hve3p")
-theme_override_font_sizes/font_size = 37
-text = "BIRTHDAYS"
+theme_override_fonts/font = ExtResource("9_aonl4")
+theme_override_font_sizes/font_size = 33
+text = "FOOD AND DRINKS"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
