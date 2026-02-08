@@ -13,12 +13,19 @@ var time_left := 0.0
 @onready var candle_spot_1 = $cake/candleSpot1
 @onready var win_ui: Control = $UI/winUI
 
+@onready var result_score_label: Label = $UI/winUI/resultsBox/scoreResultLabel
+@onready var result_miss_label: Label = $UI/winUI/resultsBox/missResultLabel
+@onready var win_title_label: Label = $UI/winUI/resultsBox/winLabel
+
+
 @export var candle_row_offset := Vector2(40, -10)
 @export var candle_spacing := 35.0
 
 @export var candle_count := 5
 var remaining := 0
 var misses := 0
+var score := 0
+var game_over := false
 
 # Timed mode settings
 @export var light_interval := 0.6   # gap before next candle lights
@@ -32,7 +39,10 @@ func _ready():
 	win_ui.visible = false
 
 	remaining = candle_count
+	score = 0
+	misses = 0
 	print("Candles to successfully blow out:", remaining)
+	game_over = false
 
 	time_left = round_time
 	_update_time_label()
@@ -50,7 +60,7 @@ func _update_miss_label():
 	miss_label.text = "Miss: %d" % misses
 	
 func _update_score_label():
-	score_label.text = "Score: %d" % (candle_count - remaining)
+	score_label.text = "Score: %d" % score
 
 func spawn_candles():
 	candle_nodes.clear()
@@ -93,7 +103,7 @@ func _run_timed_loop() -> void:
 		print("No candles found!")
 		return
 
-	while remaining > 0 and time_left > 0:
+	while remaining > 0 and time_left > 0 and not game_over:
 		if get_tree().paused:
 			await get_tree().process_frame
 			continue
@@ -119,30 +129,48 @@ func _run_timed_loop() -> void:
 
 func _on_candle_extinguished():
 	remaining -= 1
+	score += 1
 	_update_score_label()
 	print("Success! Remaining:", remaining)
 
 	if remaining <= 0:
 		win()
 
-
 func win():
-	print("YOU WIN!")
 	# turn off any currently lit candle
 	if lit_candle and lit_candle.is_lit:
 		lit_candle.extinguish(false)
 
-	win_ui.visible = true
-
+	_show_results("You win!")
+	
 func _end_game():
-	print("TIME UP")
-	get_tree().paused = true
-	win_ui.visible = true
+	_show_results("Time up!")
 
+func _show_results(title_text: String) -> void:
+	game_over = true
+	get_tree().paused = true
+
+	win_title_label.text = title_text
+	result_score_label.text = "Score: %d" % score 
+	result_miss_label.text = "Misses: %d" % misses
+
+	win_ui.visible = true
+	$UI/HUD.visible = false
+	
 func _on_pause_pressed() -> void:
 	print("PAUSE CLICKED")
 	$PauseMenu.open()
 
 
-func _on_continue_pressed() -> void:
+func _on_continue_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://game.tscn") # or whatever scrapbook scene is
+
+
+func _on_play_again_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _on_back_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://game.tscn")
