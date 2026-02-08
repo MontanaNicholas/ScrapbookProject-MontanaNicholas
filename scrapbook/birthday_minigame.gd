@@ -5,6 +5,7 @@ var time_left := 0.0
 
 @onready var time_label: Label = $UI/HUD/topBar/content/timeLabel
 @onready var score_label: Label = $UI/HUD/topBar/content/scoreLabel
+@onready var miss_label: Label = $UI/HUD/topBar/content/missLabel
 
 @export var candle_scene: PackedScene
 
@@ -17,6 +18,7 @@ var time_left := 0.0
 
 @export var candle_count := 5
 var remaining := 0
+var misses := 0
 
 # Timed mode settings
 @export var light_interval := 0.6   # gap before next candle lights
@@ -35,6 +37,7 @@ func _ready():
 	time_left = round_time
 	_update_time_label()
 	_update_score_label()
+	_update_miss_label()
 	
 	spawn_candles()
 	start_timed_candles()
@@ -43,7 +46,9 @@ func _ready():
 func _update_time_label():
 	time_label.text = "Time: %d" % int(ceil(time_left))
 
-
+func _update_miss_label():
+	miss_label.text = "Miss: %d" % misses
+	
 func _update_score_label():
 	score_label.text = "Score: %d" % (candle_count - remaining)
 
@@ -105,7 +110,9 @@ func _run_timed_loop() -> void:
 			continue
 
 		if lit_candle and lit_candle.is_lit:
-			print("Miss!")
+			misses += 1
+			_update_miss_label()
+			print("Miss! Total:", misses)
 			_turn_off_current_lit()
 
 		await get_tree().create_timer(light_interval, false).timeout

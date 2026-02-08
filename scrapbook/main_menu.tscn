@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2u68tik4oie7" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_7vrkn"]
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://c6pu5h6fg7r5g" path="res://assets/socks.png" id="4_jix8l"]
 
 [node name="main_menu" type="Control" unique_id=925571316]
@@ -27,14 +28,16 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -265.21912
-offset_top = -95.976166
+offset_top = -133.40698
 offset_right = -71.57536
-offset_bottom = -56.146255
+offset_bottom = -23.406982
 grow_horizontal = 2
 theme_override_constants/line_spacing = 4
-theme_override_fonts/font = ExtResource("3_fu7sn")
-theme_override_font_sizes/font_size = 51
-text = "TITLE TEXT"
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_font_sizes/font_size = 58
+text = "TITLE 
+TEXT"
+horizontal_alignment = 1
 
 [node name="Socks" type="Sprite2D" parent="BookCover" unique_id=56311288]
 position = Vector2(-91.616394, 82.13989)

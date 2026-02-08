@@ -101,6 +101,10 @@ layout_mode = 2
 [node name="scoreLabel" type="Label" parent="UI/HUD/topBar/content" unique_id=269118759]
 layout_mode = 2
 
+[node name="missLabel" type="Label" parent="UI/HUD/topBar/content" unique_id=1702018674]
+layout_mode = 2
+text = "Miss: 0"
+
 [node name="PauseMenu" parent="." unique_id=229042202 instance=ExtResource("6_o6i3p")]
 position = Vector2(578, 370)
 
