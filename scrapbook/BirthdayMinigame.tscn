@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://snn35e2kp272" path="res://candle.tscn" id="2_o6i3p"]
 [ext_resource type="Texture2D" uid="uid://lb34acqwof68" path="res://assets/pause.png" id="5_o6i3p"]
 [ext_resource type="PackedScene" uid="uid://bal2mmkyvntnc" path="res://pause_menu.tscn" id="6_o6i3p"]
+[ext_resource type="AudioStream" uid="uid://bxwacu4q6a61p" path="res://audio/miss.mp3" id="7_rvamj"]
+[ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="8_vkig8"]
 
 [node name="BirthdayMinigame" type="Node2D" unique_id=232311416]
 script = ExtResource("1_4xl2v")
@@ -94,9 +96,11 @@ text = "Continue"
 
 [node name="playAgain" type="Button" parent="UI/winUI/resultsBox" unique_id=1547785817]
 layout_mode = 2
+text = "Play Again"
 
 [node name="back" type="Button" parent="UI/winUI/resultsBox" unique_id=1346698929]
 layout_mode = 2
+text = "Back"
 
 [node name="HUD" type="Control" parent="UI" unique_id=2130281993]
 layout_mode = 3
@@ -133,6 +137,16 @@ text = "Miss: 0"
 
 [node name="PauseMenu" parent="." unique_id=229042202 instance=ExtResource("6_o6i3p")]
 position = Vector2(578, 370)
+
+[node name="SFX_Miss" type="AudioStreamPlayer" parent="." unique_id=863484089]
+stream = ExtResource("7_rvamj")
+volume_db = -6.0
+
+[node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=216757177]
+stream = ExtResource("8_vkig8")
+volume_db = -6.0
+
+[node name="SFX_Hit" type="AudioStreamPlayer" parent="." unique_id=962380935]
 
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="UI/winUI/resultsBox/continue" to="." method="_on_continue_pressed"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var round_time := 45.0
+@export var round_time := 30.0
 var time_left := 0.0
 
 @onready var time_label: Label = $UI/HUD/topBar/content/timeLabel
@@ -17,6 +17,9 @@ var time_left := 0.0
 @onready var result_miss_label: Label = $UI/winUI/resultsBox/missResultLabel
 @onready var win_title_label: Label = $UI/winUI/resultsBox/winLabel
 
+@onready var sfx_hit: AudioStreamPlayer = $SFX_Hit
+@onready var sfx_miss: AudioStreamPlayer = $SFX_Miss
+@onready var sfx_ui: AudioStreamPlayer = $SFX_UI
 
 @export var candle_row_offset := Vector2(40, -10)
 @export var candle_spacing := 35.0
@@ -29,7 +32,7 @@ var game_over := false
 
 # Timed mode settings
 @export var light_interval := 0.6   # gap before next candle lights
-@export var lit_duration := 1.2     # how long a candle stays lit
+@export var lit_duration := 0.8     # how long a candle stays lit
 
 var candle_nodes: Array = []
 var lit_candle = null
@@ -38,10 +41,10 @@ var lit_candle = null
 func _ready():
 	win_ui.visible = false
 
-	remaining = candle_count
+	remaining = candle_count # optional, can keep
+	print("Round started!")
 	score = 0
 	misses = 0
-	print("Candles to successfully blow out:", remaining)
 	game_over = false
 
 	time_left = round_time
@@ -103,7 +106,7 @@ func _run_timed_loop() -> void:
 		print("No candles found!")
 		return
 
-	while remaining > 0 and time_left > 0 and not game_over:
+	while time_left > 0 and not game_over:
 		if get_tree().paused:
 			await get_tree().process_frame
 			continue
@@ -121,6 +124,7 @@ func _run_timed_loop() -> void:
 
 		if lit_candle and lit_candle.is_lit:
 			misses += 1
+			sfx_miss.play()
 			_update_miss_label()
 			print("Miss! Total:", misses)
 			_turn_off_current_lit()
@@ -128,13 +132,9 @@ func _run_timed_loop() -> void:
 		await get_tree().create_timer(light_interval, false).timeout
 
 func _on_candle_extinguished():
-	remaining -= 1
 	score += 1
 	_update_score_label()
-	print("Success! Remaining:", remaining)
-
-	if remaining <= 0:
-		win()
+	print("Hit! Score:", score)
 
 func win():
 	# turn off any currently lit candle
@@ -163,14 +163,17 @@ func _on_pause_pressed() -> void:
 
 
 func _on_continue_pressed():
+	sfx_ui.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://game.tscn") # or whatever scrapbook scene is
 
 
 func _on_play_again_pressed() -> void:
+	sfx_ui.play()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_back_pressed() -> void:
+	sfx_ui.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://game.tscn")

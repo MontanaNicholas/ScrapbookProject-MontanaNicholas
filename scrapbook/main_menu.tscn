@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://c6pu5h6fg7r5g" path="res://assets/socks.png" id="4_jix8l"]
+[ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="6_nlkkf"]
 
 [node name="main_menu" type="Control" unique_id=925571316]
 layout_mode = 3
@@ -88,6 +89,10 @@ theme_override_fonts/font = ExtResource("3_fu7sn")
 theme_override_font_sizes/font_size = 25
 text = "Help"
 flat = true
+
+[node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=1045446980]
+stream = ExtResource("6_nlkkf")
+volume_db = -6.0
 
 [connection signal="pressed" from="UI/menu/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="UI/menu/VBoxContainer/help" to="." method="_on_help_pressed"]
