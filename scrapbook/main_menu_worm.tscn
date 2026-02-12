@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cn4rv70pgv6mq"]
+
+[ext_resource type="Script" uid="uid://lryyw450pem5" path="res://main_menu_worm.gd" id="1_jpm7a"]
+[ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_ivtvo"]
+[ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="3_et0ur"]
+[ext_resource type="Texture2D" uid="uid://cj8il2q32t3kl" path="res://assets/worm pop up.png" id="4_8ri27"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="6_utjjv"]
+[ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="7_jlyde"]
+
+[node name="main_menu_worm" type="Control" unique_id=925571316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 187.0
+offset_top = -2.0
+offset_right = -184.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jpm7a")
+
+[node name="BookCover" type="Sprite2D" parent="." unique_id=1642029914]
+position = Vector2(335, 331)
+scale = Vector2(1.9210535, 1.9235475)
+texture = ExtResource("2_ivtvo")
+
+[node name="title" type="Label" parent="BookCover" unique_id=1579087091]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -265.21912
+offset_top = -133.40698
+offset_right = -71.57536
+offset_bottom = -23.406982
+grow_horizontal = 2
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("3_et0ur")
+theme_override_font_sizes/font_size = 58
+text = "TITLE 
+TEXT"
+horizontal_alignment = 1
+
+[node name="WormPopUp" type="Sprite2D" parent="." unique_id=1024805860]
+position = Vector2(318, 272.00003)
+scale = Vector2(1.465156, 1.507883)
+texture = ExtResource("4_8ri27")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=446156429]
+
+[node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=1045446980]
+stream = ExtResource("7_jlyde")
+volume_db = -6.0
+
+[node name="Button" type="Button" parent="." unique_id=1202611253]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -133.0
+offset_bottom = -85.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18717575, 0.18717632, 0.18717596, 1)
+theme_override_fonts/font = ExtResource("6_utjjv")
+theme_override_font_sizes/font_size = 33
+text = "okay?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

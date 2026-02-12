@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://c6pu5h6fg7r5g" path="res://assets/socks.png" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="5_qe12f"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="6_nlkkf"]
 
 [node name="main_menu" type="Control" unique_id=925571316]
@@ -13,8 +14,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 187.0
+offset_top = -2.0
 offset_right = -184.0
-offset_bottom = -90.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
@@ -59,6 +61,15 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Button" type="Button" parent="UI/menu" unique_id=8676920]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 290.0
+offset_right = 666.0
+offset_bottom = 349.0
+icon = ExtResource("5_qe12f")
+flat = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/menu" unique_id=1754393142]
 layout_mode = 0
 offset_left = 472.0
@@ -94,5 +105,6 @@ flat = true
 stream = ExtResource("6_nlkkf")
 volume_db = -6.0
 
+[connection signal="pressed" from="UI/menu/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="UI/menu/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="UI/menu/VBoxContainer/help" to="." method="_on_help_pressed"]
