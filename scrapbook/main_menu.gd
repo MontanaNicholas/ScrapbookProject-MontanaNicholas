@@ -10,3 +10,8 @@ func _on_play_pressed() -> void:
 func _on_help_pressed() -> void:
 	sfx_ui.play()
 	get_tree().change_scene_to_file("res://help_menu.tscn")
+
+
+func _on_button_pressed() -> void:
+	sfx_ui.play()
+	get_tree().change_scene_to_file("res://main_menu_worm.tscn")

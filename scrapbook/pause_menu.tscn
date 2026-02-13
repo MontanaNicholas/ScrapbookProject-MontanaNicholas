@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b8waxqw4frgxh" path="res://pause_menu.gd" id="2_2nc7s"]
 [ext_resource type="Texture2D" uid="uid://cm4q6myn6aocx" path="res://assets/resume.png" id="2_p81d2"]
 [ext_resource type="Texture2D" uid="uid://dh735xab4y2mv" path="res://assets/quit.png" id="3_2nc7s"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="5_2nc7s"]
 
 [node name="PauseMenu" type="Sprite2D" unique_id=229042202]
 process_mode = 2
@@ -37,6 +38,17 @@ offset_bottom = 161.86276
 grow_horizontal = 2
 icon = ExtResource("3_2nc7s")
 flat = true
+
+[node name="Label" type="Label" parent="." unique_id=220401782]
+offset_left = -76.1064
+offset_top = -15.6768265
+offset_right = 87.8936
+offset_bottom = 35.479134
+theme_override_colors/font_color = Color(0.87721545, 0.33021775, 0.563437, 1)
+theme_override_fonts/font = ExtResource("5_2nc7s")
+text = "Blow out as many candles as 
+you can before the timer ends"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
