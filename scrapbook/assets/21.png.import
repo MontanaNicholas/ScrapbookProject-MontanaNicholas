@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpb404dgl0brm"
-path="res://.godot/imported/glass_ice.png-30299eff5a3fa2556c98225a2d0899a5.ctex"
+uid="uid://b5dsy2ymmao6d"
+path="res://.godot/imported/21.png-d12abd84d1384baaa05d1f62c3a86534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/glass_ice.png"
-dest_files=["res://.godot/imported/glass_ice.png-30299eff5a3fa2556c98225a2d0899a5.ctex"]
+source_file="res://assets/21.png"
+dest_files=["res://.godot/imported/21.png-d12abd84d1384baaa05d1f62c3a86534.ctex"]
 
 [params]
 

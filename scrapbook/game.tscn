@@ -7,8 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
+[ext_resource type="Texture2D" uid="uid://lly7kvrqc1bx" path="res://assets/confetti.png" id="8_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://b5dsy2ymmao6d" path="res://assets/21.png" id="9_215e1"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_hve3p"]
-[ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="9_vef74"]
+[ext_resource type="Texture2D" uid="uid://dfj076ujqktpb" path="res://assets/sparkle.png" id="11_7sc4i"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="12_80cx4"]
+[ext_resource type="Texture2D" uid="uid://djc36fspub8i7" path="res://assets/balloons.png" id="13_215e1"]
+[ext_resource type="Texture2D" uid="uid://0awxmryibyso" path="res://assets/banner.png" id="13_e8heu"]
 
 [node name="Game" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_fc0e3")
@@ -70,27 +75,71 @@ offset_bottom = -30.2658
 icon = ExtResource("7_vef74")
 flat = true
 
-[node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = 108.26
-offset_top = 79.1204
-offset_right = 164.26
-offset_bottom = 108.12
-icon = ExtResource("9_vef74")
-flat = true
+[node name="Confetti" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1991815108]
+position = Vector2(242.70682, -17.731659)
+scale = Vector2(0.4922418, 0.5187081)
+texture = ExtResource("8_lc2xo")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
-offset_left = -270.69193
-offset_top = -126.517586
-offset_right = -44.691925
-offset_bottom = -78.517586
-theme_override_colors/font_color = Color(0.49868977, 0.6516574, 0.8907185, 1)
+[node name="21" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1947145349]
+position = Vector2(133.92886, -21.022614)
+scale = Vector2(0.41289365, 0.36641783)
+texture = ExtResource("9_215e1")
+
+[node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
+offset_left = 90.90908
+offset_top = 93.29071
+offset_right = 193.90909
+offset_bottom = 115.29071
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_hve3p")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 12
+text = "PLAY MINIGAME"
+
+[node name="Sparkle" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1099004118]
+position = Vector2(221.84529, 81.78909)
+rotation = -3.662
+scale = Vector2(0.20607674, 0.20303082)
+texture = ExtResource("11_7sc4i")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1601013337]
+offset_left = 102.44235
+offset_top = 58.785927
+offset_right = 170.96341
+offset_bottom = 83.78593
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_80cx4")
+theme_override_font_sizes/font_size = 19
+text = "Finally 21!"
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
+offset_left = -270.692
+offset_top = -132.26839
+offset_right = -44.691986
+offset_bottom = -69.26839
+theme_override_colors/font_color = Color(0.28629375, 0.69542676, 0.88780195, 1)
+theme_override_fonts/font = ExtResource("9_hve3p")
+theme_override_font_sizes/font_size = 28
 text = "BIRTHDAYS"
 horizontal_alignment = 1
+
+[node name="Confetti2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1244660996]
+position = Vector2(33.07318, -17.731659)
+scale = Vector2(0.4922418, 0.5187081)
+texture = ExtResource("8_lc2xo")
+
+[node name="Balloons" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2073961334]
+position = Vector2(53.595642, 61.341843)
+scale = Vector2(0.28243497, 0.24454328)
+texture = ExtResource("13_215e1")
+
+[node name="Banner" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=845484629]
+position = Vector2(-157.39485, -97.12462)
+rotation = 0.1096029
+scale = Vector2(0.5134279, 0.4157816)
+texture = ExtResource("13_e8heu")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_button_pressed"]
