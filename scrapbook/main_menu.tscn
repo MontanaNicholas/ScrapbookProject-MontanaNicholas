@@ -37,15 +37,15 @@ scale = Vector2(1.9210535, 1.9235475)
 texture = ExtResource("2_7vrkn")
 
 [node name="titleBanner" type="Sprite2D" parent="BookCover" unique_id=1353061262]
-position = Vector2(2.8630123, -80.32034)
-scale = Vector2(0.71488553, 0.5190922)
+position = Vector2(2.8630123, -75.322426)
+scale = Vector2(0.71488553, 0.55208176)
 texture = ExtResource("3_dy7ct")
 
 [node name="worm" type="Button" parent="BookCover" unique_id=8676920]
-offset_left = 90.054756
-offset_top = -111.77265
-offset_right = 171.05475
-offset_bottom = -52.77265
+offset_left = 85.371864
+offset_top = -111.76981
+offset_right = 166.37186
+offset_bottom = -52.769814
 rotation = 0.61635715
 icon = SubResource("CompressedTexture2D_qe12f")
 flat = true
