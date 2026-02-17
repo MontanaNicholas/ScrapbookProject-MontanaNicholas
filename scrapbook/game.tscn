@@ -8,10 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
 [ext_resource type="Texture2D" uid="uid://lly7kvrqc1bx" path="res://assets/confetti.png" id="8_lc2xo"]
-[ext_resource type="Texture2D" uid="uid://b5dsy2ymmao6d" path="res://assets/21.png" id="9_215e1"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_hve3p"]
+[ext_resource type="Texture2D" uid="uid://dp1rjtdrqpxtx" path="res://assets/placeholder_button_banner.png" id="9_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://dfj076ujqktpb" path="res://assets/sparkle.png" id="11_7sc4i"]
-[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="12_80cx4"]
 [ext_resource type="Texture2D" uid="uid://djc36fspub8i7" path="res://assets/balloons.png" id="13_215e1"]
 [ext_resource type="Texture2D" uid="uid://0awxmryibyso" path="res://assets/banner.png" id="13_e8heu"]
 
@@ -80,36 +79,27 @@ position = Vector2(242.70682, -17.731659)
 scale = Vector2(0.4922418, 0.5187081)
 texture = ExtResource("8_lc2xo")
 
-[node name="21" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1947145349]
-position = Vector2(133.92886, -21.022614)
-scale = Vector2(0.41289365, 0.36641783)
-texture = ExtResource("9_215e1")
+[node name="PlaceholderButtonBanner" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1238553860]
+position = Vector2(135.68523, -105.43132)
+scale = Vector2(0.32482648, 0.22566539)
+texture = ExtResource("9_lc2xo")
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = 90.90908
-offset_top = 93.29071
-offset_right = 193.90909
-offset_bottom = 115.29071
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+offset_left = 70.5563
+offset_top = -120.12781
+offset_right = 196.5563
+offset_bottom = -94.12781
+theme_override_colors/font_color = Color(0.38306928, 6.08854e-06, 0.2707276, 1)
 theme_override_fonts/font = ExtResource("9_hve3p")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
 text = "PLAY MINIGAME"
+flat = true
 
 [node name="Sparkle" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1099004118]
 position = Vector2(221.84529, 81.78909)
 rotation = -3.662
 scale = Vector2(0.20607674, 0.20303082)
 texture = ExtResource("11_7sc4i")
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1601013337]
-offset_left = 102.44235
-offset_top = 58.785927
-offset_right = 170.96341
-offset_bottom = 83.78593
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_80cx4")
-theme_override_font_sizes/font_size = 19
-text = "Finally 21!"
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
 offset_left = -270.692
@@ -141,5 +131,5 @@ texture = ExtResource("13_e8heu")
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]

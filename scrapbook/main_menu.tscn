@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://bhwmy6lgx45rk" path="res://main_menu.gdshader" id="4_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://c6pu5h6fg7r5g" path="res://assets/socks.png" id="4_jix8l"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="6_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://dp1rjtdrqpxtx" path="res://assets/placeholder_button_banner.png" id="8_0o4t1"]
 [ext_resource type="AudioStream" uid="uid://dy16c7bd68j21" path="res://audio/bookworm.mp3" id="8_8qtwp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qe12f"]
@@ -62,9 +63,10 @@ offset_right = -66.4657
 offset_bottom = -175.73291
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0.21402639, 0, 0.07955415, 1)
+theme_override_colors/font_color = Color(0.9999998, 0.8858359, 0.3741025, 1)
+theme_override_colors/font_outline_color = Color(0.78375924, 0.6003321, 1.347661e-06, 1)
 theme_override_constants/line_spacing = 9
-theme_override_constants/outline_size = 7
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_glbon")
 theme_override_font_sizes/font_size = 40
 text = "moments
@@ -83,11 +85,12 @@ offset_right = -64.90407
 offset_bottom = -133.10333
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0.21402639, 0, 0.07955415, 1)
+theme_override_colors/font_color = Color(0.39910966, 0.0036856844, 0.28705198, 1)
+theme_override_colors/font_outline_color = Color(0.44656265, 1.3235956e-06, 0.27060604, 1)
 theme_override_constants/line_spacing = 9
-theme_override_constants/outline_size = 7
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("3_fu7sn")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 27
 text = "that matter
 "
 horizontal_alignment = 1
@@ -105,41 +108,53 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 410.0
-offset_top = 225.0
-offset_right = -316.0
-offset_bottom = -108.0
+offset_left = 418.0
+offset_top = 265.0
+offset_right = -308.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/menu" unique_id=1754393142]
 layout_mode = 0
-offset_left = 126.0
+offset_left = 133.0
 offset_top = 110.0
-offset_right = 207.0
+offset_right = 214.0
 offset_bottom = 227.0
 alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/menu/VBoxContainer" unique_id=1809191735]
+position = Vector2(45.5, 37.375)
+scale = Vector2(0.32516348, 0.35196558)
+texture = ExtResource("8_0o4t1")
 
 [node name="play" type="Button" parent="UI/menu/VBoxContainer" unique_id=711753367]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.8915206, 0.7742784, 0.4096247, 1)
+theme_override_colors/font_color = Color(0.8136099, 0.73983073, 3.85046e-07, 1)
 theme_override_colors/font_hover_color = Color(0.5085021, 0.31724322, 0.106510855, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.61160076, 0.4142234, 0.21034881, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("3_fu7sn")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 flat = true
 
+[node name="Sprite2D2" type="Sprite2D" parent="UI/menu/VBoxContainer" unique_id=265157451]
+position = Vector2(41, 104)
+scale = Vector2(0.2581699, 0.2850122)
+texture = ExtResource("8_0o4t1")
+
 [node name="help" type="Button" parent="UI/menu/VBoxContainer" unique_id=138961614]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.90702367, 0.764646, 0.44385588, 1)
+theme_override_colors/font_color = Color(0.88296926, 0.75284445, 0, 1)
 theme_override_colors/font_hover_color = Color(0.63816875, 0.37209386, 0.13630772, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("3_fu7sn")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 33
 text = "Help"
 flat = true
 
