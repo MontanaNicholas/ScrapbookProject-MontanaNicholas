@@ -22,6 +22,10 @@ boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+Sound="*uid://dmpfuy54ucvwr"
+
 [display]
 
 window/size/viewport_width=1000

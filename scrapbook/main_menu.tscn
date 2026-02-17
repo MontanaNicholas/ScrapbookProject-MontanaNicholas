@@ -2,11 +2,21 @@
 
 [ext_resource type="Script" uid="uid://c2u68tik4oie7" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://b1wfrgdcbkgux" path="res://assets/title_banner_1.png" id="3_dy7ct"]
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="3_glbon"]
+[ext_resource type="Shader" uid="uid://bhwmy6lgx45rk" path="res://main_menu.gdshader" id="4_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://c6pu5h6fg7r5g" path="res://assets/socks.png" id="4_jix8l"]
-[ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="5_qe12f"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="6_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://dy16c7bd68j21" path="res://audio/bookworm.mp3" id="8_8qtwp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qe12f"]
+load_path = "res://.godot/imported/book worm.png-2c60a064c1575e186c4241831d3572c7.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dy7ct"]
+shader = ExtResource("4_8qtwp")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 4.0
 
 [node name="main_menu" type="Control" unique_id=925571316]
 layout_mode = 3
@@ -22,27 +32,68 @@ grow_vertical = 2
 script = ExtResource("1_06t4h")
 
 [node name="BookCover" type="Sprite2D" parent="." unique_id=1642029914]
-position = Vector2(335, 331)
+position = Vector2(396, 364)
 scale = Vector2(1.9210535, 1.9235475)
 texture = ExtResource("2_7vrkn")
 
+[node name="titleBanner" type="Sprite2D" parent="BookCover" unique_id=1353061262]
+position = Vector2(2.8630123, -80.32034)
+scale = Vector2(0.71488553, 0.5190922)
+texture = ExtResource("3_dy7ct")
+
+[node name="worm" type="Button" parent="BookCover" unique_id=8676920]
+offset_left = 90.054756
+offset_top = -111.77265
+offset_right = 171.05475
+offset_bottom = -52.77265
+rotation = 0.61635715
+icon = SubResource("CompressedTexture2D_qe12f")
+flat = true
+
 [node name="title" type="Label" parent="BookCover" unique_id=1579087091]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -265.21912
-offset_top = -133.40698
-offset_right = -71.57536
-offset_bottom = -23.406982
+anchor_bottom = 0.5
+offset_left = -271.4657
+offset_top = -272.7329
+offset_right = -66.4657
+offset_bottom = -175.73291
 grow_horizontal = 2
-theme_override_constants/line_spacing = 4
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.21402639, 0, 0.07955415, 1)
+theme_override_constants/line_spacing = 9
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("3_glbon")
-theme_override_font_sizes/font_size = 58
-text = "TITLE 
-TEXT"
+theme_override_font_sizes/font_size = 40
+text = "moments
+"
+horizontal_alignment = 1
+
+[node name="title2" type="Label" parent="BookCover" unique_id=129521415]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.90405
+offset_top = -230.10333
+offset_right = -64.90407
+offset_bottom = -133.10333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.21402639, 0, 0.07955415, 1)
+theme_override_constants/line_spacing = 9
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 28
+text = "that matter
+"
 horizontal_alignment = 1
 
 [node name="Socks" type="Sprite2D" parent="BookCover" unique_id=56311288]
+material = SubResource("ShaderMaterial_dy7ct")
 position = Vector2(-91.616394, 82.13989)
 scale = Vector2(0.22940056, 0.22687827)
 texture = ExtResource("4_jix8l")
@@ -54,28 +105,19 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -2.0
-offset_right = -3.0
-offset_bottom = -2.0
+offset_left = 410.0
+offset_top = 225.0
+offset_right = -316.0
+offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="UI/menu" unique_id=8676920]
-layout_mode = 0
-offset_left = 628.0
-offset_top = 290.0
-offset_right = 666.0
-offset_bottom = 349.0
-icon = ExtResource("5_qe12f")
-flat = true
-
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/menu" unique_id=1754393142]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 348.0
-offset_right = 553.0
-offset_bottom = 465.0
+offset_left = 126.0
+offset_top = 110.0
+offset_right = 207.0
+offset_bottom = 227.0
 alignment = 1
 
 [node name="play" type="Button" parent="UI/menu/VBoxContainer" unique_id=711753367]
@@ -105,6 +147,10 @@ flat = true
 stream = ExtResource("6_nlkkf")
 volume_db = -6.0
 
-[connection signal="pressed" from="UI/menu/Button" to="." method="_on_button_pressed"]
+[node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=907279476]
+stream = ExtResource("8_8qtwp")
+volume_db = -6.0
+
+[connection signal="pressed" from="BookCover/worm" to="." method="_on_worm_pressed"]
 [connection signal="pressed" from="UI/menu/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="UI/menu/VBoxContainer/help" to="." method="_on_help_pressed"]
