@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://m2104x14fxql"]
+
+[ext_resource type="PackedScene" uid="uid://crdpxum2pqho8" path="res://ingredient.tscn" id="1_7y5dx"]
+[ext_resource type="Texture2D" uid="uid://bc1clad7vbsqt" path="res://assets/empty glass.png" id="1_84kbo"]
+[ext_resource type="Texture2D" uid="uid://bbh6fqh4l8dt0" path="res://assets/ice_layer.png" id="2_84kbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
+size = Vector2(218, 319)
+
+[node name="FoodDrinkMinigame" type="Node2D" unique_id=1183424093]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=346455647]
+
+[node name="GlassArea" type="Area2D" parent="." unique_id=1474865909]
+
+[node name="GlassSprite" type="Sprite2D" parent="GlassArea" unique_id=2072373358]
+position = Vector2(506, 267)
+texture = ExtResource("1_84kbo")
+
+[node name="LayersContainer" type="Node2D" parent="GlassArea" unique_id=596890382]
+position = Vector2(506, 395)
+
+[node name="DropZone" type="Area2D" parent="GlassArea" unique_id=286266219 groups=["drop_zone"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassArea/DropZone" unique_id=1918326507]
+position = Vector2(503, 275.5)
+shape = SubResource("RectangleShape2D_oqkd4")
+
+[node name="DropPoint" type="Marker2D" parent="GlassArea/DropZone" unique_id=1292076840]
+position = Vector2(506, 392)
+
+[node name="Ingredients" type="Node2D" parent="." unique_id=351044357]
+
+[node name="Ingredient" parent="Ingredients" unique_id=1739313639 instance=ExtResource("1_7y5dx")]
+position = Vector2(521, 551)
+ingredient_name = "ice"
+ingredient_texture = ExtResource("2_84kbo")
+
+[node name="UI" type="Control" parent="." unique_id=306137246]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

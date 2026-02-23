@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crdpxum2pqho8"]
+
+[ext_resource type="Texture2D" uid="uid://bbh6fqh4l8dt0" path="res://assets/ice_layer.png" id="1_11e83"]
+[ext_resource type="Script" uid="uid://bbceoorubap4u" path="res://ingredient.gd" id="1_762re"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_762re"]
+size = Vector2(218, 87)
+
+[node name="Ingredient" type="Area2D" unique_id=1739313639]
+script = ExtResource("1_762re")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=708605449]
+position = Vector2(-4, -7.5)
+scale = Vector2(0.96460176, 0.85)
+texture = ExtResource("1_11e83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2060904631]
+position = Vector2(-4, -7.5)
+shape = SubResource("RectangleShape2D_762re")
