@@ -43,7 +43,10 @@ func _drop_or_return() -> void:
 
 			layers_container.add_child(layer_sprite)
 
-			# Reset draggable back to shelf
+			var game := get_tree().current_scene
+			if game.has_method("add_layer"):
+				game.add_layer(ingredient_name)
+
 			global_position = start_pos
 			return
 

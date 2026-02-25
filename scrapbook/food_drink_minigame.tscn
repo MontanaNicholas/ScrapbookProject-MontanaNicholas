@@ -2,42 +2,82 @@
 
 [ext_resource type="PackedScene" uid="uid://crdpxum2pqho8" path="res://ingredient.tscn" id="1_7y5dx"]
 [ext_resource type="Texture2D" uid="uid://bc1clad7vbsqt" path="res://assets/empty glass.png" id="1_84kbo"]
+[ext_resource type="Script" uid="uid://bcepdo3nxohbn" path="res://food_drink_minigame.gd" id="1_oqkd4"]
 [ext_resource type="Texture2D" uid="uid://bbh6fqh4l8dt0" path="res://assets/ice_layer.png" id="2_84kbo"]
+[ext_resource type="Texture2D" uid="uid://c8m7887ogakbr" path="res://assets/temporary background.jpg" id="2_k5sr4"]
+[ext_resource type="Texture2D" uid="uid://dvadnjlge0wcs" path="res://assets/strawberry_layer.png" id="5_c3fg0"]
+[ext_resource type="Texture2D" uid="uid://bu7uan8gwegqq" path="res://assets/oat_layer.png" id="6_k5sr4"]
+[ext_resource type="Texture2D" uid="uid://rkawcfr6by0x" path="res://assets/matcha_layer.png" id="7_tduxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
 size = Vector2(218, 319)
 
 [node name="FoodDrinkMinigame" type="Node2D" unique_id=1183424093]
+script = ExtResource("1_oqkd4")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=346455647]
+position = Vector2(499, 327.5)
+scale = Vector2(0.80225074, 0.92999995)
+texture = ExtResource("2_k5sr4")
 
 [node name="GlassArea" type="Area2D" parent="." unique_id=1474865909]
 
 [node name="GlassSprite" type="Sprite2D" parent="GlassArea" unique_id=2072373358]
-position = Vector2(506, 267)
+position = Vector2(504, 347)
 texture = ExtResource("1_84kbo")
 
 [node name="LayersContainer" type="Node2D" parent="GlassArea" unique_id=596890382]
-position = Vector2(506, 395)
+position = Vector2(501, 395)
 
 [node name="DropZone" type="Area2D" parent="GlassArea" unique_id=286266219 groups=["drop_zone"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlassArea/DropZone" unique_id=1918326507]
-position = Vector2(503, 275.5)
+position = Vector2(502, 351)
 shape = SubResource("RectangleShape2D_oqkd4")
 
 [node name="DropPoint" type="Marker2D" parent="GlassArea/DropZone" unique_id=1292076840]
-position = Vector2(506, 392)
+position = Vector2(503, 493)
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=351044357]
 
-[node name="Ingredient" parent="Ingredients" unique_id=1739313639 instance=ExtResource("1_7y5dx")]
-position = Vector2(521, 551)
+[node name="ice" parent="Ingredients" unique_id=1739313639 instance=ExtResource("1_7y5dx")]
+position = Vector2(831, 605)
 ingredient_name = "ice"
 ingredient_texture = ExtResource("2_84kbo")
+
+[node name="strawberrySyrup" parent="Ingredients" unique_id=1513734866 instance=ExtResource("1_7y5dx")]
+position = Vector2(129, 605)
+ingredient_name = "strawberry_syrup"
+ingredient_texture = ExtResource("5_c3fg0")
+
+[node name="oatMilk" parent="Ingredients" unique_id=1200613527 instance=ExtResource("1_7y5dx")]
+position = Vector2(595, 607)
+ingredient_name = "oat_milk"
+ingredient_texture = ExtResource("6_k5sr4")
+
+[node name="matcha" parent="Ingredients" unique_id=640623739 instance=ExtResource("1_7y5dx")]
+position = Vector2(364, 605)
+ingredient_name = "matcha"
+ingredient_texture = ExtResource("7_tduxb")
 
 [node name="UI" type="Control" parent="." unique_id=306137246]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 699.0
+offset_top = 2.0
+offset_right = 1007.0
+offset_bottom = 471.0
+
+[node name="mixButton" type="Button" parent="UI" unique_id=1767816751]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = 174.5
+offset_right = 33.0
+offset_bottom = 209.0
+grow_vertical = 2
+text = "MIX"
+
+[connection signal="pressed" from="UI/mixButton" to="." method="_on_mix_button_pressed"]
