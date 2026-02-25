@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bal2mmkyvntnc" path="res://pause_menu.tscn" id="5_eq8vs"]
 
 [node name="BirthdayMinigame-help" type="Node2D" unique_id=1692983958]
+position = Vector2(-69, -42)
 script = ExtResource("1_lwj60")
 
 [node name="Tester-table" type="Sprite2D" parent="." unique_id=1806838614]
@@ -27,4 +28,4 @@ scale = Vector2(0.442919, 0.398393)
 texture = ExtResource("3_eq8vs")
 
 [node name="PauseMenu" parent="." unique_id=229042202 instance=ExtResource("5_eq8vs")]
-position = Vector2(587, 337)
+position = Vector2(586, 337)
