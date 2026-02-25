@@ -2,13 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bi823g8dignyh" path="res://food_drink_main.gd" id="1_1frad"]
 [ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="2_8fmh5"]
+[ext_resource type="Texture2D" uid="uid://kouupbq1el8a" path="res://assets/matcha image.png" id="3_166ns"]
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_shnv8"]
 [ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="4_sdjta"]
+[ext_resource type="Texture2D" uid="uid://dwx8t0abq7mrf" path="res://assets/mango matcha image.png" id="4_u62oi"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_gyhnf"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_166ns"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_u62oi"]
 [ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="8_wi5hw"]
-[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="9_aonl4"]
+[ext_resource type="Texture2D" uid="uid://r4pmi33j7mkq" path="res://assets/strawberry matcha image.png" id="11_wi5hw"]
+[ext_resource type="Texture2D" uid="uid://c3cae53pn3jae" path="res://assets/coffee image.png" id="12_aonl4"]
+[ext_resource type="Texture2D" uid="uid://m5bifo4ouq11" path="res://assets/coffee 2 image.png" id="13_h3uj0"]
+[ext_resource type="Texture2D" uid="uid://1hnv1l8a2v7q" path="res://assets/noodle image.png" id="14_0y1eo"]
 
 [node name="food_drink_menu" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_1frad")
@@ -24,6 +29,16 @@ layout_mode = 2
 position = Vector2(531, 340.00003)
 scale = Vector2(1.474, 1.565)
 texture = ExtResource("2_8fmh5")
+
+[node name="MatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=594900663]
+position = Vector2(-92.94437, 58.14695)
+scale = Vector2(0.29362708, 0.28287393)
+texture = ExtResource("3_166ns")
+
+[node name="MangoMatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1167717851]
+position = Vector2(-170.96338, -58.146984)
+scale = Vector2(0.25980222, 0.2197569)
+texture = ExtResource("4_u62oi")
 
 [node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=254491764]
 anchors_preset = -1
@@ -71,23 +86,32 @@ icon = ExtResource("7_u62oi")
 flat = true
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = 108.26
-offset_top = 79.1204
-offset_right = 164.26
-offset_bottom = 108.12
+offset_left = -275.44098
+offset_top = 81.15013
+offset_right = -219.44098
+offset_bottom = 110.15013
 icon = ExtResource("8_wi5hw")
 flat = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
-offset_left = 6.105835
-offset_top = -130.35146
-offset_right = 252.25102
-offset_bottom = -87.351456
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_aonl4")
-theme_override_font_sizes/font_size = 33
-text = "FOOD AND DRINKS"
-horizontal_alignment = 1
+[node name="StrawberryMatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=928885794]
+position = Vector2(-235.41383, -63.258804)
+scale = Vector2(0.29635945, 0.24883284)
+texture = ExtResource("11_wi5hw")
+
+[node name="CoffeeImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=988695245]
+position = Vector2(105.834465, 8.945662)
+scale = Vector2(0.4583374, 0.36780044)
+texture = ExtResource("12_aonl4")
+
+[node name="Coffee2Image" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=882183132]
+position = Vector2(200.81413, 53.035114)
+scale = Vector2(0.46695492, 0.3644781)
+texture = ExtResource("13_h3uj0")
+
+[node name="NoodleImage" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=409926527]
+position = Vector2(821, 214)
+scale = Vector2(0.5692841, 0.53466207)
+texture = ExtResource("14_0y1eo")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]

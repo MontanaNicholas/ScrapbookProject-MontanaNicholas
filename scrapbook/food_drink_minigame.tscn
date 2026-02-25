@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dvadnjlge0wcs" path="res://assets/strawberry_layer.png" id="5_c3fg0"]
 [ext_resource type="Texture2D" uid="uid://bu7uan8gwegqq" path="res://assets/oat_layer.png" id="6_k5sr4"]
 [ext_resource type="Texture2D" uid="uid://rkawcfr6by0x" path="res://assets/matcha_layer.png" id="7_tduxb"]
+[ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_5vcta"]
+[ext_resource type="Texture2D" uid="uid://bl8djbn4jrln2" path="res://assets/pause_drinks.png" id="10_baooa"]
+[ext_resource type="Texture2D" uid="uid://jfsrcbmjf3m5" path="res://assets/correct_box.png" id="11_hhqru"]
+[ext_resource type="Texture2D" uid="uid://jrdxt3hg4al6" path="res://assets/recipe.png" id="12_baooa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
 size = Vector2(218, 319)
@@ -16,6 +20,7 @@ size = Vector2(218, 319)
 script = ExtResource("1_oqkd4")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=346455647]
+z_index = -10
 position = Vector2(499, 327.5)
 scale = Vector2(0.80225074, 0.92999995)
 texture = ExtResource("2_k5sr4")
@@ -23,6 +28,7 @@ texture = ExtResource("2_k5sr4")
 [node name="GlassArea" type="Area2D" parent="." unique_id=1474865909]
 
 [node name="GlassSprite" type="Sprite2D" parent="GlassArea" unique_id=2072373358]
+z_index = 10
 position = Vector2(504, 347)
 texture = ExtResource("1_84kbo")
 
@@ -32,11 +38,11 @@ position = Vector2(501, 395)
 [node name="DropZone" type="Area2D" parent="GlassArea" unique_id=286266219 groups=["drop_zone"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlassArea/DropZone" unique_id=1918326507]
-position = Vector2(502, 351)
+position = Vector2(499, 351)
 shape = SubResource("RectangleShape2D_oqkd4")
 
 [node name="DropPoint" type="Marker2D" parent="GlassArea/DropZone" unique_id=1292076840]
-position = Vector2(503, 493)
+position = Vector2(504, 492)
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=351044357]
 
@@ -63,21 +69,103 @@ ingredient_texture = ExtResource("7_tduxb")
 [node name="UI" type="Control" parent="." unique_id=306137246]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 699.0
-offset_top = 2.0
-offset_right = 1007.0
-offset_bottom = 471.0
+offset_left = 691.0
+offset_top = 13.0
+offset_right = 973.0
+offset_bottom = 480.0
 
 [node name="mixButton" type="Button" parent="UI" unique_id=1767816751]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = 174.5
-offset_right = 33.0
-offset_bottom = 209.0
+offset_left = -1.0
+offset_top = 163.5
+offset_right = 74.0
+offset_bottom = 207.5
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_5vcta")
+theme_override_font_sizes/font_size = 33
 text = "MIX"
+
+[node name="pause" type="Button" parent="UI" unique_id=1734741220]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 12.0
+offset_right = 277.0
+offset_bottom = 80.0
+icon = ExtResource("10_baooa")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI" unique_id=1150324725]
+position = Vector2(-199, 49)
+texture = ExtResource("11_hhqru")
+
+[node name="ResultLabel" type="Label" parent="UI" unique_id=2119754235]
+layout_mode = 0
+offset_left = -368.0
+offset_top = 96.0
+offset_right = -19.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Make: Iced Strawberry Oat Matcha"
+
+[node name="Recipe" type="Sprite2D" parent="UI" unique_id=441932153]
+position = Vector2(-521, 106)
+scale = Vector2(2.121875, 1.8162878)
+texture = ExtResource("12_baooa")
+
+[node name="Recipecard" type="Panel" parent="UI" unique_id=677093283]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.8440001
+anchor_top = 0.22700001
+anchor_right = -1.8440001
+anchor_bottom = 0.22700001
+offset_left = -69.99194
+offset_top = -105.009
+offset_right = 70.00806
+offset_bottom = 104.991
+
+[node name="TitleLabel" type="Label" parent="UI/Recipecard" unique_id=493909999]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_right = 45.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Recipe"
+
+[node name="Step1Label" type="Label" parent="UI/Recipecard" unique_id=1528106571]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 47.0
+offset_right = 84.0
+offset_bottom = 70.0
+
+[node name="Step2Label" type="Label" parent="UI/Recipecard" unique_id=1464608227]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 72.0
+offset_right = 79.0
+offset_bottom = 95.0
+
+[node name="Step3Label" type="Label" parent="UI/Recipecard" unique_id=410426781]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 127.0
+offset_right = 93.0
+offset_bottom = 150.0
+
+[node name="Step4Label" type="Label" parent="UI/Recipecard" unique_id=91695946]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 174.0
+offset_right = 96.0
+offset_bottom = 197.0
 
 [connection signal="pressed" from="UI/mixButton" to="." method="_on_mix_button_pressed"]
