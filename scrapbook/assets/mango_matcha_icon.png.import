@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfj076ujqktpb"
-path="res://.godot/imported/sparkle.png-af136f5f90e6793ac717cc01398cdab8.ctex"
+uid="uid://dxskva3vkxcqr"
+path="res://.godot/imported/mango_matcha_icon.png-48c4617221e625e0814a57423b799050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sparkle.png"
-dest_files=["res://.godot/imported/sparkle.png-af136f5f90e6793ac717cc01398cdab8.ctex"]
+source_file="res://assets/mango_matcha_icon.png"
+dest_files=["res://.godot/imported/mango_matcha_icon.png-48c4617221e625e0814a57423b799050.ctex"]
 
 [params]
 

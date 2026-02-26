@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lly7kvrqc1bx"
-path="res://.godot/imported/confetti.png-3f1dc2a9c476c7a3d68cab6cff989310.ctex"
+uid="uid://crdwaj787wtff"
+path="res://.godot/imported/boba_icon.png-a38d0554113bfb31de858664c348a0b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/confetti.png"
-dest_files=["res://.godot/imported/confetti.png-3f1dc2a9c476c7a3d68cab6cff989310.ctex"]
+source_file="res://assets/boba_icon.png"
+dest_files=["res://.godot/imported/boba_icon.png-a38d0554113bfb31de858664c348a0b4.ctex"]
 
 [params]
 
