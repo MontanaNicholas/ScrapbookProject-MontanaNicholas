@@ -5,13 +5,25 @@
 [ext_resource type="Script" uid="uid://bcepdo3nxohbn" path="res://food_drink_minigame.gd" id="1_oqkd4"]
 [ext_resource type="Texture2D" uid="uid://bbh6fqh4l8dt0" path="res://assets/ice_layer.png" id="2_84kbo"]
 [ext_resource type="Texture2D" uid="uid://c8m7887ogakbr" path="res://assets/temporary background.jpg" id="2_k5sr4"]
+[ext_resource type="Texture2D" uid="uid://bu5qa57filplr" path="res://assets/milk.png" id="5_5vcta"]
 [ext_resource type="Texture2D" uid="uid://dvadnjlge0wcs" path="res://assets/strawberry_layer.png" id="5_c3fg0"]
+[ext_resource type="Texture2D" uid="uid://de671yekw5ta8" path="res://assets/oat_milk.png" id="6_baooa"]
+[ext_resource type="Texture2D" uid="uid://c8p6rrbhqeehl" path="res://assets/syrup.png" id="6_f0sc6"]
 [ext_resource type="Texture2D" uid="uid://bu7uan8gwegqq" path="res://assets/oat_layer.png" id="6_k5sr4"]
+[ext_resource type="Texture2D" uid="uid://dmakmtshkbio3" path="res://assets/strawberry.png" id="6_vs6oh"]
+[ext_resource type="Texture2D" uid="uid://mvdu5qdqew3x" path="res://assets/sugar_syrup_layer.png" id="7_ci28e"]
+[ext_resource type="Texture2D" uid="uid://dw74oy5veo5ee" path="res://assets/coconut_milk.png" id="7_hhqru"]
 [ext_resource type="Texture2D" uid="uid://rkawcfr6by0x" path="res://assets/matcha_layer.png" id="7_tduxb"]
+[ext_resource type="Texture2D" uid="uid://cdi3ftajjbp7" path="res://assets/ice.png" id="8_67yvv"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_5vcta"]
+[ext_resource type="Texture2D" uid="uid://dl5uhpylddj2w" path="res://assets/coconut_layer.png" id="9_hhqru"]
 [ext_resource type="Texture2D" uid="uid://bl8djbn4jrln2" path="res://assets/pause_drinks.png" id="10_baooa"]
 [ext_resource type="Texture2D" uid="uid://jfsrcbmjf3m5" path="res://assets/correct_box.png" id="11_hhqru"]
 [ext_resource type="Texture2D" uid="uid://jrdxt3hg4al6" path="res://assets/recipe.png" id="12_baooa"]
+[ext_resource type="Texture2D" uid="uid://cq2u6ym5mxhwl" path="res://assets/matcha.png" id="16_iccl4"]
+[ext_resource type="Texture2D" uid="uid://dxskva3vkxcqr" path="res://assets/mango_matcha_icon.png" id="22_4s2fg"]
+[ext_resource type="Texture2D" uid="uid://50acu5scte17" path="res://assets/strawberry_matcha_icon.png" id="23_0t2yd"]
+[ext_resource type="Texture2D" uid="uid://crdwaj787wtff" path="res://assets/boba_icon.png" id="24_i2xgk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
 size = Vector2(218, 319)
@@ -21,15 +33,15 @@ script = ExtResource("1_oqkd4")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=346455647]
 z_index = -10
-position = Vector2(499, 327.5)
-scale = Vector2(0.80225074, 0.92999995)
+position = Vector2(499, 324.5)
+scale = Vector2(0.80225074, 0.9214286)
 texture = ExtResource("2_k5sr4")
 
 [node name="GlassArea" type="Area2D" parent="." unique_id=1474865909]
 
 [node name="GlassSprite" type="Sprite2D" parent="GlassArea" unique_id=2072373358]
 z_index = 10
-position = Vector2(504, 347)
+position = Vector2(504, 384)
 texture = ExtResource("1_84kbo")
 
 [node name="LayersContainer" type="Node2D" parent="GlassArea" unique_id=596890382]
@@ -38,7 +50,7 @@ position = Vector2(501, 395)
 [node name="DropZone" type="Area2D" parent="GlassArea" unique_id=286266219 groups=["drop_zone"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlassArea/DropZone" unique_id=1918326507]
-position = Vector2(499, 351)
+position = Vector2(499, 379)
 shape = SubResource("RectangleShape2D_oqkd4")
 
 [node name="DropPoint" type="Marker2D" parent="GlassArea/DropZone" unique_id=1292076840]
@@ -46,25 +58,46 @@ position = Vector2(504, 492)
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=351044357]
 
-[node name="ice" parent="Ingredients" unique_id=1739313639 instance=ExtResource("1_7y5dx")]
-position = Vector2(831, 605)
+[node name="milk" parent="Ingredients" unique_id=1739313639 instance=ExtResource("1_7y5dx")]
+position = Vector2(102, 538)
+ingredient_texture = ExtResource("5_5vcta")
 ingredient_name = "ice"
-ingredient_texture = ExtResource("2_84kbo")
 
-[node name="strawberrySyrup" parent="Ingredients" unique_id=1513734866 instance=ExtResource("1_7y5dx")]
-position = Vector2(129, 605)
+[node name="strawberry" parent="Ingredients" unique_id=493176016 instance=ExtResource("1_7y5dx")]
+position = Vector2(103, 615)
+ingredient_texture = ExtResource("6_vs6oh")
+layer_texture = ExtResource("5_c3fg0")
 ingredient_name = "strawberry_syrup"
-ingredient_texture = ExtResource("5_c3fg0")
+
+[node name="syrup" parent="Ingredients" unique_id=355823431 instance=ExtResource("1_7y5dx")]
+position = Vector2(222, 538)
+ingredient_texture = ExtResource("6_f0sc6")
+layer_texture = ExtResource("7_ci28e")
+ingredient_name = "ice"
+
+[node name="ice" parent="Ingredients" unique_id=1965399473 instance=ExtResource("1_7y5dx")]
+position = Vector2(43, 615)
+ingredient_texture = ExtResource("8_67yvv")
+layer_texture = ExtResource("2_84kbo")
+ingredient_name = "ice"
 
 [node name="oatMilk" parent="Ingredients" unique_id=1200613527 instance=ExtResource("1_7y5dx")]
-position = Vector2(595, 607)
+position = Vector2(43, 537)
+ingredient_texture = ExtResource("6_baooa")
+layer_texture = ExtResource("6_k5sr4")
 ingredient_name = "oat_milk"
-ingredient_texture = ExtResource("6_k5sr4")
 
-[node name="matcha" parent="Ingredients" unique_id=640623739 instance=ExtResource("1_7y5dx")]
-position = Vector2(364, 605)
-ingredient_name = "matcha"
-ingredient_texture = ExtResource("7_tduxb")
+[node name="cocnutMilk" parent="Ingredients" unique_id=640623739 instance=ExtResource("1_7y5dx")]
+position = Vector2(164, 538)
+ingredient_texture = ExtResource("7_hhqru")
+layer_texture = ExtResource("9_hhqru")
+ingredient_name = "coconut_milk"
+
+[node name="matcha" parent="Ingredients" unique_id=1875120209 instance=ExtResource("1_7y5dx")]
+position = Vector2(279, 538)
+ingredient_texture = ExtResource("16_iccl4")
+layer_texture = ExtResource("7_tduxb")
+ingredient_name = "coconut_milk"
 
 [node name="UI" type="Control" parent="." unique_id=306137246]
 layout_mode = 3
@@ -98,16 +131,65 @@ offset_bottom = 80.0
 icon = ExtResource("10_baooa")
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI" unique_id=1150324725]
-position = Vector2(-199, 49)
+[node name="progress" type="Node2D" parent="UI" unique_id=1679585619]
+
+[node name="box" type="Sprite2D" parent="UI/progress" unique_id=1150324725]
+position = Vector2(-199, 29)
 texture = ExtResource("11_hhqru")
+
+[node name="MangoMatchaIcon" type="Sprite2D" parent="UI/progress/box" unique_id=179329053]
+position = Vector2(-67.99997, 0)
+scale = Vector2(0.5151514, 0.45601854)
+texture = ExtResource("22_4s2fg")
+
+[node name="StrawberryMatchaIcon" type="Sprite2D" parent="UI/progress/box" unique_id=923098395]
+position = Vector2(-137, 0)
+scale = Vector2(0.51515144, 0.46064818)
+texture = ExtResource("23_0t2yd")
+
+[node name="BobaIcon" type="Sprite2D" parent="UI/progress/box" unique_id=1926502827]
+position = Vector2(1.25, 1.25)
+scale = Vector2(0.5530304, 0.43055558)
+texture = ExtResource("24_i2xgk")
+
+[node name="slotLabel1" type="Label" parent="UI/progress" unique_id=516739715]
+offset_left = -360.0
+offset_top = 5.0
+offset_right = -312.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 39
+text = "\"\""
+
+[node name="slotLabel2" type="Label" parent="UI/progress" unique_id=1863582567]
+offset_left = -288.0
+offset_top = 4.0
+offset_right = -248.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 35
+text = "\"\""
+
+[node name="slotLabel3" type="Label" parent="UI/progress" unique_id=1970658171]
+offset_left = -220.0
+offset_top = 4.0
+offset_right = -177.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 35
+text = "\"\""
+
+[node name="slotLabel4" type="Label" parent="UI/progress" unique_id=1002022439]
+offset_left = -150.0
+offset_top = 4.0
+offset_right = -110.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 35
+text = "\"\""
 
 [node name="ResultLabel" type="Label" parent="UI" unique_id=2119754235]
 layout_mode = 0
 offset_left = -368.0
-offset_top = 96.0
+offset_top = 71.0
 offset_right = -19.0
-offset_bottom = 126.0
+offset_bottom = 101.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
 text = "Make: Iced Strawberry Oat Matcha"
@@ -137,6 +219,7 @@ anchor_right = 0.5
 offset_left = -28.0
 offset_right = 45.0
 offset_bottom = 32.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Recipe"
 
@@ -162,6 +245,13 @@ offset_right = 93.0
 offset_bottom = 150.0
 
 [node name="Step4Label" type="Label" parent="UI/Recipecard" unique_id=91695946]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 174.0
+offset_right = 96.0
+offset_bottom = 197.0
+
+[node name="Step5Label" type="Label" parent="UI/Recipecard" unique_id=603218788]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 174.0
