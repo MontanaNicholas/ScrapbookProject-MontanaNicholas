@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://6j742pg0p44x"]
+
+[ext_resource type="Script" uid="uid://ce7y1fkq3axm8" path="res://travel_main.gd" id="1_8xfbq"]
+[ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="2_bcgyq"]
+[ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_4ii04"]
+[ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="4_om2me"]
+[ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_b75bh"]
+[ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_6wole"]
+[ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_ti6g8"]
+[ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="8_crjfm"]
+[ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="9_p0mns"]
+
+[node name="travel_main" type="Node2D" unique_id=1560944956]
+script = ExtResource("1_8xfbq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1449537960]
+offset_right = 993.0
+offset_bottom = 627.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1094898433]
+layout_mode = 2
+
+[node name="Book" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=1400640625]
+position = Vector2(531, 340.00003)
+scale = Vector2(1.474, 1.565)
+texture = ExtResource("2_bcgyq")
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=254491764]
+anchors_preset = -1
+anchor_left = 0.483
+anchor_top = 0.458
+anchor_right = 0.483
+anchor_bottom = 0.458
+offset_left = -98.9011
+offset_top = -290.04
+offset_right = -72.9011
+offset_bottom = -264.04
+icon = ExtResource("3_4ii04")
+flat = true
+
+[node name="help" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1330651097]
+offset_left = 247.0
+offset_top = 103.682
+offset_right = 273.0
+offset_bottom = 129.682
+icon = ExtResource("4_om2me")
+flat = true
+
+[node name="blue" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=927850267]
+offset_left = 267.222
+offset_top = -99.3694
+offset_right = 317.222
+offset_bottom = -64.3694
+icon = ExtResource("5_b75bh")
+flat = true
+
+[node name="yellow" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=123858921]
+offset_left = 267.222
+offset_top = -29.798
+offset_right = 314.222
+offset_bottom = 5.20197
+icon = ExtResource("6_6wole")
+flat = true
+
+[node name="red" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=836804210]
+offset_left = 267.222
+offset_top = -65.2658
+offset_right = 311.222
+offset_bottom = -30.2658
+icon = ExtResource("7_ti6g8")
+flat = true
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
+offset_left = -270.692
+offset_top = -132.26839
+offset_right = -44.691986
+offset_bottom = -69.26839
+theme_override_colors/font_color = Color(0.28629375, 0.69542676, 0.88780195, 1)
+theme_override_fonts/font = ExtResource("8_crjfm")
+theme_override_font_sizes/font_size = 28
+text = "travel"
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1364630204]
+offset_left = -290.36636
+offset_top = 83.06708
+offset_right = -254.36636
+offset_bottom = 119.06708
+icon = ExtResource("9_p0mns")
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_red_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/back" to="." method="_on_back_pressed"]
