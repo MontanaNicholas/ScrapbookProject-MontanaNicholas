@@ -7,6 +7,8 @@ extends Node2D
 @onready var step2_label: Label = $UI/Recipecard/Step2Label
 @onready var step3_label: Label = $UI/Recipecard/Step3Label
 @onready var step4_label: Label = $UI/Recipecard/Step4Label
+@onready var step5_label: Label = $UI/Recipecard/Step5Label
+
 @onready var progress_labels := [
 	$UI/progress/slotLabel1,
 	$UI/progress/slotLabel2,
@@ -107,7 +109,8 @@ func _update_recipe_card() -> void:
 		step1_label,
 		step2_label,
 		step3_label,
-		step4_label
+		step4_label,
+		step5_label
 	]
 	
 	for i in range(step_labels.size()):

@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://fcle26vt5q8x"]
+
+[ext_resource type="Script" uid="uid://du6rkk7mxac6k" path="res://help_pop_up_menu.gd" id="1_e7fqd"]
+[ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_iypnw"]
+[ext_resource type="Texture2D" uid="uid://b1wfrgdcbkgux" path="res://assets/title_banner_1.png" id="3_3lw46"]
+[ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="4_c1duh"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="5_rtobj"]
+[ext_resource type="Shader" uid="uid://bhwmy6lgx45rk" path="res://main_menu.gdshader" id="6_migb7"]
+[ext_resource type="Texture2D" uid="uid://c6pu5h6fg7r5g" path="res://assets/socks.png" id="7_wprrr"]
+[ext_resource type="Texture2D" uid="uid://du78p1dellobn" path="res://assets/help bar.png" id="8_e7fqd"]
+[ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="9_2mx6p"]
+[ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="9_iypnw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qe12f"]
+load_path = "res://.godot/imported/book worm.png-2c60a064c1575e186c4241831d3572c7.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dy7ct"]
+shader = ExtResource("6_migb7")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 4.0
+
+[node name="help_pop_up_menu" type="Control" unique_id=925571316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 127.0
+offset_top = -46.0
+offset_right = -94.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7fqd")
+
+[node name="BookCover" type="Sprite2D" parent="." unique_id=1642029914]
+position = Vector2(396, 364)
+scale = Vector2(1.9210535, 1.9235475)
+texture = ExtResource("2_iypnw")
+
+[node name="titleBanner" type="Sprite2D" parent="BookCover" unique_id=1353061262]
+position = Vector2(2.8630123, -75.322426)
+scale = Vector2(0.71488553, 0.55208176)
+texture = ExtResource("3_3lw46")
+
+[node name="worm" type="Button" parent="BookCover" unique_id=8676920]
+offset_left = 85.371864
+offset_top = -111.76981
+offset_right = 166.37186
+offset_bottom = -52.769814
+rotation = 0.61635715
+icon = SubResource("CompressedTexture2D_qe12f")
+flat = true
+
+[node name="title" type="Label" parent="BookCover" unique_id=1579087091]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.4657
+offset_top = -272.7329
+offset_right = -66.4657
+offset_bottom = -175.73291
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9999998, 0.8858359, 0.3741025, 1)
+theme_override_colors/font_outline_color = Color(0.78375924, 0.6003321, 1.347661e-06, 1)
+theme_override_constants/line_spacing = 9
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_c1duh")
+theme_override_font_sizes/font_size = 40
+text = "moments
+"
+horizontal_alignment = 1
+
+[node name="title2" type="Label" parent="BookCover" unique_id=129521415]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.90405
+offset_top = -230.10333
+offset_right = -64.90407
+offset_bottom = -133.10333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.39910966, 0.0036856844, 0.28705198, 1)
+theme_override_colors/font_outline_color = Color(0.44656265, 1.3235956e-06, 0.27060604, 1)
+theme_override_constants/line_spacing = 9
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("5_rtobj")
+theme_override_font_sizes/font_size = 27
+text = "that matter
+"
+horizontal_alignment = 1
+
+[node name="Socks" type="Sprite2D" parent="BookCover" unique_id=56311288]
+material = SubResource("ShaderMaterial_dy7ct")
+position = Vector2(-91.616394, 82.13989)
+scale = Vector2(0.22940056, 0.22687827)
+texture = ExtResource("7_wprrr")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=446156429]
+
+[node name="menu" type="Control" parent="UI" unique_id=1545813926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 283.0
+offset_top = 221.0
+offset_right = -224.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HelpBar" type="Sprite2D" parent="UI" unique_id=1577413702]
+position = Vector2(527, 374)
+texture = ExtResource("8_e7fqd")
+
+[node name="Label" type="Label" parent="UI/HelpBar" unique_id=924852132]
+offset_left = -168.0
+offset_top = -68.0
+offset_right = 166.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_rtobj")
+theme_override_font_sizes/font_size = 37
+text = "Explore the pages 
+And
+Find lost bookworms!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="UI/HelpBar/Label" unique_id=1072446411]
+layout_mode = 0
+offset_left = 351.0
+offset_top = -23.0
+offset_right = 377.0
+offset_bottom = 3.0
+icon = ExtResource("9_iypnw")
+flat = true
+
+[node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=1045446980]
+stream = ExtResource("9_2mx6p")
+volume_db = -6.0
+
+[connection signal="pressed" from="BookCover/worm" to="." method="_on_worm_pressed"]
+[connection signal="pressed" from="UI/HelpBar/Label/Button" to="." method="_on_button_pressed"]

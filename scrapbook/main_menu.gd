@@ -28,7 +28,7 @@ func _on_play_pressed() -> void:
 
 func _on_help_pressed() -> void:
 	Sound.play_ui()
-	get_tree().change_scene_to_file("res://help_menu.tscn")
+	get_tree().change_scene_to_file("res://help_pop_up_menu.tscn")
 
 func _on_worm_pressed() -> void:
 	Sound.play_worm()
