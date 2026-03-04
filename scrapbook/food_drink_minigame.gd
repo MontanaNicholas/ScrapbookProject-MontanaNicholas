@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var end_screen: Control = $UI/EndScreen
+@onready var end_label: Label = $UI/EndScreen/VBoxContainer/EndLabel
+@onready var restart_button: Button = $UI/EndScreen/VBoxContainer/RestartButton
+@onready var exit_button: Button = $UI/EndScreen/VBoxContainer/ExitButton
 @onready var bg_music: AudioStreamPlayer = $BGMusic
 @onready var correct_sound: AudioStreamPlayer = $CorrectSound
 @onready var wrong_sound: AudioStreamPlayer = $WrongSound
@@ -15,13 +19,13 @@ extends Node2D
 @onready var progress_labels := [
 	$UI/progress/slotLabel1,
 	$UI/progress/slotLabel2,
-	$UI/progress/slotLabel3,
-	$UI/progress/slotLabel4,
-	$UI/progress/slotLabel5
+	$UI/progress/slotLabel3
 ]
 var current_layers: Array[String] = []
 var recipe_index := 0
 var drinks_completed := 0
+
+var wrong_drinks := 0
 
 var recipes := [
 	{
@@ -50,7 +54,7 @@ func _ready() -> void:
 	
 func _select_next_recipe() -> void:
 	if recipe_index >= recipes.size():
-		print("All drinks completed!")
+		_show_end_screen()
 		return
 	
 	var recipe = recipes[recipe_index]
@@ -97,6 +101,36 @@ func add_layer(name: String, texture: Texture2D) -> void:
 	layer_sprite.z_as_relative = false
 	layer_sprite.z_index = 500 + layers_container.get_child_count()
 	
+func _show_end_screen() -> void:
+	game_locked = true
+	end_screen.visible = true
+	
+	if wrong_drinks == 0:
+		end_label.text = "Congratulations! Perfect drinks!"
+	else:
+		end_label.text = "Oh no! Some drinks were wrong!"
+
+func _on_restart_button_pressed() -> void:
+	end_screen.visible = false
+
+	recipe_index = 0
+	drinks_completed = 0
+	wrong_drinks = 0
+	current_layers.clear()
+
+	for label in progress_labels:
+		if label != null:
+			label.text = ""
+
+	_clear_layers_visual()
+
+	game_locked = false
+
+	_select_next_recipe()
+	reset_drink()
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://food_drink_main.tscn")
 	
 func check_recipe() -> void:
 	game_locked = true
@@ -113,6 +147,7 @@ func check_recipe() -> void:
 		wrong_sound.play()
 		_mark_drink_complete(false)
 		_make_muddy_placeholder()
+		wrong_drinks += 1
 
 	await get_tree().create_timer(1.5).timeout
 	_select_next_recipe()

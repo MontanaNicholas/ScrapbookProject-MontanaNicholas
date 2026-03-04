@@ -17,3 +17,7 @@ func _on_red_pressed() -> void:
 
 func _on_yellow_pressed() -> void:
 	get_tree().change_scene_to_file("res://travel_main.tscn")
+
+
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://BirthdayMinigame.tscn")
