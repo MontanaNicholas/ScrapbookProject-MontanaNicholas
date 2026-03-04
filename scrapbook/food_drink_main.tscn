@@ -86,6 +86,14 @@ offset_bottom = -30.2658
 icon = ExtResource("7_u62oi")
 flat = true
 
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1595536283]
+offset_left = -292.4016
+offset_top = 81.15013
+offset_right = -256.4016
+offset_bottom = 117.15013
+icon = ExtResource("14_u62oi")
+flat = true
+
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
 offset_left = 13.568512
 offset_top = 79.87218
@@ -109,14 +117,6 @@ position = Vector2(200.81413, 53.035114)
 scale = Vector2(0.46695492, 0.3644781)
 texture = ExtResource("13_h3uj0")
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1595536283]
-offset_left = -292.40164
-offset_top = 81.15014
-offset_right = -256.40164
-offset_bottom = 117.15014
-icon = ExtResource("14_u62oi")
-flat = true
-
 [node name="NoodleImage" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=409926527]
 position = Vector2(821, 214)
 scale = Vector2(0.5692841, 0.53466207)
@@ -126,6 +126,5 @@ texture = ExtResource("14_0y1eo")
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_yellow_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]

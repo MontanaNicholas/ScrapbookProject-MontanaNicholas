@@ -27,8 +27,8 @@ scale = Vector2(1.474, 1.565)
 texture = ExtResource("1_80nbo")
 
 [node name="PartySocks" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1302695515]
-position = Vector2(-93.6228, 27.476013)
-scale = Vector2(0.678426, 0.6389776)
+position = Vector2(-80.05428, 42.811455)
+scale = Vector2(0.6098804, 0.541356)
 texture = ExtResource("3_hve3p")
 
 [node name="Camera" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=910727200]
@@ -99,7 +99,7 @@ flat = true
 offset_left = -270.692
 offset_top = -132.26839
 offset_right = -44.691986
-offset_bottom = -69.26839
+offset_bottom = -91.37382
 theme_override_colors/font_color = Color(0.28629375, 0.69542676, 0.88780195, 1)
 theme_override_fonts/font = ExtResource("9_hve3p")
 theme_override_font_sizes/font_size = 28
@@ -111,5 +111,5 @@ horizontal_alignment = 1
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_yellow_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]

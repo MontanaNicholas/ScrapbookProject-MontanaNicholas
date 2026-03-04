@@ -16,6 +16,8 @@ extends Node2D
 	$UI/progress/slotLabel4
 ]
 var current_layers: Array[String] = []
+var recipe_index := 0
+var drinks_completed := 0
 
 var recipes := [
 	{
@@ -38,26 +40,32 @@ var game_locked := false
 
 func _ready() -> void:
 	randomize()
-	_select_random_recipe()
+	_select_next_recipe()
 	reset_drink()
+	
 
-func _select_random_recipe() -> void:
-	var recipe = recipes[randi() % recipes.size()]
+func _select_next_recipe() -> void:
+	if recipe_index >= recipes.size():
+		print("All drinks completed!")
+		return
 	
+	var recipe = recipes[recipe_index]
+
 	recipe_name = recipe["name"]
-	
+
 	target_recipe.clear()
 	for layer in recipe["layers"]:
 		target_recipe.append(layer)
-	
+
 	_update_recipe_card()
+
+	recipe_index += 1
 	
 func add_layer(name: String, texture: Texture2D) -> void:
 	if game_locked:
 		return
 
 	current_layers.append(name)
-	_update_progress_display()
 	
 	var layer_sprite := Sprite2D.new()
 	layer_sprite.texture = texture
@@ -89,19 +97,21 @@ func add_layer(name: String, texture: Texture2D) -> void:
 func check_recipe() -> void:
 	game_locked = true
 
-	var correct := (current_layers == target_recipe)
-
-	if correct:
+	if current_layers == target_recipe:
 		print("Correct:", recipe_name)
-		if is_instance_valid(result_label):
-			result_label.text = "Perfect!"
+		result_label.text = "Perfect!"
+		_mark_drink_complete(true)
+
 	else:
-		print(" Wrong order:", current_layers)
-		if is_instance_valid(result_label):
-			result_label.text = "Oops… muddy drink! "
+		print("Wrong order:", current_layers)
+		result_label.text = "Oops… muddy drink!"
+		_mark_drink_complete(false)
+		_make_muddy_placeholder()
 
-		_make_muddy_placeholder() # temporary visual feedback
-
+	await get_tree().create_timer(1.5).timeout
+	_select_next_recipe()
+	reset_drink()
+	
 func _update_recipe_card() -> void:
 	title_label.text = recipe_name
 	
@@ -123,13 +133,10 @@ func reset_drink() -> void:
 	game_locked = false
 	current_layers.clear()
 	_clear_layers_visual()
-	
-	for label in progress_labels:
-		label.text = ""
 
 	if is_instance_valid(result_label):
 		result_label.text = "Make: " + recipe_name
-
+		
 func _clear_layers_visual() -> void:
 	for c in layers_container.get_children():
 		c.queue_free()
@@ -140,21 +147,22 @@ func _make_muddy_placeholder() -> void:
 		if c is Sprite2D:
 			c.modulate = Color(0.45, 0.35, 0.30, 1.0)
 
-func _update_progress_display() -> void:
-	var index := current_layers.size() - 1
-	
-	if index >= target_recipe.size():
+
+func _mark_drink_complete(correct: bool) -> void:
+	if drinks_completed >= progress_labels.size():
 		return
 
-	var label := progress_labels[index] as Label
+	var label: Label = progress_labels[drinks_completed]
 
-	if current_layers[index] == target_recipe[index]:
+	if correct:
 		label.text = "✔"
 		label.modulate = Color(0.2, 0.8, 0.2)
 	else:
 		label.text = "✖"
 		label.modulate = Color(0.9, 0.2, 0.2)
 
+	drinks_completed += 1
+	
 func _on_mix_button_pressed() -> void:
 	if game_locked:
 		return
