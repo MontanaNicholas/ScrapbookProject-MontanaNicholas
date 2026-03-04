@@ -1,19 +1,23 @@
 extends Node2D
 
+@onready var bg_music: AudioStreamPlayer = $BGMusic
+@onready var correct_sound: AudioStreamPlayer = $CorrectSound
+@onready var wrong_sound: AudioStreamPlayer = $WrongSound
 @onready var layers_container: Node2D = $GlassArea/LayersContainer
 @onready var result_label: Label = $UI/ResultLabel
 @onready var title_label: Label = $UI/Recipecard/TitleLabel
-@onready var step1_label: Label = $UI/Recipecard/Step1Label
-@onready var step2_label: Label = $UI/Recipecard/Step2Label
-@onready var step3_label: Label = $UI/Recipecard/Step3Label
-@onready var step4_label: Label = $UI/Recipecard/Step4Label
-@onready var step5_label: Label = $UI/Recipecard/Step5Label
+@onready var step1_label: Label =  $UI/Recipecard/TitleLabel/VBoxContainer/Step1Label
+@onready var step2_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step2Label
+@onready var step3_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step3Label
+@onready var step4_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step4Label
+@onready var step5_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step5Label
 
 @onready var progress_labels := [
 	$UI/progress/slotLabel1,
 	$UI/progress/slotLabel2,
 	$UI/progress/slotLabel3,
-	$UI/progress/slotLabel4
+	$UI/progress/slotLabel4,
+	$UI/progress/slotLabel5
 ]
 var current_layers: Array[String] = []
 var recipe_index := 0
@@ -42,8 +46,8 @@ func _ready() -> void:
 	randomize()
 	_select_next_recipe()
 	reset_drink()
+	bg_music.play()
 	
-
 func _select_next_recipe() -> void:
 	if recipe_index >= recipes.size():
 		print("All drinks completed!")
@@ -100,11 +104,13 @@ func check_recipe() -> void:
 	if current_layers == target_recipe:
 		print("Correct:", recipe_name)
 		result_label.text = "Perfect!"
+		correct_sound.play()
 		_mark_drink_complete(true)
 
 	else:
 		print("Wrong order:", current_layers)
 		result_label.text = "Oops… muddy drink!"
+		wrong_sound.play()
 		_mark_drink_complete(false)
 		_make_muddy_placeholder()
 
@@ -124,11 +130,15 @@ func _update_recipe_card() -> void:
 	]
 	
 	for i in range(step_labels.size()):
+		if step_labels[i] == null:
+			continue
+
 		if i < target_recipe.size():
-			step_labels[i].text = str(i + 1) + ". " + target_recipe[i].capitalize()
+			var nice_name := target_recipe[i].replace("_", " ").capitalize()
+			step_labels[i].text = str(i + 1) + ". " + nice_name
 		else:
 			step_labels[i].text = ""
-			
+		
 func reset_drink() -> void:
 	game_locked = false
 	current_layers.clear()

@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://bcepdo3nxohbn" path="res://food_drink_minigame.gd" id="1_oqkd4"]
 [ext_resource type="Texture2D" uid="uid://bbh6fqh4l8dt0" path="res://assets/ice_layer.png" id="2_84kbo"]
 [ext_resource type="Texture2D" uid="uid://c8m7887ogakbr" path="res://assets/temporary background.jpg" id="2_k5sr4"]
+[ext_resource type="AudioStream" uid="uid://bgetpuh085dtt" path="res://audio/drinks-music.mp3" id="2_wkyfg"]
+[ext_resource type="AudioStream" uid="uid://di5dqhkwwu2uk" path="res://audio/correct.mp3" id="3_c13vw"]
+[ext_resource type="AudioStream" uid="uid://ctonjrr1venqj" path="res://audio/wrong.mp3" id="4_yahw6"]
 [ext_resource type="Texture2D" uid="uid://bu5qa57filplr" path="res://assets/milk.png" id="5_5vcta"]
 [ext_resource type="Texture2D" uid="uid://dvadnjlge0wcs" path="res://assets/strawberry_layer.png" id="5_c3fg0"]
 [ext_resource type="Texture2D" uid="uid://de671yekw5ta8" path="res://assets/oat_milk.png" id="6_baooa"]
@@ -22,18 +25,35 @@
 [ext_resource type="Texture2D" uid="uid://jrdxt3hg4al6" path="res://assets/recipe.png" id="12_baooa"]
 [ext_resource type="Texture2D" uid="uid://cq2u6ym5mxhwl" path="res://assets/matcha.png" id="16_iccl4"]
 [ext_resource type="Texture2D" uid="uid://dlb6hfia6dy3y" path="res://assets/mango.png" id="18_4uifj"]
+[ext_resource type="Texture2D" uid="uid://cuxh565jpy256" path="res://assets/tea.png" id="18_wn10e"]
 [ext_resource type="Texture2D" uid="uid://jof2j31krbwm" path="res://assets/mango_layer.png" id="19_cmlde"]
+[ext_resource type="Texture2D" uid="uid://6cm6r5gleyco" path="res://assets/tea_layer.png" id="19_ruyqe"]
 [ext_resource type="Texture2D" uid="uid://cj2q1m01leh34" path="res://assets/boba.png" id="20_b35l7"]
 [ext_resource type="Texture2D" uid="uid://b1lepcrmurvk5" path="res://assets/boba_layer.png" id="21_wn10e"]
 [ext_resource type="Texture2D" uid="uid://dxskva3vkxcqr" path="res://assets/mango_matcha_icon.png" id="22_4s2fg"]
 [ext_resource type="Texture2D" uid="uid://50acu5scte17" path="res://assets/strawberry_matcha_icon.png" id="23_0t2yd"]
 [ext_resource type="Texture2D" uid="uid://crdwaj787wtff" path="res://assets/boba_icon.png" id="24_i2xgk"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="29_cmlde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
 size = Vector2(218, 319)
 
 [node name="FoodDrinkMinigame" type="Node2D" unique_id=1183424093]
 script = ExtResource("1_oqkd4")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=579862773]
+stream = ExtResource("2_wkyfg")
+volume_db = -18.0
+autoplay = true
+parameters/looping = true
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="." unique_id=653761185]
+stream = ExtResource("3_c13vw")
+volume_db = -6.0
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="." unique_id=173035022]
+stream = ExtResource("4_yahw6")
+volume_db = -6.0
 
 [node name="Background" type="Sprite2D" parent="." unique_id=346455647]
 z_index = -10
@@ -65,6 +85,7 @@ position = Vector2(504, 492)
 [node name="milk" parent="Ingredients" unique_id=1739313639 instance=ExtResource("1_7y5dx")]
 position = Vector2(102, 538)
 ingredient_texture = ExtResource("5_5vcta")
+layer_texture = ExtResource("9_hhqru")
 ingredient_name = "milk"
 
 [node name="strawberry_syrup" parent="Ingredients" unique_id=493176016 instance=ExtResource("1_7y5dx")]
@@ -102,6 +123,12 @@ position = Vector2(279, 538)
 ingredient_texture = ExtResource("16_iccl4")
 layer_texture = ExtResource("7_tduxb")
 ingredient_name = "matcha"
+
+[node name="tea" parent="Ingredients" unique_id=987027383 instance=ExtResource("1_7y5dx")]
+position = Vector2(295, 613)
+ingredient_texture = ExtResource("18_wn10e")
+layer_texture = ExtResource("19_ruyqe")
+ingredient_name = "tea"
 
 [node name="mango_syrup" parent="Ingredients" unique_id=596803151 instance=ExtResource("1_7y5dx")]
 position = Vector2(164, 615)
@@ -211,8 +238,8 @@ theme_override_font_sizes/font_size = 21
 text = "Make: Iced Strawberry Oat Matcha"
 
 [node name="Recipe" type="Sprite2D" parent="UI" unique_id=441932153]
-position = Vector2(-521, 106)
-scale = Vector2(2.121875, 1.8162878)
+position = Vector2(-508.5469, 120.578125)
+scale = Vector2(2.410938, 1.6172347)
 texture = ExtResource("12_baooa")
 
 [node name="Recipecard" type="Panel" parent="UI" unique_id=677093283]
@@ -222,56 +249,68 @@ anchor_left = -1.8440001
 anchor_top = 0.22700001
 anchor_right = -1.8440001
 anchor_bottom = 0.22700001
-offset_left = -69.99194
+offset_left = -85.99194
 offset_top = -105.009
-offset_right = 70.00806
-offset_bottom = 104.991
+offset_right = 107.00806
+offset_bottom = 130.991
 
 [node name="TitleLabel" type="Label" parent="UI/Recipecard" unique_id=493909999]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -28.0
-offset_right = 45.0
-offset_bottom = 32.0
+offset_left = -95.5
+offset_top = 4.0
+offset_right = 95.5
+offset_bottom = 58.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("29_cmlde")
+theme_override_font_sizes/font_size = 20
 text = "Recipe"
 
-[node name="Step1Label" type="Label" parent="UI/Recipecard" unique_id=1528106571]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 47.0
-offset_right = 84.0
-offset_bottom = 70.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Recipecard/TitleLabel" unique_id=1269867585]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 2.1910002
+anchor_right = 0.508
+anchor_bottom = 2.1910002
+offset_left = -95.028
+offset_top = -71.31401
+offset_right = 94.972
+offset_bottom = 115.68599
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Step2Label" type="Label" parent="UI/Recipecard" unique_id=1464608227]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 72.0
-offset_right = 79.0
-offset_bottom = 95.0
+[node name="Step1Label" type="Label" parent="UI/Recipecard/TitleLabel/VBoxContainer" unique_id=1528106571]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("29_cmlde")
+theme_override_font_sizes/font_size = 20
 
-[node name="Step3Label" type="Label" parent="UI/Recipecard" unique_id=410426781]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 127.0
-offset_right = 93.0
-offset_bottom = 150.0
+[node name="Step2Label" type="Label" parent="UI/Recipecard/TitleLabel/VBoxContainer" unique_id=1464608227]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("29_cmlde")
+theme_override_font_sizes/font_size = 20
 
-[node name="Step4Label" type="Label" parent="UI/Recipecard" unique_id=91695946]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 174.0
-offset_right = 96.0
-offset_bottom = 197.0
+[node name="Step3Label" type="Label" parent="UI/Recipecard/TitleLabel/VBoxContainer" unique_id=410426781]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.021434637, 0.021434635, 0.021434633, 1)
+theme_override_fonts/font = ExtResource("29_cmlde")
+theme_override_font_sizes/font_size = 20
 
-[node name="Step5Label" type="Label" parent="UI/Recipecard" unique_id=603218788]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 174.0
-offset_right = 96.0
-offset_bottom = 197.0
+[node name="Step4Label" type="Label" parent="UI/Recipecard/TitleLabel/VBoxContainer" unique_id=91695946]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.00069389754, 0.00069389766, 0.0006938976, 1)
+theme_override_fonts/font = ExtResource("29_cmlde")
+theme_override_font_sizes/font_size = 20
+
+[node name="Step5Label" type="Label" parent="UI/Recipecard/TitleLabel/VBoxContainer" unique_id=603218788]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("29_cmlde")
+theme_override_font_sizes/font_size = 20
 
 [connection signal="pressed" from="UI/mixButton" to="." method="_on_mix_button_pressed"]
