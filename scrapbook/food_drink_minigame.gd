@@ -1,60 +1,178 @@
 extends Node2D
 
+@onready var end_screen: Control = $UI/EndScreen
+@onready var end_label: Label = $UI/EndScreen/VBoxContainer/EndLabel
+@onready var restart_button: Button = $UI/EndScreen/VBoxContainer/RestartButton
+@onready var exit_button: Button = $UI/EndScreen/VBoxContainer/ExitButton
+@onready var bg_music: AudioStreamPlayer = $BGMusic
+@onready var correct_sound: AudioStreamPlayer = $CorrectSound
+@onready var wrong_sound: AudioStreamPlayer = $WrongSound
 @onready var layers_container: Node2D = $GlassArea/LayersContainer
 @onready var result_label: Label = $UI/ResultLabel
 @onready var title_label: Label = $UI/Recipecard/TitleLabel
-@onready var step1_label: Label = $UI/Recipecard/Step1Label
-@onready var step2_label: Label = $UI/Recipecard/Step2Label
-@onready var step3_label: Label = $UI/Recipecard/Step3Label
-@onready var step4_label: Label = $UI/Recipecard/Step4Label
-var current_layers: Array[String] = []
+@onready var step1_label: Label =  $UI/Recipecard/TitleLabel/VBoxContainer/Step1Label
+@onready var step2_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step2Label
+@onready var step3_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step3Label
+@onready var step4_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step4Label
+@onready var step5_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step5Label
 
-var target_recipe: Array[String] = ["ice", "strawberry_syrup", "oat_milk", "matcha"]
-
-var recipe_display_steps: Array[String] = [
-	"1. Ice",
-	"2. Strawberry Syrup",
-	"3. Oat Milk",
-	"4. Matcha"
+@onready var progress_labels := [
+	$UI/progress/slotLabel1,
+	$UI/progress/slotLabel2,
+	$UI/progress/slotLabel3
 ]
-var recipe_name := "Iced Strawberry Oat Matcha"
+var current_layers: Array[String] = []
+var recipe_index := 0
+var drinks_completed := 0
+
+var wrong_drinks := 0
+
+var recipes := [
+	{
+		"name": "Iced Strawberry Oat Matcha",
+		"layers": ["ice", "strawberry_syrup", "oat_milk", "matcha"]
+	},
+	{
+		"name": "Iced Mango Coconut Matcha",
+		"layers": ["ice", "mango_syrup", "coconut_milk", "matcha"]
+	},
+	{
+		"name": "Classic Milk Tea",
+		"layers": ["ice", "boba", "sugar_syrup", "tea", "milk"]
+	}
+]
+
+var target_recipe: Array[String] = []
+var recipe_name := ""
 var game_locked := false
 
 func _ready() -> void:
+	randomize()
+	_select_next_recipe()
 	reset_drink()
+	bg_music.play()
+	
+func _select_next_recipe() -> void:
+	if recipe_index >= recipes.size():
+		_show_end_screen()
+		return
+	
+	var recipe = recipes[recipe_index]
+
+	recipe_name = recipe["name"]
+
+	target_recipe.clear()
+	for layer in recipe["layers"]:
+		target_recipe.append(layer)
+
 	_update_recipe_card()
 
-func add_layer(name: String) -> void:
+	recipe_index += 1
+	
+func add_layer(name: String, texture: Texture2D) -> void:
 	if game_locked:
 		return
 
 	current_layers.append(name)
-	print("Added:", name, "=>", current_layers)
+	
+	var layer_sprite := Sprite2D.new()
+	layer_sprite.texture = texture
+	layer_sprite.centered = true
+
+	layers_container.add_child(layer_sprite)
+
+	var drop_point := $GlassArea/DropZone/DropPoint
+	var base_pos := layers_container.to_local(drop_point.global_position)
+
+	var y_offset: float = 0.0
+
+	for child in layers_container.get_children():
+		if child == layer_sprite:
+			continue
+
+		if child is Sprite2D:
+			var s := child as Sprite2D
+			if s.texture:
+				var h: float = s.texture.get_size().y * s.scale.y
+				y_offset += h
+
+	layer_sprite.position = base_pos + Vector2(0, -y_offset)
+
+	layer_sprite.z_as_relative = false
+	layer_sprite.z_index = 500 + layers_container.get_child_count()
+	
+func _show_end_screen() -> void:
+	game_locked = true
+	end_screen.visible = true
+	
+	if wrong_drinks == 0:
+		end_label.text = "Congratulations! Perfect drinks!"
+	else:
+		end_label.text = "Oh no! Some drinks were wrong!"
+
+func _on_restart_button_pressed() -> void:
+	end_screen.visible = false
+
+	recipe_index = 0
+	drinks_completed = 0
+	wrong_drinks = 0
+	current_layers.clear()
+
+	for label in progress_labels:
+		if label != null:
+			label.text = ""
+
+	_clear_layers_visual()
+
+	game_locked = false
+
+	_select_next_recipe()
+	reset_drink()
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://food_drink_main.tscn")
+	
 func check_recipe() -> void:
 	game_locked = true
 
-	var correct := (current_layers == target_recipe)
-
-	if correct:
+	if current_layers == target_recipe:
 		print("Correct:", recipe_name)
-		if is_instance_valid(result_label):
-			result_label.text = "Perfect!"
+		result_label.text = "Perfect!"
+		correct_sound.play()
+		_mark_drink_complete(true)
+
 	else:
-		print(" Wrong order:", current_layers)
-		if is_instance_valid(result_label):
-			result_label.text = "Oops… muddy drink! "
+		print("Wrong order:", current_layers)
+		result_label.text = "Oops… muddy drink!"
+		wrong_sound.play()
+		_mark_drink_complete(false)
+		_make_muddy_placeholder()
+		wrong_drinks += 1
 
-		_make_muddy_placeholder() # temporary visual feedback
-
+	await get_tree().create_timer(1.5).timeout
+	_select_next_recipe()
+	reset_drink()
+	
 func _update_recipe_card() -> void:
 	title_label.text = recipe_name
+	
+	var step_labels = [
+		step1_label,
+		step2_label,
+		step3_label,
+		step4_label,
+		step5_label
+	]
+	
+	for i in range(step_labels.size()):
+		if step_labels[i] == null:
+			continue
 
-	if recipe_display_steps.size() >= 4:
-		step1_label.text = recipe_display_steps[0]
-		step2_label.text = recipe_display_steps[1]
-		step3_label.text = recipe_display_steps[2]
-		step4_label.text = recipe_display_steps[3]
-		
+		if i < target_recipe.size():
+			var nice_name := target_recipe[i].replace("_", " ").capitalize()
+			step_labels[i].text = str(i + 1) + ". " + nice_name
+		else:
+			step_labels[i].text = ""
 		
 func reset_drink() -> void:
 	game_locked = false
@@ -63,7 +181,7 @@ func reset_drink() -> void:
 
 	if is_instance_valid(result_label):
 		result_label.text = "Make: " + recipe_name
-
+		
 func _clear_layers_visual() -> void:
 	for c in layers_container.get_children():
 		c.queue_free()
@@ -75,6 +193,21 @@ func _make_muddy_placeholder() -> void:
 			c.modulate = Color(0.45, 0.35, 0.30, 1.0)
 
 
+func _mark_drink_complete(correct: bool) -> void:
+	if drinks_completed >= progress_labels.size():
+		return
+
+	var label: Label = progress_labels[drinks_completed]
+
+	if correct:
+		label.text = "✔"
+		label.modulate = Color(0.2, 0.8, 0.2)
+	else:
+		label.text = "✖"
+		label.modulate = Color(0.9, 0.2, 0.2)
+
+	drinks_completed += 1
+	
 func _on_mix_button_pressed() -> void:
 	if game_locked:
 		return

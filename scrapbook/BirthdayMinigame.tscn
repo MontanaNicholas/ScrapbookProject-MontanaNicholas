@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://snn35e2kp272" path="res://candle.tscn" id="2_o6i3p"]
 [ext_resource type="Texture2D" uid="uid://lb34acqwof68" path="res://assets/pause.png" id="5_o6i3p"]
 [ext_resource type="PackedScene" uid="uid://bal2mmkyvntnc" path="res://pause_menu.tscn" id="6_o6i3p"]
-[ext_resource type="AudioStream" uid="uid://bxwacu4q6a61p" path="res://audio/miss.mp3" id="7_rvamj"]
+[ext_resource type="AudioStream" uid="uid://ctonjrr1venqj" path="res://audio/wrong.mp3" id="7_rvamj"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="8_vkig8"]
 
 [node name="BirthdayMinigame" type="Node2D" unique_id=232311416]

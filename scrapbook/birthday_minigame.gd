@@ -41,7 +41,7 @@ var lit_candle = null
 func _ready():
 	win_ui.visible = false
 
-	remaining = candle_count # optional, can keep
+	remaining = candle_count 
 	print("Round started!")
 	score = 0
 	misses = 0

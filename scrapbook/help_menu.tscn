@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://b6jgnvkarkmht"]
 
-[ext_resource type="Script" uid="uid://cyty8nui6l4t6" path="res://help_menu.gd" id="1_54252"]
 [ext_resource type="Texture2D" uid="uid://sabqmre6anym" path="res://assets/book cover.png" id="2_rtr1j"]
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="3_54252"]
 [ext_resource type="Texture2D" uid="uid://du78p1dellobn" path="res://assets/help bar.png" id="4_54252"]
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="5_2ghtw"]
+
+[sub_resource type="GDScript" id="GDScript_rtr1j"]
+script/source = "extends Control
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://main_menu.tscn\")
+"
 
 [node name="main_menu" type="Control" unique_id=925571316]
 layout_mode = 3
@@ -16,7 +23,7 @@ offset_right = -184.0
 offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_54252")
+script = SubResource("GDScript_rtr1j")
 
 [node name="BookCover" type="Sprite2D" parent="." unique_id=1642029914]
 position = Vector2(335, 331)
@@ -62,17 +69,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -420.7085
-offset_top = -234.89197
-offset_right = -69.291504
-offset_bottom = -78.89197
+offset_left = -421.2258
+offset_top = -208.23961
+offset_right = -69.80881
+offset_bottom = -86.273575
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_54252")
 theme_override_font_sizes/font_size = 39
 text = "Explore the scrapbook 
-Unlock new pages
 Find bookworms!"
 horizontal_alignment = 1
 
