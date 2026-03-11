@@ -166,6 +166,8 @@ func check_recipe() -> void:
 func _show_final_drink() -> void:
 	_clear_layers_visual()
 
+	$GlassArea/GlassSprite.visible = false   # hide the empty glass
+
 	finished_strawberry_matcha.visible = false
 	finished_mango_matcha.visible = false
 
@@ -208,6 +210,8 @@ func reset_drink() -> void:
 	game_locked = false
 	current_layers.clear()
 	_clear_layers_visual()
+
+	$GlassArea/GlassSprite.visible = true   # show the empty glass again
 
 	finished_strawberry_matcha.visible = false
 	finished_mango_matcha.visible = false
