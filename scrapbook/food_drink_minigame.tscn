@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dmakmtshkbio3" path="res://assets/strawberry.png" id="6_vs6oh"]
 [ext_resource type="Texture2D" uid="uid://mvdu5qdqew3x" path="res://assets/sugar_syrup_layer.png" id="7_ci28e"]
 [ext_resource type="Texture2D" uid="uid://dw74oy5veo5ee" path="res://assets/coconut_milk.png" id="7_hhqru"]
+[ext_resource type="Texture2D" uid="uid://c1034a358mreu" path="res://assets/strawberry_matcha.png" id="7_knylu"]
 [ext_resource type="Texture2D" uid="uid://rkawcfr6by0x" path="res://assets/matcha_layer.png" id="7_tduxb"]
+[ext_resource type="Texture2D" uid="uid://b6lqk7nrqjng2" path="res://assets/mango_matcha.png" id="8_13syp"]
 [ext_resource type="Texture2D" uid="uid://cdi3ftajjbp7" path="res://assets/ice.png" id="8_67yvv"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_5vcta"]
 [ext_resource type="Texture2D" uid="uid://dl5uhpylddj2w" path="res://assets/coconut_layer.png" id="9_hhqru"]
@@ -80,6 +82,18 @@ shape = SubResource("RectangleShape2D_oqkd4")
 
 [node name="DropPoint" type="Marker2D" parent="GlassArea/DropZone" unique_id=1292076840]
 position = Vector2(504, 492)
+
+[node name="FinishedStrawberryMatcha" type="Sprite2D" parent="GlassArea" unique_id=436657475]
+visible = false
+position = Vector2(504.00003, 377.00003)
+scale = Vector2(0.9866667, 1)
+texture = ExtResource("7_knylu")
+
+[node name="FinishedMangoMatcha" type="Sprite2D" parent="GlassArea" unique_id=2077557662]
+visible = false
+z_index = 10
+position = Vector2(506, 371)
+texture = ExtResource("8_13syp")
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=351044357]
 

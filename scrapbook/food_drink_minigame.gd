@@ -15,6 +15,10 @@ extends Node2D
 @onready var step3_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step3Label
 @onready var step4_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step4Label
 @onready var step5_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step5Label
+@onready var finished_strawberry_matcha: Sprite2D = $GlassArea/FinishedStrawberryMatcha
+@onready var finished_mango_matcha: Sprite2D = $GlassArea/FinishedMangoMatcha
+@export var strawberry_matcha_texture: Texture2D
+@export var mango_matcha_texture: Texture2D
 
 @onready var progress_labels := [
 	$UI/progress/slotLabel1,
@@ -144,6 +148,8 @@ func check_recipe() -> void:
 		correct_sound.play()
 		_mark_drink_complete(true)
 
+		_show_final_drink()
+
 	else:
 		print("Wrong order:", current_layers)
 		result_label.text = "Oops… muddy drink!"
@@ -152,9 +158,30 @@ func check_recipe() -> void:
 		_make_muddy_placeholder()
 		wrong_drinks += 1
 
-	await get_tree().create_timer(1.5).timeout
-	_select_next_recipe()
+	await get_tree().create_timer(2.0).timeout
+
 	reset_drink()
+	_select_next_recipe()
+	
+func _show_final_drink() -> void:
+	_clear_layers_visual()
+
+	finished_strawberry_matcha.visible = false
+	finished_mango_matcha.visible = false
+
+	if recipe_name == "Iced Strawberry Oat Matcha":
+		finished_strawberry_matcha.visible = true
+		finished_strawberry_matcha.scale = Vector2(0.2,0.2)
+
+		var tween = create_tween()
+		tween.tween_property(finished_strawberry_matcha,"scale",Vector2(1,1),0.25)
+
+	elif recipe_name == "Iced Mango Coconut Matcha":
+		finished_mango_matcha.visible = true
+		finished_mango_matcha.scale = Vector2(0.2,0.2)
+
+		var tween = create_tween()
+		tween.tween_property(finished_mango_matcha,"scale",Vector2(1,1),0.25)
 	
 func _update_recipe_card() -> void:
 	title_label.text = recipe_name
@@ -182,6 +209,9 @@ func reset_drink() -> void:
 	current_layers.clear()
 	_clear_layers_visual()
 
+	finished_strawberry_matcha.visible = false
+	finished_mango_matcha.visible = false
+	
 	if is_instance_valid(result_label):
 		result_label.text = "Make: " + recipe_name
 		
