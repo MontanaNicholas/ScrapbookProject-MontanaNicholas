@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://50acu5scte17" path="res://assets/strawberry_matcha_icon.png" id="23_0t2yd"]
 [ext_resource type="Texture2D" uid="uid://crdwaj787wtff" path="res://assets/boba_icon.png" id="24_i2xgk"]
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="29_cmlde"]
+[ext_resource type="Texture2D" uid="uid://cqiqbr36f5ijo" path="res://assets/gameover_food.png" id="35_c13vw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
 size = Vector2(218, 319)
@@ -305,43 +306,55 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("29_cmlde")
 theme_override_font_sizes/font_size = 20
 
-[node name="EndScreen" type="Control" parent="UI" unique_id=879572572]
-layout_mode = 1
+[node name="EndScreenLayer" type="CanvasLayer" parent="UI" unique_id=260138156]
+visible = false
+
+[node name="EndScreen" type="Control" parent="UI/EndScreenLayer" unique_id=879572572]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = 240.0
-offset_right = -388.0
-offset_bottom = 26.0
+offset_left = 831.0
+offset_top = 449.0
+offset_right = -169.0
+offset_bottom = -201.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/EndScreen" unique_id=1376332614]
-position = Vector2(36.99999, 89.00001)
-scale = Vector2(1.8699996, 1.789394)
-texture = ExtResource("12_baooa")
+[node name="Sprite2D" type="Sprite2D" parent="UI/EndScreenLayer/EndScreen" unique_id=1376332614]
+position = Vector2(-271.00003, -74)
+scale = Vector2(2.3370616, 2.4880304)
+texture = ExtResource("35_c13vw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndScreen" unique_id=1755421553]
-layout_mode = 0
-offset_right = 65.0
-offset_bottom = 100.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndScreenLayer/EndScreen" unique_id=1755421553]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -407.0
+offset_top = -117.0
+offset_right = -136.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="EndLabel" type="Label" parent="UI/EndScreen/VBoxContainer" unique_id=120766536]
+[node name="EndLabel" type="Label" parent="UI/EndScreenLayer/EndScreen/VBoxContainer" unique_id=120766536]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
 text = "\"\""
 horizontal_alignment = 1
 
-[node name="RestartButton" type="Button" parent="UI/EndScreen/VBoxContainer" unique_id=1172931014]
+[node name="RestartButton" type="Button" parent="UI/EndScreenLayer/EndScreen/VBoxContainer" unique_id=1172931014]
 layout_mode = 2
 text = "Restart"
 
-[node name="ExitButton" type="Button" parent="UI/EndScreen/VBoxContainer" unique_id=297573296]
+[node name="ExitButton" type="Button" parent="UI/EndScreenLayer/EndScreen/VBoxContainer" unique_id=297573296]
 layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="UI/mixButton" to="." method="_on_mix_button_pressed"]
-[connection signal="pressed" from="UI/EndScreen/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="UI/EndScreen/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/EndScreenLayer/EndScreen/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/EndScreenLayer/EndScreen/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

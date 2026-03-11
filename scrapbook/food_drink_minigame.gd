@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var end_screen: Control = $UI/EndScreen
-@onready var end_label: Label = $UI/EndScreen/VBoxContainer/EndLabel
-@onready var restart_button: Button = $UI/EndScreen/VBoxContainer/RestartButton
-@onready var exit_button: Button = $UI/EndScreen/VBoxContainer/ExitButton
+@onready var end_screen: Control = $UI/EndScreenLayer/EndScreen
+@onready var end_label: Label = $UI/EndScreenLayer/EndScreen/VBoxContainer/EndLabel
+@onready var restart_button: Button = $UI/EndScreenLayer/EndScreen/VBoxContainer/RestartButton
+@onready var exit_button: Button = $UI/EndScreenLayer/EndScreen/VBoxContainer/ExitButton
 @onready var bg_music: AudioStreamPlayer = $BGMusic
 @onready var correct_sound: AudioStreamPlayer = $CorrectSound
 @onready var wrong_sound: AudioStreamPlayer = $WrongSound
@@ -103,15 +103,18 @@ func add_layer(name: String, texture: Texture2D) -> void:
 	
 func _show_end_screen() -> void:
 	game_locked = true
-	end_screen.visible = true
 	
+	$UI/EndScreenLayer.visible = true
+	$GlassArea.visible = false
+
 	if wrong_drinks == 0:
 		end_label.text = "Congratulations! Perfect drinks!"
 	else:
 		end_label.text = "Oh no! Some drinks were wrong!"
 
 func _on_restart_button_pressed() -> void:
-	end_screen.visible = false
+	$UI/EndScreenLayer.visible = false
+	$GlassArea.visible = true
 
 	recipe_index = 0
 	drinks_completed = 0
