@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_hve3p"]
+[ext_resource type="FontFile" uid="uid://i8ph2375dcx5" path="res://fonts/The Million Mile Man.ttf" id="11_mfdv2"]
 
 [node name="Game" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_fc0e3")
@@ -96,13 +97,13 @@ text = "PLAY "
 flat = true
 
 [node name="title" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
-offset_left = -270.692
-offset_top = -132.26839
-offset_right = -44.691986
-offset_bottom = -91.37382
-theme_override_colors/font_color = Color(0.28629375, 0.69542676, 0.88780195, 1)
-theme_override_fonts/font = ExtResource("9_hve3p")
-theme_override_font_sizes/font_size = 28
+offset_left = -274.08414
+offset_top = -124.600655
+offset_right = -52.23883
+offset_bottom = -82.600655
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_mfdv2")
+theme_override_font_sizes/font_size = 41
 text = "BIRTHDAYS"
 horizontal_alignment = 1
 
