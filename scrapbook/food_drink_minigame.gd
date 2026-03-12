@@ -60,7 +60,7 @@ func _select_next_recipe() -> void:
 	if recipe_index >= recipes.size():
 		_show_end_screen()
 		return
-	
+
 	var recipe = recipes[recipe_index]
 
 	recipe_name = recipe["name"]
@@ -160,8 +160,8 @@ func check_recipe() -> void:
 
 	await get_tree().create_timer(2.0).timeout
 
-	reset_drink()
 	_select_next_recipe()
+	reset_drink()
 	
 func _show_final_drink() -> void:
 	_clear_layers_visual()
