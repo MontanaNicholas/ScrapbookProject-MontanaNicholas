@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_b75bh"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_6wole"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_ti6g8"]
-[ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="8_crjfm"]
 [ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="9_p0mns"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_30l5a"]
+load_path = "res://.godot/imported/play.png-659bd52d7667961eaefb6f06b279c2de.ctex"
 
 [node name="travel_main" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_8xfbq")
@@ -70,17 +72,6 @@ offset_bottom = -30.2658
 icon = ExtResource("7_ti6g8")
 flat = true
 
-[node name="title" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
-offset_left = -270.692
-offset_top = -132.26839
-offset_right = -44.691986
-offset_bottom = -69.26839
-theme_override_colors/font_color = Color(0.28629375, 0.69542676, 0.88780195, 1)
-theme_override_fonts/font = ExtResource("8_crjfm")
-theme_override_font_sizes/font_size = 28
-text = "travel"
-horizontal_alignment = 1
-
 [node name="back" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1364630204]
 offset_left = -290.36636
 offset_top = 83.06708
@@ -89,8 +80,17 @@ offset_bottom = 119.06708
 icon = ExtResource("9_p0mns")
 flat = true
 
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1522246376]
+offset_left = 102.44233
+offset_top = 77.955246
+offset_right = 158.44232
+offset_bottom = 106.955246
+icon = SubResource("CompressedTexture2D_30l5a")
+flat = true
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/Button" to="." method="_on_button_pressed"]

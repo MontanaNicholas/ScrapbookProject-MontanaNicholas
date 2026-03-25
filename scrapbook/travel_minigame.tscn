@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://2m7oxun0jisy"]
+
+[ext_resource type="Script" uid="uid://brsi8scl0bs84" path="res://travel_minigame.gd" id="1_ajxh8"]
+[ext_resource type="Texture2D" uid="uid://dqtgbel7eflla" path="res://assets/room.jpg" id="2_328dh"]
+[ext_resource type="Texture2D" uid="uid://bj7er32ys2fhc" path="res://assets/suitcase.png" id="3_0ntmf"]
+[ext_resource type="Texture2D" uid="uid://cfo2mo6cvg84s" path="res://assets/pause-travel.png" id="4_v3gcf"]
+
+[node name="TravelMinigame" type="Node2D" unique_id=1639411175]
+position = Vector2(24, 0)
+script = ExtResource("1_ajxh8")
+
+[node name="background" type="Sprite2D" parent="." unique_id=702069314]
+position = Vector2(477, 331)
+scale = Vector2(1.3491848, 1.5555556)
+texture = ExtResource("2_328dh")
+
+[node name="SuitcaseArea" type="Node2D" parent="." unique_id=1861129773]
+position = Vector2(489, 388)
+
+[node name="SuitcaseSprite" type="Sprite2D" parent="SuitcaseArea" unique_id=1259342828]
+position = Vector2(1, 56)
+texture = ExtResource("3_0ntmf")
+
+[node name="DropZone" type="Area2D" parent="SuitcaseArea" unique_id=386540419]
+position = Vector2(450, 487)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuitcaseArea/DropZone" unique_id=1561254444]
+
+[node name="Items" type="Node2D" parent="." unique_id=1152527337]
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1030749731]
+
+[node name="UI" type="Control" parent="UILayer" unique_id=1888006981]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResultLabel" type="Label" parent="UILayer/UI" unique_id=784587391]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PauseButton" type="Button" parent="UILayer/UI" unique_id=1353036420]
+layout_mode = 0
+offset_left = 907.0
+offset_top = 26.0
+offset_right = 975.0
+offset_bottom = 94.0
+icon = ExtResource("4_v3gcf")
+flat = true
+
+[node name="PauseMenu" type="Control" parent="UILayer/UI" unique_id=2054093284]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/UI/PauseMenu" unique_id=1119208958]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 39.0
+offset_bottom = 42.0
+
+[node name="Background" type="Sprite2D" parent="UILayer/UI/PauseMenu" unique_id=355337445]
+
+[node name="ResumeButton" type="Button" parent="UILayer/UI/PauseMenu" unique_id=859555262]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="QuitButton" type="Button" parent="UILayer/UI/PauseMenu" unique_id=2041267034]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="UILayer/UI/PauseButton" to="." method="_on_pause_button_pressed"]
