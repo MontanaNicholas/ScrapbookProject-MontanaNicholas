@@ -8,15 +8,18 @@ extends Node2D
 @onready var correct_sound: AudioStreamPlayer = $CorrectSound
 @onready var wrong_sound: AudioStreamPlayer = $WrongSound
 @onready var layers_container: Node2D = $GlassArea/LayersContainer
-@onready var result_label: Label = $UI/ResultLabel
-@onready var title_label: Label = $UI/Recipecard/TitleLabel
-@onready var step1_label: Label =  $UI/Recipecard/TitleLabel/VBoxContainer/Step1Label
-@onready var step2_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step2Label
-@onready var step3_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step3Label
-@onready var step4_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step4Label
-@onready var step5_label: Label = $UI/Recipecard/TitleLabel/VBoxContainer/Step5Label
+@onready var result_label: Label = $UILayer/UI/ResultLabel
+@onready var title_label: Label = $UILayer/UI/Recipecard/TitleLabel
+@onready var step1_label: Label = $UILayer/UI/Recipecard/TitleLabel/VBoxContainer/Step1Label
+@onready var step2_label: Label = $UILayer/UI/Recipecard/TitleLabel/VBoxContainer/Step2Label
+@onready var step3_label: Label = $UILayer/UI/Recipecard/TitleLabel/VBoxContainer/Step3Label
+@onready var step4_label: Label = $UILayer/UI/Recipecard/TitleLabel/VBoxContainer/Step4Label
+@onready var step5_label: Label = $UILayer/UI/Recipecard/TitleLabel/VBoxContainer/Step5Label
 @onready var finished_strawberry_matcha: Sprite2D = $GlassArea/FinishedStrawberryMatcha
 @onready var finished_mango_matcha: Sprite2D = $GlassArea/FinishedMangoMatcha
+@onready var pause_menu: Control = $UILayer/UI/PauseMenu
+@onready var resume_button: Button = $UILayer/UI/PauseMenu/ResumeButton
+@onready var quit_button: Button = $UILayer/UI/PauseMenu/QuitButton
 @export var strawberry_matcha_texture: Texture2D
 @export var mango_matcha_texture: Texture2D
 
@@ -255,3 +258,18 @@ func _on_mix_button_pressed() -> void:
 		return
 
 	check_recipe()
+
+
+func _on_pause_pressed() -> void:
+	get_tree().paused = true
+	pause_menu.visible = true
+
+
+func _on_resume_button_pressed() -> void:
+	pause_menu.visible = false
+	get_tree().paused = false
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://food_drink_main.tscn")
