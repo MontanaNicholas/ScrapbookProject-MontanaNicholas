@@ -6,5 +6,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 	if area.name in correct_items:
 		print("Correct item packed!")
+		area.queue_free()
+
 	else:
 		print("Wrong item!")
