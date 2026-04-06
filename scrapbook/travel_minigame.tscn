@@ -3,7 +3,33 @@
 [ext_resource type="Script" uid="uid://brsi8scl0bs84" path="res://travel_minigame.gd" id="1_ajxh8"]
 [ext_resource type="Texture2D" uid="uid://dqtgbel7eflla" path="res://assets/room.jpg" id="2_328dh"]
 [ext_resource type="Texture2D" uid="uid://bj7er32ys2fhc" path="res://assets/suitcase.png" id="3_0ntmf"]
+[ext_resource type="Script" uid="uid://cvddojj8vqrft" path="res://drop_zone.gd" id="4_363l8"]
+[ext_resource type="Script" uid="uid://k568gsltjk8y" path="res://camera.gd" id="4_hoqpb"]
 [ext_resource type="Texture2D" uid="uid://cfo2mo6cvg84s" path="res://assets/pause-travel.png" id="4_v3gcf"]
+[ext_resource type="Texture2D" uid="uid://isi7ansh2iek" path="res://assets/camera.png" id="5_uwhy2"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="6_iee5i"]
+[ext_resource type="Texture2D" uid="uid://tc1lecm0x7e0" path="res://assets/passport.png" id="6_uwhy2"]
+[ext_resource type="Texture2D" uid="uid://djkllbmrcbv70" path="res://assets/toothbrush.png" id="7_iee5i"]
+[ext_resource type="Texture2D" uid="uid://dfmgqnag57ear" path="res://assets/banana peel.png" id="8_s3ajs"]
+[ext_resource type="Texture2D" uid="uid://diinfdgcimtns" path="res://assets/apple.png" id="9_c1xgx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxb15"]
+size = Vector2(452, 229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3ajs"]
+size = Vector2(123.677765, 84.408066)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iee5i"]
+size = Vector2(76.679504, 100.97821)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1xgx"]
+size = Vector2(39, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_363l8"]
+size = Vector2(123, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv5mt"]
+size = Vector2(75.09221, 81.91542)
 
 [node name="TravelMinigame" type="Node2D" unique_id=1639411175]
 position = Vector2(24, 0)
@@ -22,11 +48,86 @@ position = Vector2(1, 56)
 texture = ExtResource("3_0ntmf")
 
 [node name="DropZone" type="Area2D" parent="SuitcaseArea" unique_id=386540419]
-position = Vector2(450, 487)
+position = Vector2(4, 55)
+script = ExtResource("4_363l8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SuitcaseArea/DropZone" unique_id=1561254444]
+position = Vector2(2, -7.5)
+shape = SubResource("RectangleShape2D_jxb15")
 
 [node name="Items" type="Node2D" parent="." unique_id=1152527337]
+
+[node name="camera" type="Area2D" parent="Items" unique_id=109964338]
+position = Vector2(185, 148)
+script = ExtResource("4_hoqpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/camera" unique_id=145139534]
+position = Vector2(-4.9999943, 3.9999971)
+rotation = -0.26018918
+scale = Vector2(0.43300647, 0.44642857)
+texture = ExtResource("5_uwhy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/camera" unique_id=1148556932]
+position = Vector2(-4.7716827, 8.099533)
+rotation = -0.31516314
+shape = SubResource("RectangleShape2D_s3ajs")
+
+[node name="Passport" type="Area2D" parent="Items" unique_id=220388320]
+position = Vector2(817, 530)
+script = ExtResource("4_hoqpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/Passport" unique_id=887847341]
+position = Vector2(16.999939, -4)
+scale = Vector2(0.118273534, 0.101354115)
+texture = ExtResource("6_uwhy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Passport" unique_id=605884484]
+position = Vector2(10.34137, -2.3242188)
+rotation = -0.38690233
+shape = SubResource("RectangleShape2D_iee5i")
+
+[node name="Toothbrush" type="Area2D" parent="Items" unique_id=1691482496]
+position = Vector2(846, 264)
+script = ExtResource("4_hoqpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/Toothbrush" unique_id=1793328878]
+position = Vector2(-1, 2)
+rotation = 0.29337204
+scale = Vector2(0.13541658, 0.090333365)
+texture = ExtResource("7_iee5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Toothbrush" unique_id=598240931]
+position = Vector2(-3, 4)
+rotation = 0.23551048
+shape = SubResource("RectangleShape2D_c1xgx")
+
+[node name="Banana" type="Area2D" parent="Items" unique_id=55298856]
+position = Vector2(114, 522)
+script = ExtResource("4_hoqpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/Banana" unique_id=889082305]
+position = Vector2(-3.0517578e-05, -15)
+scale = Vector2(0.15367484, 0.1693131)
+texture = ExtResource("8_s3ajs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Banana" unique_id=80878560]
+position = Vector2(-0.5, -21)
+shape = SubResource("RectangleShape2D_363l8")
+
+[node name="Apple" type="Area2D" parent="Items" unique_id=1595943669]
+position = Vector2(584, 150)
+script = ExtResource("4_hoqpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/Apple" unique_id=1660098303]
+position = Vector2(4, 1)
+rotation = -0.37122217
+scale = Vector2(0.0966093, 0.09432146)
+texture = ExtResource("9_c1xgx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Apple" unique_id=839712977]
+position = Vector2(3.5, 5.9999695)
+rotation = -0.5554732
+shape = SubResource("RectangleShape2D_jv5mt")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1030749731]
 
@@ -35,6 +136,17 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UILayer/UI" unique_id=1637430155]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 22.00003
+offset_right = 598.0
+offset_bottom = 67.00003
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_iee5i")
+theme_override_font_sizes/font_size = 35
+text = "Pack Your Suitcase!"
 
 [node name="ResultLabel" type="Label" parent="UILayer/UI" unique_id=784587391]
 layout_mode = 0
@@ -75,4 +187,5 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[connection signal="area_entered" from="SuitcaseArea/DropZone" to="SuitcaseArea/DropZone" method="_on_area_entered"]
 [connection signal="pressed" from="UILayer/UI/PauseButton" to="." method="_on_pause_button_pressed"]
