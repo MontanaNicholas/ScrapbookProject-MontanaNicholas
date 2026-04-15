@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="5_axfmo"]
 [ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="6_cqtih"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="7_s2lrf"]
+[ext_resource type="FontFile" uid="uid://d4h5d5oj2sv1x" path="res://fonts/Jraot-Hollow.ttf" id="8_7p408"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="8_n57qu"]
 [ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="9_7p408"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="9_nor76"]
-[ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="10_dndfm"]
 
 [node name="family_friends" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_7p408")
@@ -76,8 +76,8 @@ offset_top = -132.26839
 offset_right = -44.691986
 offset_bottom = -69.26839
 theme_override_colors/font_color = Color(0.28629375, 0.69542676, 0.88780195, 1)
-theme_override_fonts/font = ExtResource("10_dndfm")
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("8_7p408")
+theme_override_font_sizes/font_size = 24
 text = "Family and 
 friends"
 horizontal_alignment = 1

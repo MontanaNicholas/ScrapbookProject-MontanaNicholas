@@ -4,9 +4,12 @@
 [ext_resource type="Script" uid="uid://b5wkw6e4j517l" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_7jktm"]
 [ext_resource type="Texture2D" uid="uid://cxkn6kbch4pds" path="res://assets/party socks.png" id="3_hve3p"]
+[ext_resource type="Texture2D" uid="uid://ckse7dfax8xa5" path="res://assets/checkered2.jpg" id="3_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://5t84si2g53ry" path="res://assets/calender.png" id="4_215e1"]
 [ext_resource type="Texture2D" uid="uid://isi7ansh2iek" path="res://assets/camera.png" id="4_mfdv2"]
 [ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="4_ryrav"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
+[ext_resource type="Texture2D" uid="uid://b20f7qx70tgd5" path="res://assets/polaroid.png" id="5_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_hve3p"]
@@ -26,13 +29,30 @@ position = Vector2(531, 340.00003)
 scale = Vector2(1.474, 1.565)
 texture = ExtResource("1_80nbo")
 
+[node name="checkered" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2104340469]
+position = Vector2(97.01492, -9.584676)
+scale = Vector2(0.23680577, 0.18221611)
+texture = ExtResource("3_lc2xo")
+
+[node name="calender" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=439643744]
+position = Vector2(205.56313, -102.87541)
+scale = Vector2(0.7968118, 0.72700506)
+texture = ExtResource("4_215e1")
+
+[node name="me" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1919313133]
+position = Vector2(170.96335, 19.808285)
+rotation = 0.009125173
+scale = Vector2(0.17978415, 0.16732661)
+texture = ExtResource("5_lc2xo")
+
 [node name="PartySocks" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1302695515]
-position = Vector2(-80.05428, 42.811455)
+position = Vector2(-94.97965, 40.255547)
 scale = Vector2(0.6098804, 0.541356)
 texture = ExtResource("3_hve3p")
 
 [node name="Camera" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=910727200]
-position = Vector2(99.72863, -84.345055)
+position = Vector2(89.55224, -81.78916)
+rotation = -0.15292081
 scale = Vector2(0.5032768, 0.44500226)
 texture = ExtResource("4_mfdv2")
 
@@ -82,11 +102,11 @@ icon = ExtResource("7_vef74")
 flat = true
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = 52.238792
-offset_top = -85.62304
-offset_right = 102.23879
-offset_bottom = -59.62304
-rotation = -0.061208192
+offset_left = 42.062405
+offset_top = -74.76039
+offset_right = 92.06241
+offset_bottom = -48.76039
+rotation = -0.23303308
 theme_override_colors/font_color = Color(0.98794764, 0.91893005, 1.540184e-06, 1)
 theme_override_colors/font_outline_color = Color(0.38928655, 0.38928664, 0.38928658, 1)
 theme_override_constants/outline_size = 2
@@ -94,17 +114,6 @@ theme_override_fonts/font = ExtResource("9_hve3p")
 theme_override_font_sizes/font_size = 15
 text = "PLAY "
 flat = true
-
-[node name="title" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1266040855]
-offset_left = -270.692
-offset_top = -132.26839
-offset_right = -44.691986
-offset_bottom = -91.37382
-theme_override_colors/font_color = Color(0.28629375, 0.69542676, 0.88780195, 1)
-theme_override_fonts/font = ExtResource("9_hve3p")
-theme_override_font_sizes/font_size = 28
-text = "BIRTHDAYS"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
