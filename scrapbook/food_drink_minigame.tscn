@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bc1clad7vbsqt" path="res://assets/empty glass.png" id="1_84kbo"]
 [ext_resource type="Script" uid="uid://bcepdo3nxohbn" path="res://food_drink_minigame.gd" id="1_oqkd4"]
 [ext_resource type="Texture2D" uid="uid://bbh6fqh4l8dt0" path="res://assets/ice_layer.png" id="2_84kbo"]
-[ext_resource type="Texture2D" uid="uid://c8m7887ogakbr" path="res://assets/temporary background.jpg" id="2_k5sr4"]
 [ext_resource type="AudioStream" uid="uid://bgetpuh085dtt" path="res://audio/drinks-music.mp3" id="2_wkyfg"]
 [ext_resource type="AudioStream" uid="uid://di5dqhkwwu2uk" path="res://audio/correct.mp3" id="3_c13vw"]
 [ext_resource type="AudioStream" uid="uid://ctonjrr1venqj" path="res://audio/wrong.mp3" id="4_yahw6"]
+[ext_resource type="Texture2D" uid="uid://cexch431s7qdl" path="res://assets/counter.png" id="5_4rvpu"]
 [ext_resource type="Texture2D" uid="uid://bu5qa57filplr" path="res://assets/milk.png" id="5_5vcta"]
 [ext_resource type="Texture2D" uid="uid://dvadnjlge0wcs" path="res://assets/strawberry_layer.png" id="5_c3fg0"]
 [ext_resource type="Texture2D" uid="uid://de671yekw5ta8" path="res://assets/oat_milk.png" id="6_baooa"]
@@ -62,11 +62,12 @@ volume_db = -6.0
 
 [node name="Background" type="Sprite2D" parent="." unique_id=346455647]
 z_index = -10
-position = Vector2(499, 324.5)
-scale = Vector2(0.80225074, 0.9214286)
-texture = ExtResource("2_k5sr4")
+position = Vector2(499.5, 325)
+scale = Vector2(0.71561617, 0.71777785)
+texture = ExtResource("5_4rvpu")
 
 [node name="GlassArea" type="Area2D" parent="." unique_id=1474865909]
+position = Vector2(1, 0)
 
 [node name="GlassSprite" type="Sprite2D" parent="GlassArea" unique_id=2072373358]
 z_index = 10
@@ -186,10 +187,10 @@ text = "MIX"
 
 [node name="pause" type="Button" parent="UILayer/UI" unique_id=1734741220]
 layout_mode = 0
-offset_left = 209.0
-offset_top = 12.0
-offset_right = 277.0
-offset_bottom = 80.0
+offset_left = 228.0
+offset_top = -1.0
+offset_right = 296.0
+offset_bottom = 67.0
 icon = ExtResource("10_baooa")
 flat = true
 
