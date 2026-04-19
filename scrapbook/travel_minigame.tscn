@@ -170,41 +170,108 @@ flat = true
 process_mode = 2
 visible = false
 anchors_preset = 0
-offset_left = 284.0
-offset_top = 212.0
-offset_right = 721.0
+offset_left = 247.0
+offset_top = 150.0
+offset_right = 778.0
 offset_bottom = 577.0
 
-[node name="ColorRect" type="ColorRect" parent="UILayer/UI/PauseMenu" unique_id=1119208958]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 428.0
-offset_bottom = 352.0
-
-[node name="Background" type="Sprite2D" parent="UILayer/UI/PauseMenu" unique_id=355337445]
-position = Vector2(219.99997, 183.00003)
-scale = Vector2(1.5285715, 1.7600001)
+[node name="TextureRect" type="TextureRect" parent="UILayer/UI/PauseMenu" unique_id=159333488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.5
+offset_top = -180.0
+offset_right = 254.5
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("13_ebxpl")
 
-[node name="ResumeButton" type="Button" parent="UILayer/UI/PauseMenu" unique_id=859555262]
+[node name="ResumeContainer" type="Control" parent="UILayer/UI/PauseMenu" unique_id=85325556]
+anchors_preset = 0
+offset_left = 217.0
+offset_top = 97.0
+offset_right = 326.0
+offset_bottom = 171.0
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/UI/PauseMenu/ResumeContainer" unique_id=1602139826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_dew2l")
+
+[node name="ResumeButton" type="Button" parent="UILayer/UI/PauseMenu/ResumeContainer" unique_id=859555262]
 process_mode = 2
-layout_mode = 0
-offset_left = 164.0
-offset_top = 118.0
-offset_right = 272.0
-offset_bottom = 186.0
-icon = ExtResource("14_dew2l")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -43.5
+offset_right = 88.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_2dee0")
+theme_override_font_sizes/font_size = 41
+text = "Resume"
 flat = true
 
-[node name="QuitButton" type="Button" parent="UILayer/UI/PauseMenu" unique_id=2041267034]
+[node name="Quit2Container" type="Control" parent="UILayer/UI/PauseMenu" unique_id=366924490]
+anchors_preset = 0
+offset_left = 201.0
+offset_top = 243.0
+offset_right = 344.0
+offset_bottom = 332.0
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/UI/PauseMenu/Quit2Container" unique_id=1129581647]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_dew2l")
+
+[node name="QuitButton" type="Button" parent="UILayer/UI/PauseMenu/Quit2Container" unique_id=2041267034]
 process_mode = 2
-layout_mode = 0
-offset_left = 166.0
-offset_top = 237.0
-offset_right = 274.0
-offset_bottom = 305.0
-icon = ExtResource("14_dew2l")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -64.0
+offset_right = 104.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_2dee0")
+theme_override_font_sizes/font_size = 41
+text = "Quit"
 flat = true
 
 [node name="WinScreen" type="Control" parent="UILayer/UI" unique_id=1677416642]
@@ -289,11 +356,6 @@ theme_override_font_sizes/font_size = 46
 text = "Replay"
 flat = true
 
-[node name="Replay" type="Label" parent="UILayer/UI/WinScreen/ReplayContainer" unique_id=555453856]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="QuitContainer" type="Control" parent="UILayer/UI/WinScreen" unique_id=149227096]
 process_mode = 2
 layout_mode = 1
@@ -343,24 +405,10 @@ theme_override_font_sizes/font_size = 46
 text = "Quit"
 flat = true
 
-[node name="Quit" type="Label" parent="UILayer/UI/WinScreen/QuitContainer" unique_id=824680084]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
 [connection signal="area_entered" from="SuitcaseArea/DropZone" to="SuitcaseArea/DropZone" method="_on_area_entered"]
 [connection signal="pressed" from="UILayer/UI/PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="UILayer/UI/PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="UILayer/UI/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UILayer/UI/PauseMenu/ResumeContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UILayer/UI/PauseMenu/Quit2Container/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/WinScreen/ReplayContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/WinScreen/QuitContainer/QuitButton2" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/WinScreen/QuitContainer/QuitButton2" to="." method="_on_quit_button_2_pressed"]
