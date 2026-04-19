@@ -99,6 +99,7 @@ position = Vector2(506, 371)
 texture = ExtResource("8_13syp")
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=351044357]
+position = Vector2(0, -165)
 
 [node name="milk" parent="Ingredients" unique_id=1739313639 instance=ExtResource("1_7y5dx")]
 position = Vector2(102, 538)

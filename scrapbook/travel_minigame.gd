@@ -17,3 +17,23 @@ func _process(delta: float) -> void:
 func _on_pause_button_pressed() -> void:
 	get_tree().paused = true
 	pause_menu.visible = true
+
+
+func _on_resume_button_pressed() -> void:
+	get_tree().paused = false
+	pause_menu.visible = false
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://travel_main.tscn")
+
+
+func _on_quit_2_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://travel_main.tscn")
+
+
+func _on_replay_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
