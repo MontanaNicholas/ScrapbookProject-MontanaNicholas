@@ -38,7 +38,10 @@
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="29_cmlde"]
 [ext_resource type="Texture2D" uid="uid://cqiqbr36f5ijo" path="res://assets/gameover_food.png" id="35_c13vw"]
 [ext_resource type="Texture2D" uid="uid://be721qn62n3y2" path="res://assets/resume-food.png" id="38_4rvpu"]
+[ext_resource type="Texture2D" uid="uid://vapse33jb4d0" path="res://assets/banner.png" id="38_pux4p"]
+[ext_resource type="Texture2D" uid="uid://c1byk80fix2qk" path="res://assets/pause_box.png" id="39_nlwcc"]
 [ext_resource type="Texture2D" uid="uid://mvkrqsrkwfxw" path="res://assets/quit-food.png" id="39_xf1n3"]
+[ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="40_eu00r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
 size = Vector2(218, 319)
@@ -327,6 +330,7 @@ theme_override_fonts/font = ExtResource("29_cmlde")
 theme_override_font_sizes/font_size = 20
 
 [node name="EndScreenLayer" type="CanvasLayer" parent="UILayer/UI" unique_id=260138156]
+layer = 10
 visible = false
 
 [node name="EndScreen" type="Control" parent="UILayer/UI/EndScreenLayer" unique_id=879572572]
@@ -334,17 +338,25 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 831.0
+offset_left = 829.0
 offset_top = 449.0
-offset_right = -169.0
+offset_right = -171.0
 offset_bottom = -201.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="UILayer/UI/EndScreenLayer/EndScreen" unique_id=1376332614]
-position = Vector2(-271.00003, -74)
-scale = Vector2(2.3370616, 2.4880304)
+position = Vector2(-317.4788, -131.19887)
+scale = Vector2(2.8764343, 3.2506819)
 texture = ExtResource("35_c13vw")
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/UI/EndScreenLayer/EndScreen" unique_id=675493536]
+layout_mode = 0
+offset_left = -559.0
+offset_top = -294.0
+offset_right = -62.0
+offset_bottom = -192.0
+texture = ExtResource("38_pux4p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UILayer/UI/EndScreenLayer/EndScreen" unique_id=1755421553]
 layout_mode = 1
@@ -353,10 +365,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -407.0
-offset_top = -117.0
-offset_right = -136.0
-offset_bottom = 56.0
+offset_left = -449.0
+offset_top = -178.0
+offset_right = -178.0
+offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -367,13 +379,87 @@ theme_override_font_sizes/font_size = 21
 text = "\"\""
 horizontal_alignment = 1
 
-[node name="RestartButton" type="Button" parent="UILayer/UI/EndScreenLayer/EndScreen/VBoxContainer" unique_id=1172931014]
-layout_mode = 2
-text = "Restart"
+[node name="ResartContainer" type="Control" parent="UILayer/UI/EndScreenLayer/EndScreen" unique_id=257567487]
+anchors_preset = 0
+offset_left = -577.0
+offset_top = -69.0
+offset_right = -362.0
+offset_bottom = 51.0
 
-[node name="ExitButton" type="Button" parent="UILayer/UI/EndScreenLayer/EndScreen/VBoxContainer" unique_id=297573296]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="UILayer/UI/EndScreenLayer/EndScreen/ResartContainer" unique_id=149399750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("39_nlwcc")
+
+[node name="RestartButton" type="Button" parent="UILayer/UI/EndScreenLayer/EndScreen/ResartContainer" unique_id=1172931014]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -24.0
+offset_right = 57.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("40_eu00r")
+theme_override_font_sizes/font_size = 41
+text = "Restart"
+flat = true
+
+[node name="ExitContainer" type="Control" parent="UILayer/UI/EndScreenLayer/EndScreen" unique_id=1644793818]
+anchors_preset = 0
+offset_left = -278.0
+offset_top = -76.0
+offset_right = -63.0
+offset_bottom = 52.0
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/UI/EndScreenLayer/EndScreen/ExitContainer" unique_id=1128316106]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("39_nlwcc")
+
+[node name="ExitButton" type="Button" parent="UILayer/UI/EndScreenLayer/EndScreen/ExitContainer" unique_id=297573296]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -24.0
+offset_right = 31.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("40_eu00r")
+theme_override_font_sizes/font_size = 41
 text = "Exit"
+flat = true
 
 [node name="PauseMenu" type="Control" parent="UILayer/UI" unique_id=726907720]
 process_mode = 3
@@ -424,7 +510,7 @@ flat = true
 
 [connection signal="pressed" from="UILayer/UI/mixButton" to="." method="_on_mix_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="UILayer/UI/EndScreenLayer/EndScreen/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="UILayer/UI/EndScreenLayer/EndScreen/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UILayer/UI/EndScreenLayer/EndScreen/ResartContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UILayer/UI/EndScreenLayer/EndScreen/ExitContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var end_screen: Control = $UI/EndScreenLayer/EndScreen
-@onready var end_label: Label = $UI/EndScreenLayer/EndScreen/VBoxContainer/EndLabel
-@onready var restart_button: Button = $UI/EndScreenLayer/EndScreen/VBoxContainer/RestartButton
-@onready var exit_button: Button = $UI/EndScreenLayer/EndScreen/VBoxContainer/ExitButton
+@onready var end_screen: Control = $UILayer/UI/EndScreenLayer/EndScreen
+@onready var end_label: Label = $UILayer/UI/EndScreenLayer/EndScreen/VBoxContainer/EndLabel
+@onready var restart_button: Button = $UILayer/UI/EndScreenLayer/EndScreen/RestartContainer/RestartButton
+@onready var exit_button: Button = $UILayer/UI/EndScreenLayer/EndScreen/ExitContainer/ExitButton
 @onready var bg_music: AudioStreamPlayer = $BGMusic
 @onready var correct_sound: AudioStreamPlayer = $CorrectSound
 @onready var wrong_sound: AudioStreamPlayer = $WrongSound
@@ -24,9 +24,9 @@ extends Node2D
 @export var mango_matcha_texture: Texture2D
 
 @onready var progress_labels := [
-	$UI/progress/slotLabel1,
-	$UI/progress/slotLabel2,
-	$UI/progress/slotLabel3
+	$UILayer/UI/progress/slotLabel1,
+	$UILayer/UI/progress/slotLabel2,
+	$UILayer/UI/progress/slotLabel3
 ]
 var current_layers: Array[String] = []
 var recipe_index := 0
@@ -59,9 +59,9 @@ func _ready() -> void:
 	reset_drink()
 	bg_music.play()
 	
+
 func _select_next_recipe() -> void:
 	if recipe_index >= recipes.size():
-		_show_end_screen()
 		return
 
 	var recipe = recipes[recipe_index]
@@ -111,7 +111,9 @@ func add_layer(name: String, texture: Texture2D) -> void:
 func _show_end_screen() -> void:
 	game_locked = true
 	
-	$UI/EndScreenLayer.visible = true
+	$UILayer/UI/EndScreenLayer.visible = true  
+	end_screen.visible = true
+	
 	$GlassArea.visible = false
 
 	if wrong_drinks == 0:
@@ -120,7 +122,7 @@ func _show_end_screen() -> void:
 		end_label.text = "Oh no! Some drinks were wrong!"
 
 func _on_restart_button_pressed() -> void:
-	$UI/EndScreenLayer.visible = false
+	end_screen.visible = false
 	$GlassArea.visible = true
 
 	recipe_index = 0
@@ -162,6 +164,10 @@ func check_recipe() -> void:
 		wrong_drinks += 1
 
 	await get_tree().create_timer(2.0).timeout
+
+	if drinks_completed >= recipes.size():
+		_show_end_screen()
+		return
 
 	_select_next_recipe()
 	reset_drink()
@@ -235,15 +241,19 @@ func _make_muddy_placeholder() -> void:
 
 func _mark_drink_complete(correct: bool) -> void:
 	if drinks_completed >= progress_labels.size():
-		return
+		print("All drinks already counted")
 
 	var label: Label = progress_labels[drinks_completed]
 
+	if label == null:
+		print("Label is null! Check paths.")
+		return
+
 	if correct:
-		label.text = "✔"
+		label.text = "+"
 		label.modulate = Color(0.2, 0.8, 0.2)
 	else:
-		label.text = "✖"
+		label.text = "-"
 		label.modulate = Color(0.9, 0.2, 0.2)
 
 	drinks_completed += 1
