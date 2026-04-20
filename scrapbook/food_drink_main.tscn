@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://brm32v7sr72vd" path="res://assets/checkered.jpg" id="3_wi5hw"]
 [ext_resource type="Texture2D" uid="uid://xovju685n3c5" path="res://assets/paper2.png" id="4_4tw6f"]
 [ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="4_aonl4"]
-[ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="4_sdjta"]
 [ext_resource type="Texture2D" uid="uid://cc1gjd2h2ouet" path="res://assets/hotsauce.png" id="5_afq51"]
 [ext_resource type="Texture2D" uid="uid://b6lqk7nrqjng2" path="res://assets/mango_matcha.png" id="5_aonl4"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_gyhnf"]
@@ -21,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://btoe2brustlym" path="res://fonts/New Pizza.otf" id="19_lhxka"]
 [ext_resource type="Texture2D" uid="uid://bvvlspsvbgnmq" path="res://assets/paper1.png" id="20_uaw56"]
 [ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="21_5516u"]
+[ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="21_v6n7u"]
 
 [node name="food_drink_menu" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_1frad")
@@ -101,14 +101,6 @@ offset_bottom = -264.04
 icon = ExtResource("3_shnv8")
 flat = true
 
-[node name="help" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1330651097]
-offset_left = 247.0
-offset_top = 103.682
-offset_right = 273.0
-offset_bottom = 129.682
-icon = ExtResource("4_sdjta")
-flat = true
-
 [node name="blue" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=927850267]
 offset_left = 267.222
 offset_top = -99.3694
@@ -117,20 +109,20 @@ offset_bottom = -64.3694
 icon = ExtResource("5_gyhnf")
 flat = true
 
+[node name="red" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=836804210]
+offset_left = 267.22195
+offset_top = -65.26581
+offset_right = 311.22195
+offset_bottom = -30.265808
+icon = ExtResource("7_u62oi")
+flat = true
+
 [node name="yellow" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=123858921]
 offset_left = 267.222
 offset_top = -29.798
 offset_right = 314.222
 offset_bottom = 5.20197
 icon = ExtResource("6_166ns")
-flat = true
-
-[node name="red" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=836804210]
-offset_left = 267.222
-offset_top = -65.2658
-offset_right = 311.222
-offset_bottom = -30.2658
-icon = ExtResource("7_u62oi")
 flat = true
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1595536283]
@@ -215,10 +207,13 @@ text = "Franks Red Hot"
 
 [node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=1954000951]
 
+[node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=225433101]
+stream = ExtResource("21_v6n7u")
+volume_db = -6.0
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/worm" to="." method="_on_worm_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_yellow_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_yellow_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]

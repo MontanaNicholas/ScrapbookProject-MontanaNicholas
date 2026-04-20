@@ -14,6 +14,5 @@ func _ready():
 func play_ui():
 	ui_player.play()
 
-
 func play_worm():
 	worm_player.play()

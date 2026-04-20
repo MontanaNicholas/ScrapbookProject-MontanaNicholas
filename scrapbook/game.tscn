@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://ckse7dfax8xa5" path="res://assets/checkered2.jpg" id="3_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://5t84si2g53ry" path="res://assets/calender.png" id="4_215e1"]
 [ext_resource type="Texture2D" uid="uid://isi7ansh2iek" path="res://assets/camera.png" id="4_mfdv2"]
-[ext_resource type="Texture2D" uid="uid://bkr8rkqyqipag" path="res://assets/help.png" id="4_ryrav"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://b20f7qx70tgd5" path="res://assets/polaroid.png" id="5_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_hve3p"]
+[ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="13_lc2xo"]
 
 [node name="Game" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_fc0e3")
@@ -69,14 +69,6 @@ offset_bottom = -264.04
 icon = ExtResource("3_7jktm")
 flat = true
 
-[node name="help" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1330651097]
-offset_left = 247.0
-offset_top = 103.682
-offset_right = 273.0
-offset_bottom = 129.682
-icon = ExtResource("4_ryrav")
-flat = true
-
 [node name="blue" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=927850267]
 offset_left = 267.222
 offset_top = -99.3694
@@ -85,20 +77,20 @@ offset_bottom = -64.3694
 icon = ExtResource("5_eow3j")
 flat = true
 
+[node name="red" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=836804210]
+offset_left = 267.22195
+offset_top = -65.26581
+offset_right = 311.22195
+offset_bottom = -30.265808
+icon = ExtResource("7_vef74")
+flat = true
+
 [node name="yellow" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=123858921]
 offset_left = 267.222
 offset_top = -29.798
 offset_right = 314.222
 offset_bottom = 5.20197
 icon = ExtResource("6_j5wjh")
-flat = true
-
-[node name="red" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=836804210]
-offset_left = 267.222
-offset_top = -65.2658
-offset_right = 311.222
-offset_bottom = -30.2658
-icon = ExtResource("7_vef74")
 flat = true
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
@@ -115,9 +107,12 @@ theme_override_font_sizes/font_size = 15
 text = "PLAY "
 flat = true
 
+[node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=768096409]
+stream = ExtResource("13_lc2xo")
+volume_db = -6.0
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_yellow_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_red_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_yellow_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
