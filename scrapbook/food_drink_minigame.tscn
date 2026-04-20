@@ -375,7 +375,8 @@ grow_vertical = 2
 [node name="EndLabel" type="Label" parent="UILayer/UI/EndScreenLayer/EndScreen/VBoxContainer" unique_id=120766536]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 21
+theme_override_fonts/font = ExtResource("40_eu00r")
+theme_override_font_sizes/font_size = 39
 text = "\"\""
 horizontal_alignment = 1
 

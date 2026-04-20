@@ -11,11 +11,11 @@ var time_left := 0.0
 
 @onready var candles_container = $candles
 @onready var candle_spot_1 = $cake/candleSpot1
-@onready var win_ui: Control = $UI/winUI
 
-@onready var result_score_label: Label = $UI/winUI/resultsBox/scoreResultLabel
-@onready var result_miss_label: Label = $UI/winUI/resultsBox/missResultLabel
-@onready var win_title_label: Label = $UI/winUI/resultsBox/winLabel
+@onready var end_screen: Control = $UI/EndScreenLayer/EndScreen
+@onready var result_label: Label = $UI/EndScreenLayer/EndScreen/ResultLabel
+@onready var score_result_label: Label = $UI/EndScreenLayer/EndScreen/ScoreLabel
+@onready var miss_result_label: Label = $UI/EndScreenLayer/EndScreen/MissLabel
 
 @onready var sfx_hit: AudioStreamPlayer = $SFX_Hit
 @onready var sfx_miss: AudioStreamPlayer = $SFX_Miss
@@ -39,7 +39,7 @@ var lit_candle = null
 
 
 func _ready():
-	win_ui.visible = false
+	end_screen.visible = false
 
 	remaining = candle_count 
 	print("Round started!")
@@ -141,21 +141,20 @@ func win():
 	if lit_candle and lit_candle.is_lit:
 		lit_candle.extinguish(false)
 
-	_show_results("You win!")
+	_show_results()
 	
 func _end_game():
-	_show_results("Time up!")
+	_show_results()
 
-func _show_results(title_text: String) -> void:
+func _show_results() -> void:
 	game_over = true
 	get_tree().paused = true
 
-	win_title_label.text = title_text
-	result_score_label.text = "Score: %d" % score 
-	result_miss_label.text = "Misses: %d" % misses
-
-	win_ui.visible = true
+	end_screen.visible = true
 	$UI/HUD.visible = false
+
+	score_result_label.text = "Candles blown out: %d" % score
+	miss_result_label.text = "Missed candles: %d" % misses
 	
 func _on_pause_pressed() -> void:
 	print("PAUSE CLICKED")
@@ -177,3 +176,15 @@ func _on_back_pressed() -> void:
 	sfx_ui.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://game.tscn")
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://game.tscn")
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+	
+	

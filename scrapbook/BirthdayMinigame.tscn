@@ -5,9 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://dv6q043hkye11" path="res://assets/background.png" id="2_4xl2v"]
 [ext_resource type="PackedScene" uid="uid://snn35e2kp272" path="res://candle.tscn" id="2_o6i3p"]
 [ext_resource type="Texture2D" uid="uid://lb34acqwof68" path="res://assets/pause.png" id="5_o6i3p"]
+[ext_resource type="Texture2D" uid="uid://cqiqbr36f5ijo" path="res://assets/gameover_food.png" id="6_0hujg"]
 [ext_resource type="PackedScene" uid="uid://bal2mmkyvntnc" path="res://pause_menu.tscn" id="6_o6i3p"]
+[ext_resource type="Texture2D" uid="uid://vapse33jb4d0" path="res://assets/banner.png" id="7_cvruv"]
 [ext_resource type="AudioStream" uid="uid://ctonjrr1venqj" path="res://audio/wrong.mp3" id="7_rvamj"]
+[ext_resource type="Texture2D" uid="uid://c1byk80fix2qk" path="res://assets/pause_box.png" id="8_paotj"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="8_vkig8"]
+[ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="9_cjxjy"]
 
 [node name="BirthdayMinigame" type="Node2D" unique_id=232311416]
 position = Vector2(-68, -28)
@@ -40,71 +44,6 @@ icon = ExtResource("5_o6i3p")
 flat = true
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2134454498]
-
-[node name="winUI" type="Control" parent="UI" unique_id=1411200929]
-process_mode = 2
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 52.0
-offset_right = -192.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="dim" type="ColorRect" parent="UI/winUI" unique_id=533326278]
-process_mode = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.23529412)
-
-[node name="resultsBox" type="VBoxContainer" parent="UI/winUI" unique_id=1753227077]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 40.5
-offset_top = -56.0
-offset_right = 119.5
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="winLabel" type="Label" parent="UI/winUI/resultsBox" unique_id=1894043601]
-process_mode = 2
-layout_mode = 2
-text = "you win!"
-horizontal_alignment = 1
-
-[node name="scoreResultLabel" type="Label" parent="UI/winUI/resultsBox" unique_id=1584356624]
-process_mode = 2
-layout_mode = 2
-text = "Score: 0"
-
-[node name="missResultLabel" type="Label" parent="UI/winUI/resultsBox" unique_id=723893447]
-process_mode = 2
-layout_mode = 2
-text = "Misses: 0"
-
-[node name="continue" type="Button" parent="UI/winUI/resultsBox" unique_id=1483814364]
-process_mode = 2
-layout_mode = 2
-text = "Continue"
-
-[node name="playAgain" type="Button" parent="UI/winUI/resultsBox" unique_id=1547785817]
-layout_mode = 2
-text = "Play Again"
-
-[node name="back" type="Button" parent="UI/winUI/resultsBox" unique_id=1346698929]
-layout_mode = 2
-text = "Back"
 
 [node name="HUD" type="Control" parent="UI" unique_id=2130281993]
 layout_mode = 3
@@ -141,6 +80,141 @@ layout_mode = 2
 layout_mode = 2
 text = "Miss: 0"
 
+[node name="EndScreenLayer" type="CanvasLayer" parent="UI" unique_id=811647684]
+process_mode = 3
+layer = 10
+
+[node name="EndScreen" type="Control" parent="UI/EndScreenLayer" unique_id=57143676]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 829.0
+offset_top = 449.0
+offset_right = -171.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/EndScreenLayer/EndScreen" unique_id=578411973]
+position = Vector2(-317.4788, -131.19887)
+scale = Vector2(2.8764343, 3.2506819)
+texture = ExtResource("6_0hujg")
+
+[node name="TextureRect" type="TextureRect" parent="UI/EndScreenLayer/EndScreen" unique_id=1229568708]
+layout_mode = 0
+offset_left = -559.0
+offset_top = -294.0
+offset_right = -62.0
+offset_bottom = -192.0
+texture = ExtResource("7_cvruv")
+
+[node name="ResartContainer" type="Control" parent="UI/EndScreenLayer/EndScreen" unique_id=476693186]
+anchors_preset = 0
+offset_left = -577.0
+offset_top = -69.0
+offset_right = -362.0
+offset_bottom = 51.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/EndScreenLayer/EndScreen/ResartContainer" unique_id=1876482955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_paotj")
+
+[node name="RestartButton" type="Button" parent="UI/EndScreenLayer/EndScreen/ResartContainer" unique_id=2085666419]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -24.0
+offset_right = 57.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_cjxjy")
+theme_override_font_sizes/font_size = 41
+text = "Restart"
+flat = true
+
+[node name="ExitContainer" type="Control" parent="UI/EndScreenLayer/EndScreen" unique_id=881316850]
+anchors_preset = 0
+offset_left = -278.0
+offset_top = -76.0
+offset_right = -63.0
+offset_bottom = 52.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/EndScreenLayer/EndScreen/ExitContainer" unique_id=1756662621]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_paotj")
+
+[node name="ExitButton" type="Button" parent="UI/EndScreenLayer/EndScreen/ExitContainer" unique_id=1274631209]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -24.0
+offset_right = 31.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_cjxjy")
+theme_override_font_sizes/font_size = 41
+text = "Exit"
+flat = true
+
+[node name="ScoreLabel" type="Label" parent="UI/EndScreenLayer/EndScreen" unique_id=222535630]
+layout_mode = 0
+offset_left = -558.0
+offset_top = -145.0
+offset_right = -493.0
+offset_bottom = -113.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_cjxjy")
+theme_override_font_sizes/font_size = 32
+text = "Score:"
+
+[node name="MissLabel" type="Label" parent="UI/EndScreenLayer/EndScreen" unique_id=1080076621]
+layout_mode = 0
+offset_left = -263.0
+offset_top = -146.0
+offset_right = -169.0
+offset_bottom = -114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_cjxjy")
+theme_override_font_sizes/font_size = 32
+text = "Misses: "
+
 [node name="PauseMenu" parent="." unique_id=229042202 instance=ExtResource("6_o6i3p")]
 position = Vector2(578, 370)
 
@@ -155,6 +229,5 @@ volume_db = -6.0
 [node name="SFX_Hit" type="AudioStreamPlayer" parent="." unique_id=962380935]
 
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="UI/winUI/resultsBox/continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="UI/winUI/resultsBox/playAgain" to="." method="_on_play_again_pressed"]
-[connection signal="pressed" from="UI/winUI/resultsBox/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="UI/EndScreenLayer/EndScreen/ResartContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/EndScreenLayer/EndScreen/ExitContainer/ExitButton" to="." method="_on_exit_button_pressed"]
