@@ -20,6 +20,7 @@ var time_left := 0.0
 @onready var sfx_hit: AudioStreamPlayer = $SFX_Hit
 @onready var sfx_miss: AudioStreamPlayer = $SFX_Miss
 @onready var sfx_ui: AudioStreamPlayer = $SFX_UI
+@onready var bg_music: AudioStreamPlayer = $BGMusic
 
 @export var candle_row_offset := Vector2(40, -10)
 @export var candle_spacing := 35.0
@@ -54,6 +55,7 @@ func _ready():
 	
 	spawn_candles()
 	start_timed_candles()
+	bg_music.play()
 	
 	
 func _update_time_label():

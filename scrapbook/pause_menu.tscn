@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://b8waxqw4frgxh" path="res://pause_menu.gd" id="2_2nc7s"]
 [ext_resource type="Texture2D" uid="uid://cm4q6myn6aocx" path="res://assets/resume.png" id="2_p81d2"]
 [ext_resource type="Texture2D" uid="uid://dh735xab4y2mv" path="res://assets/quit.png" id="3_2nc7s"]
-[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="5_2nc7s"]
+[ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="5_2nc7s"]
 
 [node name="PauseMenu" type="Sprite2D" unique_id=229042202]
 process_mode = 2
-position = Vector2(-5, -2)
-scale = Vector2(1.31395, 1.21198)
+position = Vector2(-5, -34.062065)
+scale = Vector2(1.31395, 1.0467116)
 texture = ExtResource("1_05uyy")
 script = ExtResource("2_2nc7s")
 
@@ -18,10 +18,10 @@ process_mode = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -193.0
-offset_top = -160.545
-offset_right = -71.0
-offset_bottom = -118.545
+offset_left = -192.88512
+offset_top = -119.36232
+offset_right = -70.88512
+offset_bottom = -77.36232
 grow_horizontal = 2
 icon = ExtResource("2_p81d2")
 flat = true
@@ -31,23 +31,25 @@ process_mode = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -170.0
-offset_top = 119.86275
-offset_right = -96.0
-offset_bottom = 161.86276
+offset_left = -167.00894
+offset_top = 93.68585
+offset_right = -93.00894
+offset_bottom = 135.68587
 grow_horizontal = 2
 icon = ExtResource("3_2nc7s")
 flat = true
 
 [node name="Label" type="Label" parent="." unique_id=220401782]
-offset_left = -76.1064
-offset_top = -15.6768265
-offset_right = 87.8936
-offset_bottom = 35.479134
+offset_left = -109.593216
+offset_top = -34.334137
+offset_right = 118.406784
+offset_bottom = 72.103264
 theme_override_colors/font_color = Color(0.87721545, 0.33021775, 0.563437, 1)
 theme_override_fonts/font = ExtResource("5_2nc7s")
-text = "Blow out as many candles as 
-you can before the timer ends"
+theme_override_font_sizes/font_size = 29
+text = "Blow out as many 
+candles as you can 
+before the timer ends"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
