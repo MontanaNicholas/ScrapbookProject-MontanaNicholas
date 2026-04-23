@@ -20,7 +20,9 @@
 [ext_resource type="FontFile" uid="uid://btoe2brustlym" path="res://fonts/New Pizza.otf" id="19_lhxka"]
 [ext_resource type="Texture2D" uid="uid://bvvlspsvbgnmq" path="res://assets/paper1.png" id="20_uaw56"]
 [ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="21_5516u"]
+[ext_resource type="Texture2D" uid="uid://b2i2h8s7t0w3l" path="res://assets/beer.png" id="21_afq51"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="21_v6n7u"]
+[ext_resource type="Texture2D" uid="uid://bxb3fnngfdmn0" path="res://assets/guinneass.png" id="22_ywey8"]
 
 [node name="food_drink_menu" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_1frad")
@@ -147,9 +149,9 @@ scale = Vector2(0.38104928, 0.37380195)
 texture = ExtResource("13_0y1eo")
 
 [node name="VeggieTacos" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1733569281]
-offset_left = 138.39893
+offset_left = 166.21439
 offset_top = -44.728455
-offset_right = 232.39893
+offset_right = 260.2144
 offset_bottom = 8.271545
 rotation = 0.012411654
 theme_override_colors/font_color = Color(0.8237491, 0.114152335, 3.85046e-07, 1)
@@ -160,50 +162,30 @@ TACOS"
 horizontal_alignment = 1
 
 [node name="Paper1" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1420621406]
-position = Vector2(-91.58751, -8.945707)
-scale = Vector2(0.33967647, 0.47798032)
+position = Vector2(-91.58751, 35.143753)
+scale = Vector2(0.27549475, 0.29912925)
 texture = ExtResource("20_uaw56")
 
-[node name="MangoMatcha" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1413400735]
-offset_left = -145.8616
-offset_top = -111.18212
-offset_right = -27.861603
-offset_bottom = 105.81788
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("21_5516u")
-theme_override_font_sizes/font_size = 16
-text = "Mango and 
-strawberry iced 
-matcha. Whether
-you're new to 
-matcha or not, I
-heavily recommend 
-trying these.
-Especially from 
-Namo (where I get 
-them for free 
-as a work privelige)"
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=2120695202]
-offset_left = 53.595657
-offset_top = -111.8211
-offset_right = 172.59566
-offset_bottom = -74.8211
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("21_5516u")
-theme_override_font_sizes/font_size = 16
-text = "The best hot sauce 
-to ever exist !"
-
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=178700924]
-offset_left = 88.87381
+offset_left = 80.7327
 offset_top = -72.84347
-offset_right = 179.87381
+offset_right = 171.7327
 offset_bottom = -49.843468
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("21_5516u")
 theme_override_font_sizes/font_size = 15
 text = "Franks Red Hot"
+
+[node name="beer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1023697876]
+position = Vector2(209.63365, -86.90097)
+rotation = 0.2009914
+scale = Vector2(0.069793314, 0.061259516)
+texture = ExtResource("21_afq51")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1240720442]
+position = Vector2(-68.0806, -40.428276)
+scale = Vector2(0.03713017, 0.038399998)
+texture = ExtResource("22_ywey8")
 
 [node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=1954000951]
 

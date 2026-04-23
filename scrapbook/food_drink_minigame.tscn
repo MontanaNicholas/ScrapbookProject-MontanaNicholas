@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://crdwaj787wtff" path="res://assets/boba_icon.png" id="24_i2xgk"]
 [ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="29_cmlde"]
 [ext_resource type="Texture2D" uid="uid://cqiqbr36f5ijo" path="res://assets/gameover_food.png" id="35_c13vw"]
+[ext_resource type="FontFile" uid="uid://btoe2brustlym" path="res://fonts/New Pizza.otf" id="35_nlwcc"]
 [ext_resource type="Texture2D" uid="uid://be721qn62n3y2" path="res://assets/resume-food.png" id="38_4rvpu"]
 [ext_resource type="Texture2D" uid="uid://vapse33jb4d0" path="res://assets/banner.png" id="38_pux4p"]
 [ext_resource type="Texture2D" uid="uid://c1byk80fix2qk" path="res://assets/pause_box.png" id="39_nlwcc"]
@@ -44,7 +45,7 @@
 [ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="40_eu00r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqkd4"]
-size = Vector2(218, 319)
+size = Vector2(218, 308.5)
 
 [node name="FoodDrinkMinigame" type="Node2D" unique_id=1183424093]
 script = ExtResource("1_oqkd4")
@@ -65,8 +66,8 @@ volume_db = -6.0
 
 [node name="Background" type="Sprite2D" parent="." unique_id=346455647]
 z_index = -10
-position = Vector2(499.5, 325)
-scale = Vector2(0.71561617, 0.71777785)
+position = Vector2(502.99997, 334.00006)
+scale = Vector2(0.71561617, 0.7400002)
 texture = ExtResource("5_4rvpu")
 
 [node name="GlassArea" type="Area2D" parent="." unique_id=1474865909]
@@ -74,7 +75,7 @@ position = Vector2(1, 0)
 
 [node name="GlassSprite" type="Sprite2D" parent="GlassArea" unique_id=2072373358]
 z_index = 10
-position = Vector2(504, 384)
+position = Vector2(504, 317)
 texture = ExtResource("1_84kbo")
 
 [node name="LayersContainer" type="Node2D" parent="GlassArea" unique_id=596890382]
@@ -83,11 +84,11 @@ position = Vector2(501, 395)
 [node name="DropZone" type="Area2D" parent="GlassArea" unique_id=286266219 groups=["drop_zone"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlassArea/DropZone" unique_id=1918326507]
-position = Vector2(499, 379)
+position = Vector2(499, 344.25)
 shape = SubResource("RectangleShape2D_oqkd4")
 
 [node name="DropPoint" type="Marker2D" parent="GlassArea/DropZone" unique_id=1292076840]
-position = Vector2(504, 492)
+position = Vector2(500, 484)
 
 [node name="FinishedStrawberryMatcha" type="Sprite2D" parent="GlassArea" unique_id=436657475]
 visible = false
@@ -179,15 +180,16 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = 163.5
-offset_right = 74.0
-offset_bottom = 207.5
+offset_left = -23.0
+offset_top = 158.5
+offset_right = 52.0
+offset_bottom = 202.5
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.284797, 0.45343536, 1, 1)
 theme_override_fonts/font = ExtResource("9_5vcta")
 theme_override_font_sizes/font_size = 33
 text = "MIX"
+flat = true
 
 [node name="pause" type="Button" parent="UILayer/UI" unique_id=1734741220]
 layout_mode = 0
@@ -201,7 +203,7 @@ flat = true
 [node name="progress" type="Node2D" parent="UILayer/UI" unique_id=1679585619]
 
 [node name="box" type="Sprite2D" parent="UILayer/UI/progress" unique_id=1150324725]
-position = Vector2(-219, 29)
+position = Vector2(-189, 29)
 texture = ExtResource("11_hhqru")
 
 [node name="MangoMatchaIcon" type="Sprite2D" parent="UILayer/UI/progress/box" unique_id=179329053]
@@ -220,36 +222,37 @@ scale = Vector2(0.5530304, 0.43055558)
 texture = ExtResource("24_i2xgk")
 
 [node name="slotLabel1" type="Label" parent="UILayer/UI/progress" unique_id=516739715]
-offset_left = -312.0
+offset_left = -282.0
 offset_top = 5.0
-offset_right = -264.0
+offset_right = -234.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 47
 text = "\"\""
 
 [node name="slotLabel2" type="Label" parent="UILayer/UI/progress" unique_id=1863582567]
-offset_left = -238.0
+offset_left = -213.0
 offset_top = 5.0
-offset_right = -197.0
+offset_right = -172.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 47
 text = "\"\""
 
 [node name="slotLabel3" type="Label" parent="UILayer/UI/progress" unique_id=1970658171]
-offset_left = -171.0
+offset_left = -142.0
 offset_top = 2.0
-offset_right = -128.0
+offset_right = -99.0
 offset_bottom = 67.0
 theme_override_font_sizes/font_size = 47
 text = "\"\""
 
 [node name="ResultLabel" type="Label" parent="UILayer/UI" unique_id=2119754235]
 layout_mode = 0
-offset_left = -368.0
-offset_top = 71.0
-offset_right = -19.0
-offset_bottom = 101.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = -381.0
+offset_top = 78.0
+offset_right = 35.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.92725766, 0.11509641, 0.5791132, 1)
+theme_override_fonts/font = ExtResource("35_nlwcc")
 theme_override_font_sizes/font_size = 21
 text = "Make: Iced Strawberry Oat Matcha"
 
@@ -275,14 +278,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -95.5
-offset_top = 4.0
-offset_right = 95.5
-offset_bottom = 58.0
+offset_left = -89.5
+offset_top = 10.0
+offset_right = 101.5
+offset_bottom = 64.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("29_cmlde")
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("35_nlwcc")
+theme_override_font_sizes/font_size = 11
 text = "Recipe"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UILayer/UI/Recipecard/TitleLabel" unique_id=1269867585]
@@ -301,31 +304,31 @@ grow_vertical = 2
 
 [node name="Step1Label" type="Label" parent="UILayer/UI/Recipecard/TitleLabel/VBoxContainer" unique_id=1528106571]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("29_cmlde")
 theme_override_font_sizes/font_size = 20
 
 [node name="Step2Label" type="Label" parent="UILayer/UI/Recipecard/TitleLabel/VBoxContainer" unique_id=1464608227]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("29_cmlde")
 theme_override_font_sizes/font_size = 20
 
 [node name="Step3Label" type="Label" parent="UILayer/UI/Recipecard/TitleLabel/VBoxContainer" unique_id=410426781]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.021434637, 0.021434635, 0.021434633, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("29_cmlde")
 theme_override_font_sizes/font_size = 20
 
 [node name="Step4Label" type="Label" parent="UILayer/UI/Recipecard/TitleLabel/VBoxContainer" unique_id=91695946]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.00069389754, 0.00069389766, 0.0006938976, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("29_cmlde")
 theme_override_font_sizes/font_size = 20
 
 [node name="Step5Label" type="Label" parent="UILayer/UI/Recipecard/TitleLabel/VBoxContainer" unique_id=603218788]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("29_cmlde")
 theme_override_font_sizes/font_size = 20
 
