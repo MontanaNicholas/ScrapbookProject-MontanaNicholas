@@ -80,17 +80,20 @@ position = Vector2(504, 317)
 texture = ExtResource("1_84kbo")
 
 [node name="FinishedStrawberryMatcha" type="Sprite2D" parent="GlassArea" unique_id=436657475]
+visible = false
 position = Vector2(508.77994, 350.10217)
 scale = Vector2(0.6911002, 0.73448914)
 texture = ExtResource("7_nlwcc")
 
 [node name="FinishedMangoMatcha" type="Sprite2D" parent="GlassArea" unique_id=2077557662]
+visible = false
 z_index = 10
 position = Vector2(502.78613, 341.49405)
 scale = Vector2(0.7410693, 0.76252973)
 texture = ExtResource("8_eu00r")
 
 [node name="FinishedMilkTea" type="Sprite2D" parent="GlassArea" unique_id=1477380321]
+visible = false
 z_index = 10
 position = Vector2(509.58163, 358.49997)
 scale = Vector2(0.602092, 0.67749995)

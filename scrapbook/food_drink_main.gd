@@ -9,7 +9,7 @@ func _on_exit_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	Sound.play_ui()
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://food_drink_main.tscn")
 
 func _on_play_pressed() -> void:
 	Sound.play_ui()
@@ -17,7 +17,7 @@ func _on_play_pressed() -> void:
 
 func _on_worm_pressed() -> void:
 	Sound.play_worm()
-	get_tree().change_scene_to_file("res://main_menu_worm.tscn")
+	get_tree().change_scene_to_file("res://food_drink_worm.tscn")
 
 func _on_blue_pressed() -> void:
 	Sound.play_ui()

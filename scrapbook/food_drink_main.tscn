@@ -39,11 +39,11 @@ scale = Vector2(1.474, 1.565)
 texture = ExtResource("2_8fmh5")
 
 [node name="worm" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=861809853]
-offset_left = 232.70015
-offset_top = 51.118202
-offset_right = 270.70013
-offset_bottom = 110.1182
-rotation = 0.36392906
+offset_left = 232.02173
+offset_top = 47.284317
+offset_right = 270.02173
+offset_bottom = 106.28432
+rotation = 0.7629671
 icon = ExtResource("4_aonl4")
 flat = true
 
@@ -135,9 +135,9 @@ scale = Vector2(0.021418858, 0.02012702)
 texture = ExtResource("3_v6n7u")
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1927502721]
-position = Vector2(213.7042, 35.782734)
+position = Vector2(204.63799, 30.49665)
 rotation = 0.087444425
-scale = Vector2(0.076107696, 0.06562583)
+scale = Vector2(0.08462979, 0.06856383)
 texture = ExtResource("16_qe8e2")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=762506860]
@@ -229,7 +229,7 @@ skew = -0.13943136
 texture = ExtResource("21_4tw6f")
 
 [node name="coffeebean6" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=958191891]
-position = Vector2(205.56308, -13.418556)
+position = Vector2(251.69604, 8.306683)
 rotation = -0.1162107
 scale = Vector2(0.2992166, 0.42891365)
 skew = -0.07655001

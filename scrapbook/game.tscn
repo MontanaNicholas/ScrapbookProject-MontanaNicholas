@@ -4,14 +4,15 @@
 [ext_resource type="Script" uid="uid://b5wkw6e4j517l" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_7jktm"]
 [ext_resource type="Texture2D" uid="uid://cxkn6kbch4pds" path="res://assets/party socks.png" id="3_hve3p"]
-[ext_resource type="Texture2D" uid="uid://ckse7dfax8xa5" path="res://assets/checkered2.jpg" id="3_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://5t84si2g53ry" path="res://assets/calender.png" id="4_215e1"]
 [ext_resource type="Texture2D" uid="uid://isi7ansh2iek" path="res://assets/camera.png" id="4_mfdv2"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
-[ext_resource type="Texture2D" uid="uid://b20f7qx70tgd5" path="res://assets/polaroid.png" id="5_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
+[ext_resource type="Texture2D" uid="uid://cy7soy6hq52us" path="res://assets/bar-receipt.png" id="9_215e1"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_hve3p"]
+[ext_resource type="Texture2D" uid="uid://3gdodxtt0y16" path="res://assets/me - polaroid.png" id="10_7sc4i"]
+[ext_resource type="FontFile" uid="uid://btoe2brustlym" path="res://fonts/New Pizza.otf" id="13_80cx4"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="13_lc2xo"]
 
 [node name="Game" type="Node2D" unique_id=1560944956]
@@ -29,32 +30,15 @@ position = Vector2(531, 340.00003)
 scale = Vector2(1.474, 1.565)
 texture = ExtResource("1_80nbo")
 
-[node name="checkered" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2104340469]
-position = Vector2(97.01492, -9.584676)
-scale = Vector2(0.23680577, 0.18221611)
-texture = ExtResource("3_lc2xo")
-
 [node name="calender" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=439643744]
-position = Vector2(205.56313, -102.87541)
+position = Vector2(55.630936, 24.281128)
 scale = Vector2(0.7968118, 0.72700506)
 texture = ExtResource("4_215e1")
-
-[node name="me" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1919313133]
-position = Vector2(170.96335, 19.808285)
-rotation = 0.009125173
-scale = Vector2(0.17978415, 0.16732661)
-texture = ExtResource("5_lc2xo")
 
 [node name="PartySocks" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1302695515]
 position = Vector2(-94.97965, 40.255547)
 scale = Vector2(0.6098804, 0.541356)
 texture = ExtResource("3_hve3p")
-
-[node name="Camera" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=910727200]
-position = Vector2(89.55224, -81.78916)
-rotation = -0.15292081
-scale = Vector2(0.5032768, 0.44500226)
-texture = ExtResource("4_mfdv2")
 
 [node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=254491764]
 anchors_preset = -1
@@ -93,12 +77,29 @@ offset_bottom = 5.20197
 icon = ExtResource("6_j5wjh")
 flat = true
 
+[node name="receipt" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=465672560]
+position = Vector2(74.62686, -61.34187)
+scale = Vector2(0.5051788, 0.5448405)
+texture = ExtResource("9_215e1")
+
+[node name="me" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1919313133]
+position = Vector2(177.74762, 30.670906)
+rotation = 0.009125174
+scale = Vector2(0.16151883, 0.15135399)
+texture = ExtResource("10_7sc4i")
+
+[node name="Camera" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=910727200]
+position = Vector2(181.81819, -91.373795)
+rotation = 0.06418373
+scale = Vector2(0.42681512, 0.38084462)
+texture = ExtResource("4_mfdv2")
+
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = 42.062405
-offset_top = -74.76039
-offset_right = 92.06241
-offset_bottom = -48.76039
-rotation = -0.23303308
+offset_left = 139.0773
+offset_top = -94.57296
+offset_right = 189.07732
+offset_bottom = -68.57296
+rotation = 0.021735176
 theme_override_colors/font_color = Color(0.98794764, 0.91893005, 1.540184e-06, 1)
 theme_override_colors/font_outline_color = Color(0.38928655, 0.38928664, 0.38928658, 1)
 theme_override_constants/outline_size = 2
@@ -106,6 +107,17 @@ theme_override_fonts/font = ExtResource("9_hve3p")
 theme_override_font_sizes/font_size = 15
 text = "PLAY "
 flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1029885483]
+offset_left = 107.19183
+offset_top = 92.013824
+offset_right = 252.19183
+offset_bottom = 115.013824
+rotation = 0.013667174
+theme_override_colors/font_color = Color(0.4258134, 0, 0.19872573, 1)
+theme_override_fonts/font = ExtResource("13_80cx4")
+theme_override_font_sizes/font_size = 18
+text = "21st  Birthday"
 
 [node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=768096409]
 stream = ExtResource("13_lc2xo")

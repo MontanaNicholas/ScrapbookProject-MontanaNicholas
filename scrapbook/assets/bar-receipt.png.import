@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20f7qx70tgd5"
-path="res://.godot/imported/polaroid.png-b697311a7c019b943b05e5163b0cca91.ctex"
+uid="uid://cy7soy6hq52us"
+path="res://.godot/imported/bar-receipt.png-1a5382bd42f1f2854089ce5ddd24eeef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/polaroid.png"
-dest_files=["res://.godot/imported/polaroid.png-b697311a7c019b943b05e5163b0cca91.ctex"]
+source_file="res://assets/bar-receipt.png"
+dest_files=["res://.godot/imported/bar-receipt.png-1a5382bd42f1f2854089ce5ddd24eeef.ctex"]
 
 [params]
 
