@@ -2,22 +2,23 @@
 
 [ext_resource type="Script" uid="uid://bi823g8dignyh" path="res://food_drink_main.gd" id="1_1frad"]
 [ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="2_8fmh5"]
-[ext_resource type="Texture2D" uid="uid://cdfsrqmso0jwo" path="res://assets/jarrito-polaroid.png" id="3_4tw6f"]
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_shnv8"]
 [ext_resource type="Texture2D" uid="uid://dxpni4js4tjn3" path="res://assets/pickles.png" id="3_v6n7u"]
-[ext_resource type="Texture2D" uid="uid://brm32v7sr72vd" path="res://assets/checkered.jpg" id="3_wi5hw"]
 [ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="4_aonl4"]
-[ext_resource type="Texture2D" uid="uid://cc1gjd2h2ouet" path="res://assets/hotsauce.png" id="5_afq51"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_gyhnf"]
+[ext_resource type="Texture2D" uid="uid://bd5ubry2hllih" path="res://assets/matchas - polaroid.png" id="5_v6n7u"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_166ns"]
-[ext_resource type="Texture2D" uid="uid://ddhbyrt7lraqr" path="res://assets/mango-polaroid.png" id="6_v6n7u"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_u62oi"]
 [ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="8_wi5hw"]
-[ext_resource type="Texture2D" uid="uid://da13gio2mx40e" path="res://assets/strawberry-polaroid.png" id="12_4tw6f"]
+[ext_resource type="Texture2D" uid="uid://bsddgkap83hut" path="res://assets/burger-green.png" id="11_0y1eo"]
 [ext_resource type="Texture2D" uid="uid://gk7aotucpar8" path="res://assets/tacos-polaroid.png" id="14_afq51"]
 [ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="14_u62oi"]
-[ext_resource type="Texture2D" uid="uid://bsktreif82pou" path="res://assets/burger-polaroid.png" id="16_ywey8"]
+[ext_resource type="Texture2D" uid="uid://c0mgyrcf1ln8u" path="res://assets/jarritos-white.png" id="16_qe8e2"]
+[ext_resource type="Texture2D" uid="uid://dh8bgjgsfnn1" path="res://assets/guinneass-white.png" id="17_v6n7u"]
+[ext_resource type="Texture2D" uid="uid://btrhv7fp5rfjh" path="res://assets/receipt.png" id="18_v6n7u"]
 [ext_resource type="FontFile" uid="uid://btoe2brustlym" path="res://fonts/New Pizza.otf" id="19_lhxka"]
+[ext_resource type="Texture2D" uid="uid://cyh3tdhmpgt3u" path="res://assets/tape.png" id="20_4tw6f"]
+[ext_resource type="Texture2D" uid="uid://c4armlv3wcy67" path="res://assets/coffee-bean.png" id="21_4tw6f"]
 [ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="21_5516u"]
 [ext_resource type="Texture2D" uid="uid://b2i2h8s7t0w3l" path="res://assets/beer.png" id="21_afq51"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="21_v6n7u"]
@@ -37,30 +38,19 @@ position = Vector2(531, 340.00003)
 scale = Vector2(1.474, 1.565)
 texture = ExtResource("2_8fmh5")
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1927502721]
-position = Vector2(69.19944, -76.67733)
-rotation = 0.012036383
-scale = Vector2(0.11936438, 0.112038165)
-texture = ExtResource("3_4tw6f")
-
-[node name="blanket" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1385097985]
-position = Vector2(-162.14381, -49.840286)
-scale = Vector2(0.33967453, 0.29220152)
-texture = ExtResource("3_wi5hw")
-
 [node name="worm" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=861809853]
-offset_left = 210.99054
-offset_top = -138.65817
-offset_right = 248.99054
-offset_bottom = -79.65817
-rotation = 0.5714975
+offset_left = 232.70015
+offset_top = 51.118202
+offset_right = 270.70013
+offset_bottom = 110.1182
+rotation = 0.36392906
 icon = ExtResource("4_aonl4")
 flat = true
 
 [node name="MangoMatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1167717851]
-position = Vector2(80.73269, 50.47924)
-scale = Vector2(0.13409108, 0.12027755)
-texture = ExtResource("6_v6n7u")
+position = Vector2(114.654, -44.728477)
+scale = Vector2(0.21231632, 0.1734572)
+texture = ExtResource("5_v6n7u")
 
 [node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=254491764]
 anchors_preset = -1
@@ -99,24 +89,11 @@ offset_bottom = 5.20197
 icon = ExtResource("6_166ns")
 flat = true
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1595536283]
-offset_left = -292.4016
-offset_top = 81.15013
-offset_right = -256.4016
-offset_bottom = 117.15013
-icon = ExtResource("14_u62oi")
-flat = true
-
-[node name="StrawberryMatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=928885794]
-position = Vector2(186.56717, -29.392994)
-scale = Vector2(0.14621493, 0.1275854)
-texture = ExtResource("12_4tw6f")
-
 [node name="VeggieTacos" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1733569281]
-offset_left = -271.3704
-offset_top = 41.533516
-offset_right = -177.37039
-offset_bottom = 94.533516
+offset_left = -136.36363
+offset_top = -125.87861
+offset_right = -42.363632
+offset_bottom = -72.87861
 rotation = 0.012411654
 theme_override_colors/font_color = Color(0.8237491, 0.114152335, 3.85046e-07, 1)
 theme_override_fonts/font = ExtResource("19_lhxka")
@@ -126,60 +103,137 @@ TACOS"
 horizontal_alignment = 1
 
 [node name="tacos" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1240720442]
-position = Vector2(-104.47761, 44.72841)
+position = Vector2(-219.1316, -64.53676)
 scale = Vector2(0.14509173, 0.12798807)
 texture = ExtResource("14_afq51")
 
-[node name="hotsauce" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1576421206]
-position = Vector2(-78.69742, -35.143784)
-rotation = 3.4699898
-scale = Vector2(0.05158794, 0.036282226)
-texture = ExtResource("5_afq51")
-
 [node name="burger" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=347741813]
-position = Vector2(-218.45319, -58.785965)
-scale = Vector2(0.14465319, 0.1321874)
-texture = ExtResource("16_ywey8")
-
-[node name="picklejar" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=988695245]
-position = Vector2(-151.289, -92.651764)
-rotation = 0.0023484528
-scale = Vector2(0.025294622, 0.02456596)
-texture = ExtResource("3_v6n7u")
-
-[node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = -130.25781
-offset_top = 81.789116
-offset_right = -74.25781
-offset_bottom = 110.789116
-icon = ExtResource("8_wi5hw")
-flat = true
+position = Vector2(-122.79512, 10.223615)
+scale = Vector2(0.077677354, 0.07031828)
+texture = ExtResource("11_0y1eo")
 
 [node name="beer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1023697876]
-position = Vector2(31.207617, -101.59746)
-rotation = -0.03763324
+position = Vector2(225.91586, -81.7892)
+rotation = 0.40390885
 scale = Vector2(0.040427297, 0.03422137)
 texture = ExtResource("21_afq51")
 
 [node name="Franks" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=178700924]
-offset_left = -276.11942
-offset_top = -3.1949005
-offset_right = -116.119415
-offset_bottom = 19.8051
+offset_left = -277.47626
+offset_top = -122.04473
+offset_right = -117.47626
+offset_bottom = -99.04473
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("21_5516u")
 theme_override_font_sizes/font_size = 15
 text = "Franks Red Hot Sauce"
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1738470348]
-offset_left = 121.438255
-offset_top = 21.72522
-offset_right = 256.43826
-offset_bottom = 44.72522
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("21_5516u")
-theme_override_font_sizes/font_size = 16
-text = "Strawberry oat matcha"
+[node name="picklejar" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=988695245]
+position = Vector2(-62.411625, -44.4817)
+rotation = 0.3540595
+scale = Vector2(0.021418858, 0.02012702)
+texture = ExtResource("3_v6n7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1927502721]
+position = Vector2(213.7042, 35.782734)
+rotation = 0.087444425
+scale = Vector2(0.076107696, 0.06562583)
+texture = ExtResource("16_qe8e2")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=762506860]
+offset_left = 77.34056
+offset_top = 27.476015
+offset_right = 193.34052
+offset_bottom = 46.476013
+theme_override_colors/font_color = Color(0.5881222, 0, 0.116212584, 1)
+theme_override_fonts/font = ExtResource("19_lhxka")
+theme_override_font_sizes/font_size = 7
+text = "Strawberry  and 
+Mango Matcha"
+horizontal_alignment = 1
+
+[node name="guinness" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=317275997]
+position = Vector2(-252.37447, 44.72841)
+scale = Vector2(0.044578955, 0.04370962)
+texture = ExtResource("17_v6n7u")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1595536283]
+offset_left = -292.4016
+offset_top = 81.15013
+offset_right = -256.4016
+offset_bottom = 117.15013
+icon = ExtResource("14_u62oi")
+flat = true
+
+[node name="receipt" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2044740077]
+position = Vector2(53.59566, 53.67409)
+scale = Vector2(0.25407162, 0.33986092)
+texture = ExtResource("18_v6n7u")
+
+[node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
+offset_left = 11.533224
+offset_top = 83.06706
+offset_right = 67.533226
+offset_bottom = 112.06706
+icon = ExtResource("8_wi5hw")
+flat = true
+
+[node name="tape" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1786674933]
+position = Vector2(195.3867, -123.32271)
+scale = Vector2(0.5688602, 0.41506925)
+texture = ExtResource("20_4tw6f")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1421641999]
+offset_left = 159.43011
+offset_top = -132.90736
+offset_right = 235.41388
+offset_bottom = -111.8211
+theme_override_fonts/font = ExtResource("19_lhxka")
+theme_override_font_sizes/font_size = 19
+text = "My Fav"
+
+[node name="coffeebean3" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1564504204]
+position = Vector2(-208.9552, 94.568665)
+rotation = -1.82366
+scale = Vector2(0.5373145, 0.559117)
+texture = ExtResource("21_4tw6f")
+
+[node name="coffeebean2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1684805355]
+position = Vector2(-152.64584, -81.789154)
+scale = Vector2(0.4794805, 0.55081534)
+texture = ExtResource("21_4tw6f")
+
+[node name="coffeebean" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=472546631]
+position = Vector2(92.26592, 103.514366)
+scale = Vector2(0.44080704, 0.44968036)
+texture = ExtResource("21_4tw6f")
+
+[node name="coffeebean5" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1352780253]
+position = Vector2(12.890083, 10.8625965)
+rotation = 2.6715086
+scale = Vector2(0.2992166, 0.42891365)
+skew = -0.07655001
+texture = ExtResource("21_4tw6f")
+
+[node name="coffeebean4" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1826720573]
+position = Vector2(-146.54002, -104.79233)
+rotation = -1.82366
+scale = Vector2(0.36412334, 0.4263088)
+texture = ExtResource("21_4tw6f")
+
+[node name="coffeebean7" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1530540507]
+position = Vector2(73.270004, 101.597404)
+rotation = -0.0950834
+scale = Vector2(0.23714499, 0.25303268)
+skew = -0.13943136
+texture = ExtResource("21_4tw6f")
+
+[node name="coffeebean6" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=958191891]
+position = Vector2(205.56308, -13.418556)
+rotation = -0.1162107
+scale = Vector2(0.2992166, 0.42891365)
+skew = -0.07655001
+texture = ExtResource("21_4tw6f")
 
 [node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=1954000951]
 
