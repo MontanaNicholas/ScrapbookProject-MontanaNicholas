@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3cae53pn3jae"
-path="res://.godot/imported/coffee image.png-4adc94266efdbec360157e39816e7f3b.ctex"
+uid="uid://da13gio2mx40e"
+path="res://.godot/imported/strawberry-polaroid.png-63dc367b3bc77b63449e78b9538119ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/coffee image.png"
-dest_files=["res://.godot/imported/coffee image.png-4adc94266efdbec360157e39816e7f3b.ctex"]
+source_file="res://assets/strawberry-polaroid.png"
+dest_files=["res://.godot/imported/strawberry-polaroid.png-63dc367b3bc77b63449e78b9538119ca.ctex"]
 
 [params]
 

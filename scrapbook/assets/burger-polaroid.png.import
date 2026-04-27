@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r4pmi33j7mkq"
-path="res://.godot/imported/strawberry matcha image.png-19edd98e9e86c8c7261533ebdcc46b78.ctex"
+uid="uid://bsktreif82pou"
+path="res://.godot/imported/burger-polaroid.png-ba4b6e6640e1ee3b38315e55e45751bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/strawberry matcha image.png"
-dest_files=["res://.godot/imported/strawberry matcha image.png-19edd98e9e86c8c7261533ebdcc46b78.ctex"]
+source_file="res://assets/burger-polaroid.png"
+dest_files=["res://.godot/imported/burger-polaroid.png-ba4b6e6640e1ee3b38315e55e45751bf.ctex"]
 
 [params]
 

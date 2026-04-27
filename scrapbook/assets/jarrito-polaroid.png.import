@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1hnv1l8a2v7q"
-path="res://.godot/imported/noodle image.png-b04b98a6e17a130d04a757ff7d06613f.ctex"
+uid="uid://cdfsrqmso0jwo"
+path="res://.godot/imported/jarrito-polaroid.png-8b5442c2f639e79504c049bda48602e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/noodle image.png"
-dest_files=["res://.godot/imported/noodle image.png-b04b98a6e17a130d04a757ff7d06613f.ctex"]
+source_file="res://assets/jarrito-polaroid.png"
+dest_files=["res://.godot/imported/jarrito-polaroid.png-8b5442c2f639e79504c049bda48602e2.ctex"]
 
 [params]
 

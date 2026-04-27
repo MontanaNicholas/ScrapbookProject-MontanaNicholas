@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kouupbq1el8a"
-path="res://.godot/imported/matcha image.png-0bbf2d26e01da1208aba910d8637da8b.ctex"
+uid="uid://ddhbyrt7lraqr"
+path="res://.godot/imported/mango-polaroid.png-2513a01a3cc98094ca57bf846cb7495c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/matcha image.png"
-dest_files=["res://.godot/imported/matcha image.png-0bbf2d26e01da1208aba910d8637da8b.ctex"]
+source_file="res://assets/mango-polaroid.png"
+dest_files=["res://.godot/imported/mango-polaroid.png-2513a01a3cc98094ca57bf846cb7495c.ctex"]
 
 [params]
 

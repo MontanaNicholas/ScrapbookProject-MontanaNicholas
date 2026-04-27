@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwx8t0abq7mrf"
-path="res://.godot/imported/mango matcha image.png-9a3f00583924b244c6235eafaeab3a4e.ctex"
+uid="uid://bc6sl6pyrwvn2"
+path="res://.godot/imported/jameson ticket.png-e3f212b558f90e31e85db4ec3aaa38a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mango matcha image.png"
-dest_files=["res://.godot/imported/mango matcha image.png-9a3f00583924b244c6235eafaeab3a4e.ctex"]
+source_file="res://assets/jameson ticket.png"
+dest_files=["res://.godot/imported/jameson ticket.png-e3f212b558f90e31e85db4ec3aaa38a4.ctex"]
 
 [params]
 

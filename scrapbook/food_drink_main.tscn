@@ -2,27 +2,25 @@
 
 [ext_resource type="Script" uid="uid://bi823g8dignyh" path="res://food_drink_main.gd" id="1_1frad"]
 [ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="2_8fmh5"]
+[ext_resource type="Texture2D" uid="uid://cdfsrqmso0jwo" path="res://assets/jarrito-polaroid.png" id="3_4tw6f"]
 [ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_shnv8"]
 [ext_resource type="Texture2D" uid="uid://dxpni4js4tjn3" path="res://assets/pickles.png" id="3_v6n7u"]
 [ext_resource type="Texture2D" uid="uid://brm32v7sr72vd" path="res://assets/checkered.jpg" id="3_wi5hw"]
-[ext_resource type="Texture2D" uid="uid://xovju685n3c5" path="res://assets/paper2.png" id="4_4tw6f"]
 [ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="4_aonl4"]
 [ext_resource type="Texture2D" uid="uid://cc1gjd2h2ouet" path="res://assets/hotsauce.png" id="5_afq51"]
-[ext_resource type="Texture2D" uid="uid://b6lqk7nrqjng2" path="res://assets/mango_matcha.png" id="5_aonl4"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_gyhnf"]
-[ext_resource type="Texture2D" uid="uid://lacfssopn6av" path="res://assets/matcha_cup.png" id="5_h3uj0"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_166ns"]
-[ext_resource type="Texture2D" uid="uid://qin1qp6bbtwp" path="res://assets/taco.png" id="6_ywey8"]
+[ext_resource type="Texture2D" uid="uid://ddhbyrt7lraqr" path="res://assets/mango-polaroid.png" id="6_v6n7u"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_u62oi"]
 [ext_resource type="Texture2D" uid="uid://bc2kmhpxjuwym" path="res://assets/play.png" id="8_wi5hw"]
-[ext_resource type="Texture2D" uid="uid://c1034a358mreu" path="res://assets/strawberry_matcha.png" id="13_0y1eo"]
+[ext_resource type="Texture2D" uid="uid://da13gio2mx40e" path="res://assets/strawberry-polaroid.png" id="12_4tw6f"]
+[ext_resource type="Texture2D" uid="uid://gk7aotucpar8" path="res://assets/tacos-polaroid.png" id="14_afq51"]
 [ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="14_u62oi"]
+[ext_resource type="Texture2D" uid="uid://bsktreif82pou" path="res://assets/burger-polaroid.png" id="16_ywey8"]
 [ext_resource type="FontFile" uid="uid://btoe2brustlym" path="res://fonts/New Pizza.otf" id="19_lhxka"]
-[ext_resource type="Texture2D" uid="uid://bvvlspsvbgnmq" path="res://assets/paper1.png" id="20_uaw56"]
 [ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="21_5516u"]
 [ext_resource type="Texture2D" uid="uid://b2i2h8s7t0w3l" path="res://assets/beer.png" id="21_afq51"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="21_v6n7u"]
-[ext_resource type="Texture2D" uid="uid://bxb3fnngfdmn0" path="res://assets/guinneass.png" id="22_ywey8"]
 
 [node name="food_drink_menu" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_1frad")
@@ -39,32 +37,11 @@ position = Vector2(531, 340.00003)
 scale = Vector2(1.474, 1.565)
 texture = ExtResource("2_8fmh5")
 
-[node name="picklejar" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=988695245]
-position = Vector2(54.952496, 65.17572)
-rotation = 0.0023484528
-scale = Vector2(0.039318096, 0.037356865)
-texture = ExtResource("3_v6n7u")
-
-[node name="Paper2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1936764911]
-position = Vector2(111.26187, -84.98401)
-scale = Vector2(0.4040027, 0.27108616)
-texture = ExtResource("4_4tw6f")
-
-[node name="hotsauce" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1576421206]
-position = Vector2(85.48167, -15.974459)
-rotation = 2.221655
-scale = Vector2(0.068854704, 0.05061982)
-texture = ExtResource("5_afq51")
-
-[node name="taco2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1466809465]
-position = Vector2(208.95522, 52.396137)
-scale = Vector2(0.08276261, 0.08294799)
-texture = ExtResource("6_ywey8")
-
-[node name="taco" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=409926527]
-position = Vector2(161.46545, 71.565475)
-scale = Vector2(0.09288534, 0.07770736)
-texture = ExtResource("6_ywey8")
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1927502721]
+position = Vector2(69.19944, -76.67733)
+rotation = 0.012036383
+scale = Vector2(0.11936438, 0.112038165)
+texture = ExtResource("3_4tw6f")
 
 [node name="blanket" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1385097985]
 position = Vector2(-162.14381, -49.840286)
@@ -72,23 +49,18 @@ scale = Vector2(0.33967453, 0.29220152)
 texture = ExtResource("3_wi5hw")
 
 [node name="worm" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=861809853]
-offset_left = -206.24153
-offset_top = -139.29715
-offset_right = -168.24153
-offset_bottom = -80.29715
+offset_left = 210.99054
+offset_top = -138.65817
+offset_right = 248.99054
+offset_bottom = -79.65817
 rotation = 0.5714975
 icon = ExtResource("4_aonl4")
 flat = true
 
-[node name="MatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=594900663]
-position = Vector2(-229.98642, 71.56546)
-scale = Vector2(0.040788762, 0.045042995)
-texture = ExtResource("5_h3uj0")
-
 [node name="MangoMatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1167717851]
-position = Vector2(-183.17487, -54.952087)
-scale = Vector2(0.28902146, 0.28450158)
-texture = ExtResource("5_aonl4")
+position = Vector2(80.73269, 50.47924)
+scale = Vector2(0.13409108, 0.12027755)
+texture = ExtResource("6_v6n7u")
 
 [node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=254491764]
 anchors_preset = -1
@@ -135,24 +107,16 @@ offset_bottom = 117.15013
 icon = ExtResource("14_u62oi")
 flat = true
 
-[node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = -211.66893
-offset_top = 1.9169121
-offset_right = -155.66893
-offset_bottom = 30.916912
-icon = ExtResource("8_wi5hw")
-flat = true
-
 [node name="StrawberryMatchaImage" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=928885794]
-position = Vector2(-247.11658, -59.424927)
-scale = Vector2(0.38104928, 0.37380195)
-texture = ExtResource("13_0y1eo")
+position = Vector2(186.56717, -29.392994)
+scale = Vector2(0.14621493, 0.1275854)
+texture = ExtResource("12_4tw6f")
 
 [node name="VeggieTacos" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1733569281]
-offset_left = 166.21439
-offset_top = -44.728455
-offset_right = 260.2144
-offset_bottom = 8.271545
+offset_left = -271.3704
+offset_top = 41.533516
+offset_right = -177.37039
+offset_bottom = 94.533516
 rotation = 0.012411654
 theme_override_colors/font_color = Color(0.8237491, 0.114152335, 3.85046e-07, 1)
 theme_override_fonts/font = ExtResource("19_lhxka")
@@ -161,31 +125,61 @@ text = "VEGGIE
 TACOS"
 horizontal_alignment = 1
 
-[node name="Paper1" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1420621406]
-position = Vector2(-91.58751, 35.143753)
-scale = Vector2(0.27549475, 0.29912925)
-texture = ExtResource("20_uaw56")
+[node name="tacos" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1240720442]
+position = Vector2(-104.47761, 44.72841)
+scale = Vector2(0.14509173, 0.12798807)
+texture = ExtResource("14_afq51")
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=178700924]
-offset_left = 80.7327
-offset_top = -72.84347
-offset_right = 171.7327
-offset_bottom = -49.843468
+[node name="hotsauce" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1576421206]
+position = Vector2(-78.69742, -35.143784)
+rotation = 3.4699898
+scale = Vector2(0.05158794, 0.036282226)
+texture = ExtResource("5_afq51")
+
+[node name="burger" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=347741813]
+position = Vector2(-218.45319, -58.785965)
+scale = Vector2(0.14465319, 0.1321874)
+texture = ExtResource("16_ywey8")
+
+[node name="picklejar" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=988695245]
+position = Vector2(-151.289, -92.651764)
+rotation = 0.0023484528
+scale = Vector2(0.025294622, 0.02456596)
+texture = ExtResource("3_v6n7u")
+
+[node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
+offset_left = -130.25781
+offset_top = 81.789116
+offset_right = -74.25781
+offset_bottom = 110.789116
+icon = ExtResource("8_wi5hw")
+flat = true
+
+[node name="beer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1023697876]
+position = Vector2(31.207617, -101.59746)
+rotation = -0.03763324
+scale = Vector2(0.040427297, 0.03422137)
+texture = ExtResource("21_afq51")
+
+[node name="Franks" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=178700924]
+offset_left = -276.11942
+offset_top = -3.1949005
+offset_right = -116.119415
+offset_bottom = 19.8051
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("21_5516u")
 theme_override_font_sizes/font_size = 15
-text = "Franks Red Hot"
+text = "Franks Red Hot Sauce"
 
-[node name="beer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1023697876]
-position = Vector2(209.63365, -86.90097)
-rotation = 0.2009914
-scale = Vector2(0.069793314, 0.061259516)
-texture = ExtResource("21_afq51")
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1240720442]
-position = Vector2(-68.0806, -40.428276)
-scale = Vector2(0.03713017, 0.038399998)
-texture = ExtResource("22_ywey8")
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1738470348]
+offset_left = 121.438255
+offset_top = 21.72522
+offset_right = 256.43826
+offset_bottom = 44.72522
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("21_5516u")
+theme_override_font_sizes/font_size = 16
+text = "Strawberry oat matcha"
 
 [node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=1954000951]
 
