@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_6wole"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_ti6g8"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="8_30l5a"]
+[ext_resource type="Texture2D" uid="uid://bc6sl6pyrwvn2" path="res://assets/jameson ticket.png" id="8_bcgyq"]
+[ext_resource type="Texture2D" uid="uid://cd7e3vnhxpf41" path="res://assets/guinness-polaroid.png" id="9_4ii04"]
 [ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="9_p0mns"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_30l5a"]
@@ -73,12 +75,22 @@ icon = ExtResource("9_p0mns")
 flat = true
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1522246376]
-offset_left = 102.44233
-offset_top = 77.955246
-offset_right = 158.44232
-offset_bottom = 106.955246
+offset_left = 407.73404
+offset_top = 3.19487
+offset_right = 463.73404
+offset_bottom = 32.19487
 icon = SubResource("CompressedTexture2D_30l5a")
 flat = true
+
+[node name="jameson" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=540122830]
+position = Vector2(-134.32834, -43.450497)
+scale = Vector2(0.065863855, 0.057268366)
+texture = ExtResource("8_bcgyq")
+
+[node name="guiness" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1104924797]
+position = Vector2(177.06921, 27.476013)
+scale = Vector2(0.16044776, 0.15806842)
+texture = ExtResource("9_4ii04")
 
 [node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=1421201505]
 stream = ExtResource("8_30l5a")

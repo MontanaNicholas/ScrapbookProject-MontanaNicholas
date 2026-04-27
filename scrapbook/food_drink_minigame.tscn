@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cdi3ftajjbp7" path="res://assets/ice.png" id="8_67yvv"]
 [ext_resource type="Texture2D" uid="uid://c75105ylu7plx" path="res://assets/matcha-mango.png" id="8_eu00r"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_5vcta"]
+[ext_resource type="Texture2D" uid="uid://bv1545mgphh1j" path="res://assets/milk-tea.png" id="9_eu00r"]
 [ext_resource type="Texture2D" uid="uid://dl5uhpylddj2w" path="res://assets/coconut_layer.png" id="9_hhqru"]
 [ext_resource type="Texture2D" uid="uid://bl8djbn4jrln2" path="res://assets/pause_drinks.png" id="10_baooa"]
 [ext_resource type="Texture2D" uid="uid://jfsrcbmjf3m5" path="res://assets/correct_box.png" id="11_hhqru"]
@@ -79,17 +80,21 @@ position = Vector2(504, 317)
 texture = ExtResource("1_84kbo")
 
 [node name="FinishedStrawberryMatcha" type="Sprite2D" parent="GlassArea" unique_id=436657475]
-visible = false
 position = Vector2(508.77994, 350.10217)
 scale = Vector2(0.6911002, 0.73448914)
 texture = ExtResource("7_nlwcc")
 
 [node name="FinishedMangoMatcha" type="Sprite2D" parent="GlassArea" unique_id=2077557662]
-visible = false
 z_index = 10
-position = Vector2(502.7861, 346.99405)
-scale = Vector2(0.74106926, 0.7900297)
+position = Vector2(502.78613, 341.49405)
+scale = Vector2(0.7410693, 0.76252973)
 texture = ExtResource("8_eu00r")
+
+[node name="FinishedMilkTea" type="Sprite2D" parent="GlassArea" unique_id=1477380321]
+z_index = 10
+position = Vector2(509.58163, 358.49997)
+scale = Vector2(0.602092, 0.67749995)
+texture = ExtResource("9_eu00r")
 
 [node name="LayersContainer" type="Node2D" parent="GlassArea" unique_id=596890382]
 position = Vector2(501, 395)
@@ -97,7 +102,7 @@ position = Vector2(501, 395)
 [node name="DropZone" type="Area2D" parent="GlassArea" unique_id=286266219 groups=["drop_zone"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlassArea/DropZone" unique_id=1918326507]
-position = Vector2(500, 342)
+position = Vector2(501, 343)
 shape = SubResource("RectangleShape2D_oqkd4")
 
 [node name="DropPoint" type="Marker2D" parent="GlassArea/DropZone" unique_id=1292076840]

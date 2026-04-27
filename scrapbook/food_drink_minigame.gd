@@ -17,11 +17,13 @@ extends Node2D
 @onready var step5_label: Label = $UILayer/UI/Recipecard/TitleLabel/VBoxContainer/Step5Label
 @onready var finished_strawberry_matcha: Sprite2D = $GlassArea/FinishedStrawberryMatcha
 @onready var finished_mango_matcha: Sprite2D = $GlassArea/FinishedMangoMatcha
+@onready var finished_milk_tea: Sprite2D = $GlassArea/FinishedMilkTea
 @onready var pause_menu: Control = $UILayer/UI/PauseMenu
 @onready var resume_button: Button = $UILayer/UI/PauseMenu/ResumeButton
 @onready var quit_button: Button = $UILayer/UI/PauseMenu/QuitButton
 @export var strawberry_matcha_texture: Texture2D
 @export var mango_matcha_texture: Texture2D
+@export var milk_tea_texture: Texture2D
 
 @onready var progress_labels := [
 	$UILayer/UI/progress/slotLabel1,
@@ -179,6 +181,7 @@ func _show_final_drink() -> void:
 
 	finished_strawberry_matcha.visible = false
 	finished_mango_matcha.visible = false
+	finished_milk_tea.visible = false
 
 	if recipe_name == "Iced Strawberry Oat Matcha":
 		finished_strawberry_matcha.visible = true
@@ -193,6 +196,13 @@ func _show_final_drink() -> void:
 
 		var tween = create_tween()
 		tween.tween_property(finished_mango_matcha,"scale",Vector2(1,1),0.25)
+		
+	elif recipe_name == "Classic Milk Tea":
+		finished_milk_tea.visible = true
+		finished_milk_tea.scale = Vector2(0.2,0.2)
+
+		var tween = create_tween()
+		tween.tween_property(finished_milk_tea,"scale",Vector2(1,1),0.25)
 	
 func _update_recipe_card() -> void:
 	title_label.text = recipe_name
@@ -224,6 +234,7 @@ func reset_drink() -> void:
 
 	finished_strawberry_matcha.visible = false
 	finished_mango_matcha.visible = false
+	finished_milk_tea.visible = false
 	
 	if is_instance_valid(result_label):
 		result_label.text = "Make: " + recipe_name
