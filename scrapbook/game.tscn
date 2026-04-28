@@ -213,7 +213,6 @@ stream = ExtResource("13_lc2xo")
 volume_db = -6.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_yellow_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]

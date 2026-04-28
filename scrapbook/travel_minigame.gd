@@ -37,3 +37,7 @@ func _on_quit_2_pressed() -> void:
 func _on_replay_button_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

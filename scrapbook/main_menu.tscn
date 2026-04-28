@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="6_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://dp1rjtdrqpxtx" path="res://assets/placeholder_button_banner.png" id="8_0o4t1"]
 [ext_resource type="AudioStream" uid="uid://dy16c7bd68j21" path="res://audio/bookworm.mp3" id="8_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://dxpni4js4tjn3" path="res://assets/pickles.png" id="8_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://be7cuv1ni0rig" path="res://assets/beer-white.png" id="9_iotk1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qe12f"]
 load_path = "res://.godot/imported/book worm.png-2c60a064c1575e186c4241831d3572c7.ctex"
@@ -97,9 +99,21 @@ horizontal_alignment = 1
 
 [node name="Socks" type="Sprite2D" parent="BookCover" unique_id=56311288]
 material = SubResource("ShaderMaterial_dy7ct")
-position = Vector2(-91.616394, 82.13989)
+position = Vector2(-118.16432, -108.13354)
 scale = Vector2(0.22940056, 0.22687827)
 texture = ExtResource("4_jix8l")
+
+[node name="pickles" type="Sprite2D" parent="BookCover" unique_id=1747967595]
+position = Vector2(104.109566, -22.354538)
+rotation = 0.38169286
+scale = Vector2(0.03220853, 0.027869238)
+texture = ExtResource("8_j5v2v")
+
+[node name="beer" type="Sprite2D" parent="BookCover" unique_id=1657508555]
+position = Vector2(-92.657486, 73.302055)
+rotation = -0.37978312
+scale = Vector2(0.05364639, 0.052307624)
+texture = ExtResource("9_iotk1")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=446156429]
 

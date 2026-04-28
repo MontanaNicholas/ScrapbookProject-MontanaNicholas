@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://cx87f75yqfbgu"]
+
+[ext_resource type="Script" uid="uid://dnjcv62yuaoq4" path="res://travel_worm.gd" id="1_pod8l"]
+[ext_resource type="Texture2D" uid="uid://7rpgl5q5d88r" path="res://assets/book.png" id="2_31ptv"]
+[ext_resource type="Texture2D" uid="uid://blx0a2ein24c7" path="res://assets/exit button.png" id="3_jtva7"]
+[ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="4_nadqt"]
+[ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="5_5anrj"]
+[ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_e5xea"]
+[ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="7_0n0k1"]
+[ext_resource type="Texture2D" uid="uid://dyu7ayxwit36g" path="res://assets/storehouse.png" id="8_yvswm"]
+[ext_resource type="Texture2D" uid="uid://bc6sl6pyrwvn2" path="res://assets/jameson ticket.png" id="9_pt6lf"]
+[ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="10_pqip0"]
+[ext_resource type="Texture2D" uid="uid://cd7e3vnhxpf41" path="res://assets/guinness-polaroid.png" id="11_kuur2"]
+[ext_resource type="Texture2D" uid="uid://stpqfmu37jxj" path="res://assets/Dingle.png" id="12_pbx8d"]
+[ext_resource type="Texture2D" uid="uid://db7mb681lecax" path="res://assets/clover.png" id="13_o1wdi"]
+[ext_resource type="Texture2D" uid="uid://tc1lecm0x7e0" path="res://assets/passport.png" id="14_jyud6"]
+[ext_resource type="Texture2D" uid="uid://b2i2h8s7t0w3l" path="res://assets/beer.png" id="15_cprag"]
+[ext_resource type="Texture2D" uid="uid://cj8il2q32t3kl" path="res://assets/worm pop up.png" id="16_ycru1"]
+[ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="17_14jya"]
+[ext_resource type="FontFile" uid="uid://b3hfdclt1taat" path="res://fonts/Olive Palm.otf" id="18_vmfj7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e6f1s"]
+load_path = "res://.godot/imported/play.png-659bd52d7667961eaefb6f06b279c2de.ctex"
+
+[node name="TravelWorm" type="Node2D" unique_id=517999002]
+script = ExtResource("1_pod8l")
+
+[node name="Book" type="Sprite2D" parent="." unique_id=1605192645]
+position = Vector2(531, 340.00003)
+scale = Vector2(1.474, 1.565)
+texture = ExtResource("2_31ptv")
+
+[node name="exit" type="Button" parent="Book" unique_id=657302467]
+anchors_preset = -1
+anchor_left = 0.483
+anchor_top = 0.458
+anchor_right = 0.483
+anchor_bottom = 0.458
+offset_left = -98.9011
+offset_top = -290.04
+offset_right = -72.9011
+offset_bottom = -264.04
+icon = ExtResource("3_jtva7")
+flat = true
+
+[node name="blue" type="Button" parent="Book" unique_id=805257324]
+offset_left = 267.222
+offset_top = -99.3694
+offset_right = 317.222
+offset_bottom = -64.3694
+icon = ExtResource("4_nadqt")
+flat = true
+
+[node name="red" type="Button" parent="Book" unique_id=1039804493]
+offset_left = 267.22195
+offset_top = -65.26581
+offset_right = 311.22195
+offset_bottom = -30.265808
+icon = ExtResource("5_5anrj")
+flat = true
+
+[node name="yellow" type="Button" parent="Book" unique_id=2002362889]
+offset_left = 267.222
+offset_top = -29.798
+offset_right = 314.222
+offset_bottom = 5.20197
+icon = ExtResource("6_e5xea")
+flat = true
+
+[node name="back" type="Button" parent="Book" unique_id=1047761530]
+offset_left = -291.0448
+offset_top = 81.78912
+offset_right = -255.0448
+offset_bottom = 117.78912
+icon = ExtResource("7_0n0k1")
+flat = true
+
+[node name="storehouse" type="Sprite2D" parent="Book" unique_id=1884439114]
+position = Vector2(79.376465, 26.837158)
+scale = Vector2(0.05904914, 0.06206071)
+texture = ExtResource("8_yvswm")
+
+[node name="Play" type="Button" parent="Book" unique_id=1093681674]
+offset_left = 170.28494
+offset_top = 83.70605
+offset_right = 226.28494
+offset_bottom = 112.70605
+icon = SubResource("CompressedTexture2D_e6f1s")
+flat = true
+
+[node name="jameson" type="Sprite2D" parent="Book" unique_id=500592703]
+position = Vector2(-187.24557, -44.72845)
+scale = Vector2(0.065863855, 0.057268366)
+texture = ExtResource("9_pt6lf")
+
+[node name="worm" type="Button" parent="Book" unique_id=982212925]
+offset_left = -74.62686
+offset_top = -42.811516
+offset_right = -36.62686
+offset_bottom = 16.188484
+rotation = 0.36541682
+icon = ExtResource("10_pqip0")
+flat = true
+
+[node name="guiness" type="Sprite2D" parent="Book" unique_id=626562471]
+position = Vector2(189.95929, 21.725218)
+scale = Vector2(0.12333222, 0.11393128)
+texture = ExtResource("11_kuur2")
+
+[node name="dingle" type="Sprite2D" parent="Book" unique_id=1434928569]
+position = Vector2(95.65809, -90.09587)
+scale = Vector2(0.23109019, 0.24204858)
+texture = ExtResource("12_pbx8d")
+
+[node name="clover2" type="Sprite2D" parent="Book" unique_id=661008059]
+position = Vector2(136.36362, 85.623)
+rotation = -0.49829423
+scale = Vector2(0.040479522, 0.04163838)
+texture = ExtResource("13_o1wdi")
+
+[node name="clover3" type="Sprite2D" parent="Book" unique_id=923997503]
+position = Vector2(-267.9783, -32.587887)
+rotation = -0.45269847
+scale = Vector2(0.04149486, 0.044304367)
+skew = -0.025139332
+texture = ExtResource("13_o1wdi")
+
+[node name="clover" type="Sprite2D" parent="Book" unique_id=792810443]
+position = Vector2(223.20218, -84.34504)
+rotation = 0.5494474
+scale = Vector2(0.040479522, 0.041638378)
+texture = ExtResource("13_o1wdi")
+
+[node name="clover4" type="Sprite2D" parent="Book" unique_id=233964717]
+position = Vector2(-81.12628, -85.201645)
+rotation = 0.5401345
+scale = Vector2(0.04771446, 0.043843802)
+skew = -0.13707185
+texture = ExtResource("13_o1wdi")
+
+[node name="clover5" type="Sprite2D" parent="Book" unique_id=436918464]
+position = Vector2(172.99863, -58.785988)
+rotation = -0.37790057
+scale = Vector2(0.023999017, 0.026676748)
+skew = -0.12578595
+texture = ExtResource("13_o1wdi")
+
+[node name="passport" type="Sprite2D" parent="Book" unique_id=1911453790]
+position = Vector2(-187.89124, 49.73633)
+rotation = -0.3283855
+scale = Vector2(0.12867743, 0.11911153)
+texture = ExtResource("14_jyud6")
+
+[node name="beer" type="Sprite2D" parent="Book" unique_id=1479997615]
+position = Vector2(-100.37427, 51.226074)
+rotation = 0.3274049
+scale = Vector2(0.118269265, 0.105242535)
+texture = ExtResource("15_cprag")
+
+[node name="clover6" type="Sprite2D" parent="Book" unique_id=707227799]
+position = Vector2(-234.05698, 97.76355)
+rotation = 0.3270015
+scale = Vector2(0.023207463, 0.026332034)
+skew = -0.025139332
+texture = ExtResource("13_o1wdi")
+
+[node name="clover8" type="Sprite2D" parent="Book" unique_id=1107798898]
+position = Vector2(237.44919, 77.3163)
+rotation = 2.481287
+scale = Vector2(0.029230978, -0.02803659)
+skew = 0.10308266
+texture = ExtResource("13_o1wdi")
+
+[node name="clover7" type="Sprite2D" parent="Book" unique_id=1429921366]
+position = Vector2(-79.37584, -50.479233)
+rotation = 0.3270015
+scale = Vector2(0.023207463, 0.026332034)
+skew = -0.025139332
+texture = ExtResource("13_o1wdi")
+
+[node name="WormPopUp" type="Sprite2D" parent="Book" unique_id=1159126579]
+position = Vector2(-17.639076, -23.003216)
+scale = Vector2(1.0883911, 1.0899078)
+texture = ExtResource("16_ycru1")
+
+[node name="UI" type="CanvasLayer" parent="Book" unique_id=58502597]
+
+[node name="SFX_UI2" type="AudioStreamPlayer" parent="Book" unique_id=1598592622]
+stream = ExtResource("17_14jya")
+volume_db = -6.0
+
+[node name="Button" type="Button" parent="Book" unique_id=847523336]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -627.4477
+offset_top = -244.96164
+offset_right = -493.4477
+offset_bottom = -193.96164
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18717575, 0.18717632, 0.18717596, 1)
+theme_override_fonts/font = ExtResource("18_vmfj7")
+theme_override_font_sizes/font_size = 33
+text = "okay?"
+
+[connection signal="pressed" from="Book/Button" to="." method="_on_button_pressed"]

@@ -35,4 +35,4 @@ func _on_play_pressed() -> void:
 
 func _on_worm_pressed() -> void:
 	Sound.play_worm()
-	get_tree().change_scene_to_file("res://food_drink_worm.tscn")
+	get_tree().change_scene_to_file("res://birthday_worm.tscn")

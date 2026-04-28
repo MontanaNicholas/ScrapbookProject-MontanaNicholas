@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cd7e3vnhxpf41" path="res://assets/guinness-polaroid.png" id="9_4ii04"]
 [ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="9_p0mns"]
 [ext_resource type="Texture2D" uid="uid://stpqfmu37jxj" path="res://assets/Dingle.png" id="10_b75bh"]
+[ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="10_crjfm"]
 [ext_resource type="Texture2D" uid="uid://db7mb681lecax" path="res://assets/clover.png" id="11_6wole"]
 [ext_resource type="Texture2D" uid="uid://b2i2h8s7t0w3l" path="res://assets/beer.png" id="12_ti6g8"]
 [ext_resource type="Texture2D" uid="uid://tc1lecm0x7e0" path="res://assets/passport.png" id="13_crjfm"]
@@ -97,6 +98,15 @@ position = Vector2(-187.24557, -44.72845)
 scale = Vector2(0.065863855, 0.057268366)
 texture = ExtResource("8_bcgyq")
 
+[node name="worm" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1998739055]
+offset_left = -74.62686
+offset_top = -42.811516
+offset_right = -36.62686
+offset_bottom = 16.188484
+rotation = 0.36541682
+icon = ExtResource("10_crjfm")
+flat = true
+
 [node name="guiness" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1104924797]
 position = Vector2(189.95929, 21.725218)
 scale = Vector2(0.12333222, 0.11393128)
@@ -127,9 +137,9 @@ scale = Vector2(0.040479522, 0.041638378)
 texture = ExtResource("11_6wole")
 
 [node name="clover4" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1442215118]
-position = Vector2(-84.833275, -88.25666)
-rotation = 0.5020354
-scale = Vector2(0.041654695, 0.045108035)
+position = Vector2(-81.12628, -85.201645)
+rotation = 0.5401345
+scale = Vector2(0.04771446, 0.043843802)
 skew = -0.13707185
 texture = ExtResource("11_6wole")
 
@@ -159,6 +169,13 @@ scale = Vector2(0.023207463, 0.026332034)
 skew = -0.025139332
 texture = ExtResource("11_6wole")
 
+[node name="clover8" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1464851603]
+position = Vector2(237.44919, 77.3163)
+rotation = 2.481287
+scale = Vector2(0.029230978, -0.02803659)
+skew = 0.10308266
+texture = ExtResource("11_6wole")
+
 [node name="clover7" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=853976227]
 position = Vector2(-79.37584, -50.479233)
 rotation = 0.3270015
@@ -166,19 +183,15 @@ scale = Vector2(0.023207463, 0.026332034)
 skew = -0.025139332
 texture = ExtResource("11_6wole")
 
-[node name="clover7" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book/clover7" unique_id=1464851603]
-position = Vector2(14676.344, 731.5784)
-rotation = -0.91002995
-scale = Vector2(-1.1737669, 1.137202)
-skew = -0.025139332
-texture = ExtResource("11_6wole")
-
 [node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=1421201505]
 stream = ExtResource("8_30l5a")
 volume_db = -6.0
+
+[node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=482889508]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/worm" to="." method="_on_worm_pressed"]
