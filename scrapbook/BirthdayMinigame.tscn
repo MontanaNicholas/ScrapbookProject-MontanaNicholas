@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="8_vkig8"]
 [ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="9_cjxjy"]
 [ext_resource type="AudioStream" uid="uid://c4g7tcbpgxhwy" path="res://audio/birthday.mp3" id="13_cvruv"]
+[ext_resource type="AudioStream" uid="uid://di5dqhkwwu2uk" path="res://audio/correct.mp3" id="14_cjxjy"]
 [ext_resource type="Texture2D" uid="uid://7r8bepf2kq1" path="res://assets/bdaybanner.png" id="14_paotj"]
 
 [node name="BirthdayMinigame" type="Node2D" unique_id=232311416]
@@ -85,7 +86,6 @@ text = "Miss: 0"
 [node name="EndScreenLayer" type="CanvasLayer" parent="UI" unique_id=811647684]
 process_mode = 3
 layer = 10
-visible = false
 
 [node name="EndScreen" type="Control" parent="UI/EndScreenLayer" unique_id=57143676]
 layout_mode = 3
@@ -235,6 +235,10 @@ volume_db = -6.0
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=466845692]
 stream = ExtResource("13_cvruv")
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="." unique_id=1292266172]
+stream = ExtResource("14_cjxjy")
+volume_db = -6.0
 
 [node name="banner1" type="Sprite2D" parent="." unique_id=2086863431]
 position = Vector2(347.00003, 171)

@@ -21,6 +21,7 @@ var time_left := 0.0
 @onready var sfx_miss: AudioStreamPlayer = $SFX_Miss
 @onready var sfx_ui: AudioStreamPlayer = $SFX_UI
 @onready var bg_music: AudioStreamPlayer = $BGMusic
+@onready var correct_sound: AudioStreamPlayer = $CorrectSound
 
 @export var candle_row_offset := Vector2(40, -10)
 @export var candle_spacing := 35.0
@@ -150,13 +151,15 @@ func _end_game():
 
 func _show_results() -> void:
 	game_over = true
-	get_tree().paused = true
-
+	correct_sound.play()
 	end_screen.visible = true
 	$UI/HUD.visible = false
 
 	score_result_label.text = "Candles blown out: %d" % score
 	miss_result_label.text = "Missed candles: %d" % misses
+
+	await get_tree().process_frame   # let UI update first
+	get_tree().paused = true
 	
 func _on_pause_pressed() -> void:
 	print("PAUSE CLICKED")

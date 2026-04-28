@@ -112,6 +112,7 @@ func add_layer(name: String, texture: Texture2D) -> void:
 	
 func _show_end_screen() -> void:
 	game_locked = true
+	correct_sound.play()
 	
 	$UILayer/UI/EndScreenLayer.visible = true  
 	end_screen.visible = true

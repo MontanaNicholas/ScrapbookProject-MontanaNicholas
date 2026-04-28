@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c1byk80fix2qk" path="res://assets/pause_box.png" id="14_dew2l"]
 [ext_resource type="FontFile" uid="uid://c1pgrvu12a5y3" path="res://fonts/DK Crayon Crumble.ttf" id="15_2dee0"]
 [ext_resource type="Texture2D" uid="uid://vapse33jb4d0" path="res://assets/banner.png" id="15_dew2l"]
+[ext_resource type="AudioStream" uid="uid://bgetpuh085dtt" path="res://audio/drinks-music.mp3" id="17_2dee0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxb15"]
 size = Vector2(452, 229)
@@ -405,10 +406,16 @@ theme_override_font_sizes/font_size = 46
 text = "Quit"
 flat = true
 
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=50682564]
+stream = ExtResource("17_2dee0")
+volume_db = -18.0
+autoplay = true
+parameters/looping = true
+
 [connection signal="area_entered" from="SuitcaseArea/DropZone" to="SuitcaseArea/DropZone" method="_on_area_entered"]
 [connection signal="pressed" from="UILayer/UI/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/PauseMenu/ResumeContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/PauseMenu/Quit2Container/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/WinScreen/ReplayContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
-[connection signal="pressed" from="UILayer/UI/WinScreen/QuitContainer/QuitButton2" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="UILayer/UI/WinScreen/QuitContainer/QuitButton2" to="." method="_on_quit_button_2_pressed"]
+[connection signal="pressed" from="UILayer/UI/WinScreen/QuitContainer/QuitButton2" to="." method="_on_quit_button_pressed"]

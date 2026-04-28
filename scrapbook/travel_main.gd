@@ -5,25 +5,30 @@ extends Node2D
 
 func _on_exit_pressed() -> void:
 	Sound.play_ui()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func _on_play_pressed() -> void:
 	Sound.play_ui()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://travel_minigame.tscn")
 
 func _on_blue_pressed() -> void:
 	Sound.play_ui()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://game.tscn")
 
 func _on_red_pressed() -> void:
 	Sound.play_ui()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://food_drink_main.tscn")
 
 func _on_back_pressed() -> void:
 	Sound.play_ui()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://food_drink_main.tscn")
-
 
 func _on_worm_pressed() -> void:
 	Sound.play_worm()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://travel_worm.tscn")

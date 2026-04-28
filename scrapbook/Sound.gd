@@ -12,7 +12,9 @@ func _ready():
 
 
 func play_ui():
+	ui_player.stop()
 	ui_player.play()
 
 func play_worm():
+	worm_player.stop()
 	worm_player.play()

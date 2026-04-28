@@ -23,13 +23,16 @@ func _start_worm_wiggle() -> void:
 	tween.tween_property(worm, "position:y", base_y, 0.6)
 
 func _on_play_pressed() -> void:
-	sfx_ui.play()
+	Sound.play_ui()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://game.tscn")
 
 func _on_help_pressed() -> void:
 	Sound.play_ui()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://help_pop_up_menu.tscn")
 
 func _on_worm_pressed() -> void:
 	Sound.play_worm()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://main_menu_worm.tscn")
