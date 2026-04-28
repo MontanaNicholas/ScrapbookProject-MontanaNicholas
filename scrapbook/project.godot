@@ -31,3 +31,8 @@ Sound="*uid://dmpfuy54ucvwr"
 window/size/viewport_width=1000
 window/size/viewport_height=650
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(1, 0.66817564, 0.85906994, 1)
