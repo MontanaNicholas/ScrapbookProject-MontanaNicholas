@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6lqk7nrqjng2"
-path="res://.godot/imported/mango_matcha.png-51c3784c902242945735344ddadcca42.ctex"
+uid="uid://dyu7ayxwit36g"
+path="res://.godot/imported/storehouse.png-a2894ced40b4ca7a37c5d1c7755bce69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mango_matcha.png"
-dest_files=["res://.godot/imported/mango_matcha.png-51c3784c902242945735344ddadcca42.ctex"]
+source_file="res://assets/storehouse.png"
+dest_files=["res://.godot/imported/storehouse.png-a2894ced40b4ca7a37c5d1c7755bce69.ctex"]
 
 [params]
 

@@ -157,14 +157,6 @@ position = Vector2(-252.37447, 44.72841)
 scale = Vector2(0.044578955, 0.04370962)
 texture = ExtResource("17_v6n7u")
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1595536283]
-offset_left = -292.4016
-offset_top = 81.15013
-offset_right = -256.4016
-offset_bottom = 117.15013
-icon = ExtResource("14_u62oi")
-flat = true
-
 [node name="receipt" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2044740077]
 position = Vector2(53.59566, 53.67409)
 scale = Vector2(0.25407162, 0.33986092)
@@ -235,6 +227,14 @@ scale = Vector2(0.2992166, 0.42891365)
 skew = -0.07655001
 texture = ExtResource("21_4tw6f")
 
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1595536283]
+offset_left = -292.4016
+offset_top = 81.15013
+offset_right = -256.4016
+offset_bottom = 117.15013
+icon = ExtResource("14_u62oi")
+flat = true
+
 [node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=1954000951]
 
 [node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=225433101]
@@ -245,5 +245,5 @@ volume_db = -6.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_yellow_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/Button" to="." method="_on_button_pressed"]

@@ -8,12 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://isi7ansh2iek" path="res://assets/camera.png" id="4_mfdv2"]
 [ext_resource type="Texture2D" uid="uid://4h2bk2xa6wyb" path="res://assets/blue section.png" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ch3m8ncdd43mb" path="res://assets/yellow section.png" id="6_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://dap1gimgtupb" path="res://assets/me2-polaroid.png" id="7_e8heu"]
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_vef74"]
 [ext_resource type="Texture2D" uid="uid://cy7soy6hq52us" path="res://assets/bar-receipt.png" id="9_215e1"]
 [ext_resource type="FontFile" uid="uid://ctdnq7lw3r6s4" path="res://fonts/Spicy Sale.otf" id="9_hve3p"]
-[ext_resource type="Texture2D" uid="uid://3gdodxtt0y16" path="res://assets/me - polaroid.png" id="10_7sc4i"]
+[ext_resource type="Texture2D" uid="uid://be71ne0d3klp2" path="res://assets/prosecco-polaroid.png" id="10_rvswv"]
 [ext_resource type="FontFile" uid="uid://btoe2brustlym" path="res://fonts/New Pizza.otf" id="13_80cx4"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="13_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://be7cuv1ni0rig" path="res://assets/beer-white.png" id="15_boyg6"]
+[ext_resource type="Texture2D" uid="uid://bqjc81uu5y30n" path="res://assets/book worm.png" id="16_boyg6"]
+[ext_resource type="Texture2D" uid="uid://dh8bgjgsfnn1" path="res://assets/guinneass-white.png" id="16_e36ub"]
+[ext_resource type="Texture2D" uid="uid://w4qypabx7uoj" path="res://assets/confetti.png" id="17_rvswv"]
 
 [node name="Game" type="Node2D" unique_id=1560944956]
 script = ExtResource("1_fc0e3")
@@ -29,16 +34,6 @@ layout_mode = 2
 position = Vector2(531, 340.00003)
 scale = Vector2(1.474, 1.565)
 texture = ExtResource("1_80nbo")
-
-[node name="calender" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=439643744]
-position = Vector2(55.630936, 24.281128)
-scale = Vector2(0.7968118, 0.72700506)
-texture = ExtResource("4_215e1")
-
-[node name="PartySocks" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1302695515]
-position = Vector2(-94.97965, 40.255547)
-scale = Vector2(0.6098804, 0.541356)
-texture = ExtResource("3_hve3p")
 
 [node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=254491764]
 anchors_preset = -1
@@ -77,29 +72,24 @@ offset_bottom = 5.20197
 icon = ExtResource("6_j5wjh")
 flat = true
 
-[node name="receipt" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=465672560]
-position = Vector2(74.62686, -61.34187)
-scale = Vector2(0.5051788, 0.5448405)
-texture = ExtResource("9_215e1")
-
 [node name="me" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1919313133]
-position = Vector2(177.74762, 30.670906)
+position = Vector2(106.51292, 15.974426)
 rotation = 0.009125174
-scale = Vector2(0.16151883, 0.15135399)
-texture = ExtResource("10_7sc4i")
+scale = Vector2(0.20032018, 0.17499249)
+texture = ExtResource("7_e8heu")
 
 [node name="Camera" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=910727200]
-position = Vector2(181.81819, -91.373795)
-rotation = 0.06418373
-scale = Vector2(0.42681512, 0.38084462)
+position = Vector2(193.35141, -83.70609)
+rotation = 0.52041787
+scale = Vector2(0.45170015, 0.44016126)
 texture = ExtResource("4_mfdv2")
 
 [node name="play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=255959262]
-offset_left = 139.0773
-offset_top = -94.57296
-offset_right = 189.07732
-offset_bottom = -68.57296
-rotation = 0.021735176
+offset_left = 154.00272
+offset_top = -103.51439
+offset_right = 204.00275
+offset_bottom = -77.51439
+rotation = 0.49610293
 theme_override_colors/font_color = Color(0.98794764, 0.91893005, 1.540184e-06, 1)
 theme_override_colors/font_outline_color = Color(0.38928655, 0.38928664, 0.38928658, 1)
 theme_override_constants/outline_size = 2
@@ -108,16 +98,115 @@ theme_override_font_sizes/font_size = 15
 text = "PLAY "
 flat = true
 
+[node name="prosecco" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=929741468]
+position = Vector2(-174.35559, 29.682251)
+scale = Vector2(0.20503308, 0.1594985)
+texture = ExtResource("10_rvswv")
+
+[node name="receipt" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=465672560]
+position = Vector2(-111.940315, -60.70288)
+rotation = 0.32459807
+scale = Vector2(0.45637313, 0.51386166)
+texture = ExtResource("9_215e1")
+
+[node name="calender" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=439643744]
+position = Vector2(-229.30803, -86.90098)
+scale = Vector2(1.0090739, 1.0645492)
+texture = ExtResource("4_215e1")
+
+[node name="PartySocks" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1302695515]
+position = Vector2(215.86671, 28.75397)
+scale = Vector2(0.52859247, 0.46148384)
+texture = ExtResource("3_hve3p")
+
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Book" unique_id=1029885483]
-offset_left = 107.19183
-offset_top = 92.013824
-offset_right = 252.19183
-offset_bottom = 115.013824
-rotation = 0.013667174
-theme_override_colors/font_color = Color(0.4258134, 0, 0.19872573, 1)
+offset_left = 34.5997
+offset_top = 86.900925
+offset_right = 179.5997
+offset_bottom = 109.900925
+rotation = 0.0084429085
+theme_override_colors/font_color = Color(0.29041454, 0.3872125, 0.19860232, 1)
 theme_override_fonts/font = ExtResource("13_80cx4")
 theme_override_font_sizes/font_size = 18
 text = "21st  Birthday"
+
+[node name="beer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1654795725]
+position = Vector2(-239.48439, 60.70285)
+rotation = 0.32241324
+scale = Vector2(0.06673632, 0.058774326)
+texture = ExtResource("15_boyg6")
+
+[node name="worm" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1873647151]
+offset_left = -7.462673
+offset_top = -104.15334
+offset_right = 30.537327
+offset_bottom = -45.153343
+rotation = -0.8681159
+icon = ExtResource("16_boyg6")
+flat = true
+
+[node name="guinness" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2029788651]
+position = Vector2(58.344646, -84.34506)
+rotation = 0.45342076
+scale = Vector2(0.03860761, 0.035789307)
+texture = ExtResource("16_e36ub")
+
+[node name="confetti8" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=703866157]
+position = Vector2(-114.84736, 91.59422)
+rotation = -1.0126657
+scale = Vector2(0.07006564, 0.059902713)
+skew = 0.12034905
+texture = ExtResource("17_rvswv")
+
+[node name="confetti7" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=264926542]
+position = Vector2(232.70016, 91.37379)
+rotation = 2.2486796
+scale = Vector2(0.059019662, 0.056506958)
+skew = 0.16932237
+texture = ExtResource("17_rvswv")
+
+[node name="confetti" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=678542864]
+position = Vector2(-106.84717, 36.242188)
+rotation = -1.9714823
+scale = Vector2(0.08504727, 0.06718143)
+texture = ExtResource("17_rvswv")
+
+[node name="confetti2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=213588381]
+position = Vector2(-234.05699, -10.8626175)
+rotation = -4.313859
+scale = Vector2(0.086981185, 0.076787524)
+skew = 0.18031657
+texture = ExtResource("17_rvswv")
+
+[node name="confetti3" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=924721674]
+position = Vector2(175.71236, -9.584698)
+rotation = -2.9119153
+scale = Vector2(0.09389958, 0.0844269)
+skew = 0.09708667
+texture = ExtResource("17_rvswv")
+
+[node name="confetti5" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1608039479]
+position = Vector2(114.65403, -105.43133)
+rotation = 2.730684
+scale = Vector2(0.09274241, 0.073550545)
+skew = 0.38896453
+texture = ExtResource("17_rvswv")
+
+[node name="confetti4" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2056657053]
+position = Vector2(-68.52107, -92.65178)
+rotation = -2.9309967
+scale = Vector2(0.073444635, 0.06263952)
+skew = 0.16861844
+texture = ExtResource("17_rvswv")
+
+[node name="confetti6" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=598884008]
+position = Vector2(114.65403, -105.43133)
+rotation = 2.730684
+scale = Vector2(0.09274241, 0.073550545)
+skew = 0.38896453
+texture = ExtResource("17_rvswv")
+
+[node name="SFX_WORM" type="AudioStreamPlayer" parent="." unique_id=1049078431]
 
 [node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=768096409]
 stream = ExtResource("13_lc2xo")
@@ -128,3 +217,4 @@ volume_db = -6.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/yellow" to="." method="_on_yellow_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Book/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Book/worm" to="." method="_on_worm_pressed"]

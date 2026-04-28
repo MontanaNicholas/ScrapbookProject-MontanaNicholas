@@ -225,7 +225,7 @@ scale = Vector2(1.2440962, 1.113722)
 
 [node name="SFX_Miss" type="AudioStreamPlayer" parent="." unique_id=863484089]
 stream = ExtResource("7_rvamj")
-volume_db = -6.0
+volume_db = -15.123
 
 [node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=216757177]
 stream = ExtResource("8_vkig8")
@@ -236,19 +236,19 @@ volume_db = -6.0
 [node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=466845692]
 stream = ExtResource("13_cvruv")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2086863431]
+[node name="banner1" type="Sprite2D" parent="." unique_id=2086863431]
 position = Vector2(347.00003, 171)
 rotation = -0.2121387
 scale = Vector2(0.103889644, 0.13581555)
 texture = ExtResource("14_paotj")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=20406671]
+[node name="banner2" type="Sprite2D" parent="." unique_id=20406671]
 position = Vector2(796.0001, 189.99998)
 rotation = 0.45206687
 scale = Vector2(0.12235133, 0.15100111)
 texture = ExtResource("14_paotj")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=859451812]
+[node name="banner3" type="Sprite2D" parent="." unique_id=859451812]
 position = Vector2(565, 134)
 rotation = 0.087058395
 scale = Vector2(0.12115516, 0.1565629)

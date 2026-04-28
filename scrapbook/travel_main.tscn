@@ -8,8 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://cedayfo4n6k8e" path="res://assets/red section.png" id="7_ti6g8"]
 [ext_resource type="AudioStream" uid="uid://1imayruvif5" path="res://audio/ui_click.mp3" id="8_30l5a"]
 [ext_resource type="Texture2D" uid="uid://bc6sl6pyrwvn2" path="res://assets/jameson ticket.png" id="8_bcgyq"]
+[ext_resource type="Texture2D" uid="uid://dyu7ayxwit36g" path="res://assets/storehouse.png" id="8_ti6g8"]
 [ext_resource type="Texture2D" uid="uid://cd7e3vnhxpf41" path="res://assets/guinness-polaroid.png" id="9_4ii04"]
 [ext_resource type="Texture2D" uid="uid://c8yy44f546r55" path="res://assets/back.png" id="9_p0mns"]
+[ext_resource type="Texture2D" uid="uid://stpqfmu37jxj" path="res://assets/Dingle.png" id="10_b75bh"]
+[ext_resource type="Texture2D" uid="uid://db7mb681lecax" path="res://assets/clover.png" id="11_6wole"]
+[ext_resource type="Texture2D" uid="uid://b2i2h8s7t0w3l" path="res://assets/beer.png" id="12_ti6g8"]
+[ext_resource type="Texture2D" uid="uid://tc1lecm0x7e0" path="res://assets/passport.png" id="13_crjfm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_30l5a"]
 load_path = "res://.godot/imported/play.png-659bd52d7667961eaefb6f06b279c2de.ctex"
@@ -74,23 +79,99 @@ offset_bottom = 117.78912
 icon = ExtResource("9_p0mns")
 flat = true
 
+[node name="storehouse" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2056522520]
+position = Vector2(79.376465, 26.837158)
+scale = Vector2(0.05904914, 0.06206071)
+texture = ExtResource("8_ti6g8")
+
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/Book" unique_id=1522246376]
-offset_left = 407.73404
-offset_top = 3.19487
-offset_right = 463.73404
-offset_bottom = 32.19487
+offset_left = 170.28494
+offset_top = 83.70605
+offset_right = 226.28494
+offset_bottom = 112.70605
 icon = SubResource("CompressedTexture2D_30l5a")
 flat = true
 
 [node name="jameson" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=540122830]
-position = Vector2(-134.32834, -43.450497)
+position = Vector2(-187.24557, -44.72845)
 scale = Vector2(0.065863855, 0.057268366)
 texture = ExtResource("8_bcgyq")
 
 [node name="guiness" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1104924797]
-position = Vector2(177.06921, 27.476013)
-scale = Vector2(0.16044776, 0.15806842)
+position = Vector2(189.95929, 21.725218)
+scale = Vector2(0.12333222, 0.11393128)
 texture = ExtResource("9_4ii04")
+
+[node name="dingle" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=664083069]
+position = Vector2(95.65809, -90.09587)
+scale = Vector2(0.23109019, 0.24204858)
+texture = ExtResource("10_b75bh")
+
+[node name="clover2" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=317740891]
+position = Vector2(136.36362, 85.623)
+rotation = -0.49829423
+scale = Vector2(0.040479522, 0.04163838)
+texture = ExtResource("11_6wole")
+
+[node name="clover3" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1047227094]
+position = Vector2(-267.9783, -32.587887)
+rotation = -0.45269847
+scale = Vector2(0.04149486, 0.044304367)
+skew = -0.025139332
+texture = ExtResource("11_6wole")
+
+[node name="clover" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1656557586]
+position = Vector2(223.20218, -84.34504)
+rotation = 0.5494474
+scale = Vector2(0.040479522, 0.041638378)
+texture = ExtResource("11_6wole")
+
+[node name="clover4" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1442215118]
+position = Vector2(-84.833275, -88.25666)
+rotation = 0.5020354
+scale = Vector2(0.041654695, 0.045108035)
+skew = -0.13707185
+texture = ExtResource("11_6wole")
+
+[node name="clover5" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1630872562]
+position = Vector2(172.99863, -58.785988)
+rotation = -0.37790057
+scale = Vector2(0.023999017, 0.026676748)
+skew = -0.12578595
+texture = ExtResource("11_6wole")
+
+[node name="passport" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=1663341667]
+position = Vector2(-187.89124, 49.73633)
+rotation = -0.3283855
+scale = Vector2(0.12867743, 0.11911153)
+texture = ExtResource("13_crjfm")
+
+[node name="beer" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=2073297909]
+position = Vector2(-100.37427, 51.226074)
+rotation = 0.3274049
+scale = Vector2(0.118269265, 0.105242535)
+texture = ExtResource("12_ti6g8")
+
+[node name="clover6" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=409756990]
+position = Vector2(-234.05698, 97.76355)
+rotation = 0.3270015
+scale = Vector2(0.023207463, 0.026332034)
+skew = -0.025139332
+texture = ExtResource("11_6wole")
+
+[node name="clover7" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book" unique_id=853976227]
+position = Vector2(-79.37584, -50.479233)
+rotation = 0.3270015
+scale = Vector2(0.023207463, 0.026332034)
+skew = -0.025139332
+texture = ExtResource("11_6wole")
+
+[node name="clover7" type="Sprite2D" parent="MarginContainer/VBoxContainer/Book/clover7" unique_id=1464851603]
+position = Vector2(14676.344, 731.5784)
+rotation = -0.91002995
+scale = Vector2(-1.1737669, 1.137202)
+skew = -0.025139332
+texture = ExtResource("11_6wole")
 
 [node name="SFX_UI" type="AudioStreamPlayer" parent="." unique_id=1421201505]
 stream = ExtResource("8_30l5a")

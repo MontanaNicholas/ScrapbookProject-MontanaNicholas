@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var sfx_worm: AudioStreamPlayer = $SFX_WORM
 @onready var sfx_ui: AudioStreamPlayer = $SFX_UI
 
 
@@ -30,3 +31,8 @@ func _on_back_pressed() -> void:
 func _on_play_pressed() -> void:
 	sfx_ui.play()
 	get_tree().change_scene_to_file("res://BirthdayMinigame.tscn")
+
+
+func _on_worm_pressed() -> void:
+	Sound.play_worm()
+	get_tree().change_scene_to_file("res://food_drink_worm.tscn")

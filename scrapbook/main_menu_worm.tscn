@@ -42,7 +42,7 @@ TEXT"
 horizontal_alignment = 1
 
 [node name="WormPopUp" type="Sprite2D" parent="." unique_id=1024805860]
-position = Vector2(318, 272.00003)
+position = Vector2(318, 272.00006)
 scale = Vector2(1.465156, 1.507883)
 texture = ExtResource("4_8ri27")
 

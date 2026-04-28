@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1034a358mreu"
-path="res://.godot/imported/strawberry_matcha.png-1951595311bb96effcc3a3cc5a31a0e6.ctex"
+uid="uid://db7mb681lecax"
+path="res://.godot/imported/clover.png-521b49c60503b154c4d4e109a18a5d0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/strawberry_matcha.png"
-dest_files=["res://.godot/imported/strawberry_matcha.png-1951595311bb96effcc3a3cc5a31a0e6.ctex"]
+source_file="res://assets/clover.png"
+dest_files=["res://.godot/imported/clover.png-521b49c60503b154c4d4e109a18a5d0e.ctex"]
 
 [params]
 
